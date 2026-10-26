@@ -226,9 +226,9 @@ void crear(ColeccionITF<T> &c){
 */
 template<typename T> void anadir(ColeccionITF<T> &c, const T &i){
     
-    string ident = identificador(i);
+    string ident = suIdentificador(i);
 
-    if( c.primero == nullptr || identificador(c.primero->dato) > ident ){ //si es lista vacia o el primero es mayor, INSERCION AL PRINCIPIO
+    if( c.primero == nullptr || suIdentificador(c.primero->dato) > ident ){ //si es lista vacia o el primero es mayor, INSERCION AL PRINCIPIO
         //IMPORTANTE! EVAL. CORTOCIRCUITADA: si c.primero == nullptr no evaluará c.primero->dato con lo que no hara accesos indebidos
         c.nElem++;
         Nodo* nuevoElem = new Nodo;
@@ -237,7 +237,7 @@ template<typename T> void anadir(ColeccionITF<T> &c, const T &i){
         c.primero = nuevoElem;
         
 
-    }else if(identificador(c.primero->dato) == ident){ //si el primero == i volvemos sin hacer nada
+    }else if(suIdentificador(c.primero->dato) == ident){ //si el primero == i volvemos sin hacer nada
         return;
     
     }else{  //si no (primero.dato < i), otro punto de inserción(ENTRE MEDIO O FINAL)
@@ -250,14 +250,14 @@ template<typename T> void anadir(ColeccionITF<T> &c, const T &i){
         while(pSig != nullptr){ //mientras el pAux no sea el ultimo
             //sabemos que pAux.dato es menor estricto que i
 
-            if(identificador(pSig->dato) > ident){ //si el siguiente.dato > i: insertar antes de pSig y fin
+            if(suIdentificador(pSig->dato) > ident){ //si el siguiente.dato > i: insertar antes de pSig y fin
                 c.nElem++;
                 Nodo* nuevoElem = new Nodo;
                 nuevoElem->dato = i;
                 nuevoElem->sig = pSig;
                 pAux->sig = nuevoElem;
                 return;
-            }else if(identificador(pSig->dato) == ident){ //si el siguiente.dato == i acabamos sin hacer nada
+            }else if(suIdentificador(pSig->dato) == ident){ //si el siguiente.dato == i acabamos sin hacer nada
                 return;
             }
             //avanzamos punteros de recorrido
@@ -294,7 +294,7 @@ template<typename T> void borrar(const string &ident, ColeccionITF<T> &c){
     if(c.primero == nullptr){   //si LISTA VACÍA, no hacemos nada
         return;                 //fin
 
-    }else if(identificador(c.primero->dato) == ident){  //si EL PRIMERO YA ES IGUAL: borrar el primero y fin
+    }else if(suIdentificador(c.primero->dato) == ident){  //si EL PRIMERO YA ES IGUAL: borrar el primero y fin
 
         Nodo * pKiller = c.primero;    //puntero mercenario apunta al objetivo para poder reasignar c.primero sin perder la direccion
         //COMPROBAR ITERADOR!!
@@ -317,7 +317,7 @@ template<typename T> void borrar(const string &ident, ColeccionITF<T> &c){
         while(pSig != nullptr){ //mientras el pAux no sea el ultimo
             
             //sabemos que pAux->dato != ident
-            if(identificador(pSig->dato) == ident){ //el SIGUIENTE ES EL QUE BUSCAMOS: borrar pSig y fin
+            if(suIdentificador(pSig->dato) == ident){ //el SIGUIENTE ES EL QUE BUSCAMOS: borrar pSig y fin
                 
                 //COMPROBAR ITERADOR!!
                 if(c.iter == pSig){      //si el iterador esta en el elemento a borrar, mover el iterador al siguiente elem por visitar.
