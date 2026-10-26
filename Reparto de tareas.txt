@@ -1,0 +1,31 @@
+REPARTO DE TAREAS
+
+Punto 1 de la práctica
+
+Arián:
+    - Implementación completa: Hecho
+    - Pruebas de las funciones de anuncio.cpp
+
+Punto 2 de la práctica
+
+David:
+    - Función añadir: Hecho
+    - Función borrar: Hecho
+    - Funciones iterador: En proceso
+    - Pruebas de las funcioens de coleccionITF programadas por él: En proceso
+
+Abel:
+    - Funciones restantes: En proceso
+    - Pruebas de las funcioens de coleccionITF programadas por él: En proceso
+
+
+Punto 3 de la práctica:
+
+David:
+    - Implementación del comportamiento para las instrucciones "A" y "E".
+
+Abel:
+    - Implementación del comportamiento para las instrucciones "O" y "EC".
+
+Arián:
+    - Implementación del comportamiento para las instrucciones "LC" y "LT".
