@@ -4,7 +4,7 @@ int buenosDias() {
 
     // mucho codigo y tal
 
-    int adios = 0;
+    int adios = 80;
 
     return 1;
 
