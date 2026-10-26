@@ -25,9 +25,11 @@ int main ()
     crear(20, 2, 2001, fpubl, error);
     crear(20, 2, 2001, ffin, error);
 
+    // Prueba d
+
     Anuncio e = crearAnuncio(id, articulo, descripcion, categoria, fpubl, ffin);    
 
-    //for (int i = 0; i < )
+    // 
 
     cout << "";
 
