@@ -5,6 +5,7 @@
 #define COLECCIONITF_HPP
 
 #include "fecha.hpp"
+#include "anuncio.hpp"
 #include <string>
 using namespace std;
 
