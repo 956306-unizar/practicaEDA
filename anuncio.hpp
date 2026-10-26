@@ -29,6 +29,9 @@ void cambiarCategoria(Anuncio &e, string &n);
 Fecha suPublicacion(const Anuncio &e);
 Fecha suFinalizacion(const Anuncio &e);
 
+// Función auxiliar para comprobar las funciones implemenetadas
+string mostrarAnuncio(const Anuncio &e);
+
 struct Anuncio
 {
     friend Anuncio crearAnuncio(string &ID, string &tit, string &descrip, string &categ, Fecha &publi, Fecha &final);
@@ -41,6 +44,8 @@ struct Anuncio
     friend void cambiarCategoria(Anuncio &e, string &n);
     friend Fecha suPublicacion(const Anuncio &e);
     friend Fecha suFinalizacion(const Anuncio &e);
+
+    friend string mostrarAnuncio(const Anuncio &e);
 
     private:
         string ID;
