@@ -1,0 +1,11 @@
+# Se ignora todo por defecto
+*
+
+# Se evita ignorar las propias carpetas
+!*/
+
+# No ignoramos los siguientes tipos de archivo (con el '!' delante).
+!*.cpp      
+!*.hpp
+!*.txt
+!*.git.exe

@@ -1,31 +1,56 @@
-REPARTO DE TAREAS
+======================================================================
+                         REPARTO DE TAREAS
+======================================================================
 
-Punto 1 de la práctica
+----------------------------------------------------------------------
+PUNTO 1: MODULO ANUNCIO
+----------------------------------------------------------------------
+ARIAN:
+    [X] Implementacion completa de anuncio.cpp
+    [ ] Pruebas unitarias de las funciones de anuncio.cpp
 
-Arián:
-    - Implementación completa: Hecho
-    - Pruebas de las funciones de anuncio.cpp
 
-Punto 2 de la práctica
-
+----------------------------------------------------------------------
+PUNTO 2: TAD COLECCION ITF
+----------------------------------------------------------------------
 David:
-    - Función añadir: Hecho
-    - Función borrar: Hecho
-    - Funciones iterador: En proceso
-    - Pruebas de las funcioens de coleccionITF programadas por él: En proceso
+    [X] Función añadir
+    [X] Función borrar
+    [ ] Función iniciarIterador
+    [ ] Función existeSiguiente?
+    [ ] Función siguiente
+    [ ] Función avanza
+    [ ] Pruebas de las funciones de coleccionITF programadas por él
 
 Abel:
-    - Funciones restantes: En proceso
-    - Pruebas de las funcioens de coleccionITF programadas por él: En proceso
+    [ ] Función crear
+    [ ] Función actualizar
+    [ ] Función está?
+    [ ] Función obtenerITF
+    [ ] Función obsoletos
+    [ ] Función purgar
+    [ ] Función existeTema
+    [ ] Función delTema
+    [ ] Función zanjarTema
+    [ ] Función esVacía?
+    [ ] Función tamaño
+    [ ] Pruebas de las funciones de coleccionITF programadas por él
 
+----------------------------------------------------------------------
+PUNTO 3: INTERPRETE DE INSTRUCCIONES
+----------------------------------------------------------------------
+DAVID:
+    [ ] Instruccion 'A'  (Añadir)
+    [ ] Instruccion 'E'  (Eliminar)
 
-Punto 3 de la práctica:
+ABEL:
+    [ ] Instruccion 'O'  (Obsoletos)
+    [ ] Instruccion 'EC' (Eliminar por criterio/caducidad)
 
-David:
-    - Implementación del comportamiento para las instrucciones "A" y "E".
+ARIAN:
+    [ ] Instruccion 'LC' (Listar coleccion)
+    [ ] Instruccion 'LT' (Listar por tema)
 
-Abel:
-    - Implementación del comportamiento para las instrucciones "O" y "EC".
-
-Arián:
-    - Implementación del comportamiento para las instrucciones "LC" y "LT".
+======================================================================
+Leyenda: [X] Hecho | [ ] Pendiente / En proceso
+======================================================================

@@ -7,7 +7,6 @@ g++ -std=c++11 Principal.cpp anuncio.cpp fecha.cpp -o P3_EDA
 #include "anuncio.hpp"
 
 
-
 Anuncio crearAnuncio(string &ID, string &tit, string &descrip, string &categ, Fecha &publi, Fecha &final)
 {
     Anuncio e;
@@ -67,5 +66,24 @@ Fecha suFinalizacion(const Anuncio &e)
     return e.finalizacion;
 }
 
+// Función auxiliar para comprobar las funciones implemenetadas
+string mostrarAnuncio(const Anuncio &e)
+{
+    string resultado = "";
+
+    resultado += "ID: " + suIdentificador(e) + "\n";
+    resultado += "Titulo: " + suTitulo(e) + "\n";
+    resultado += "Descripcion: " + suDescripcion(e) + "\n";
+    resultado += "Categoria: " + suCategoria(e) + "\n";
+    resultado += "Fecha de publicacion: " + to_string(anyo(suPublicacion(e))) + 
+        "/" + to_string(mes(suPublicacion(e))) + 
+        "/" + to_string(dia(suPublicacion(e))) + "\n";
+
+    resultado += "Fecha de publicacion: " + to_string(anyo(suFinalizacion(e))) + 
+        "/" + to_string(mes(suFinalizacion(e))) + 
+        "/" + to_string(dia(suFinalizacion(e))) + "\n";
+
+    return resultado;
+}
 
 
