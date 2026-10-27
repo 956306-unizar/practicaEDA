@@ -307,7 +307,7 @@ template<typename T> void actualizar(ColeccionITF<T> &c, const T &i) {
     }
 
     // Empezamos comprobando el segundo elemento de la colección, ya que ya se comprobó el primero.
-    Nodo<T>* pAux = c.primero->sig;
+    Nodo* pAux = c.primero->sig;
 
     bool actualizado = false;
 
@@ -414,7 +414,7 @@ bool esta(const string &ident, const ColeccionITF<T> &c) {
 
     }
 
-    Nodo<T>* pAux = c.primero->sig;
+    Nodo* pAux = c.primero->sig;
 
     while(pAux != nullptr) {
 
@@ -447,7 +447,7 @@ bool esta(const string &ident, const ColeccionITF<T> &c) {
 template<typename T>
 T obtenerITF(const string &ident, const ColeccionITF<T> &c) {
 
-    Nodo<T>* pAux = c.primero;
+    Nodo* pAux = c.primero;
 
     while(1) {
 
@@ -479,7 +479,7 @@ string obsoletos(const Fecha &f, const string &separador, const ColeccionITF<T> 
 
     string ids = "";
 
-    Nodo<T>* pAux = c.primero;
+    Nodo* pAux = c.primero;
 
     while(pAux != nullptr) {
 
@@ -508,10 +508,54 @@ string obsoletos(const Fecha &f, const string &separador, const ColeccionITF<T> 
     Devuelve una colección igual a la resultante de eliminar de c todos los ítems con fecha
     estrictamente anterior a f.
 */
-template<typename T
+template<typename T>
 void purgar(const Fecha &f, ColeccionITF<T> &c) {
 
-    
+    if(c.primero == nullptr) {
+        return;
+
+    } 
+
+    Nodo* pAnt = nullptr;
+    Nodo* pAux = c.primero;
+
+    Nodo* pDeleter;
+
+    while(pAux != nullptr) {
+
+        if(anterior(fecha(pAux->dato), f)) {
+
+            if(pAux == c.primero) {
+
+                c.primero = c.primero->sig;
+
+            } else {
+
+                pAnt->sig = pAux->sig;
+
+            }
+
+            pDeleter = pAux;
+            pAux = pAux->sig;
+
+            if(c.iter == pDeleter) {
+                
+                c.iter = pAux;
+
+            }
+
+            delete(pDeleter);
+            c.nElem--;
+
+        } else {
+
+            pAnt = pAux;
+            pAux = pAux->sig;
+
+        }
+
+
+    }
 
 }
 
