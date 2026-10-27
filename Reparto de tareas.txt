@@ -23,10 +23,10 @@ David:
     [ ] Pruebas de las funciones de coleccionITF programadas por él
 
 Abel:
-    [ ] Función crear
-    [ ] Función actualizar
-    [ ] Función está?
-    [ ] Función obtenerITF
+    [X] Función crear
+    [X] Función actualizar
+    [X] Función está?
+    [?] Función obtenerITF
     [ ] Función obsoletos
     [ ] Función purgar
     [ ] Función existeTema
@@ -52,5 +52,5 @@ ARIAN:
     [ ] Instruccion 'LT' (Listar por tema)
 
 ======================================================================
-Leyenda: [X] Hecho | [ ] Pendiente / En proceso
+Leyenda: [X] Hecho | [ ] Pendiente / En proceso | [?] En espera de respuesta a duda
 ======================================================================
