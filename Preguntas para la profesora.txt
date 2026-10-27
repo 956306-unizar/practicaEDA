@@ -2,3 +2,6 @@ Para el uso de las operaciones del parámetro formal ITF de ColeccionITF, cómo 
 "suIdentificador" e "identificador", usadas por anuncio.hpp y coleccionITF.hpp respectivamente?
 
 En obtenerITF, al ser parcial, cómo se debería abordar? Se especifica en la precondición, o si controla el devolver NULL o algo por el estilo?
+
+Funciones a optimizar al máximo. Comparar ejemplos de, por ejemplo, la función "esta" en distintos commits y determinar cuál es más óptima.
+Por ejemplo, la comprobación inicial de si la cadena está vacía.
