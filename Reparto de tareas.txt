@@ -16,10 +16,9 @@ PUNTO 2: TAD COLECCION ITF
 David:
     [X] Función añadir
     [X] Función borrar
-    [ ] Función iniciarIterador
-    [ ] Función existeSiguiente?
-    [ ] Función siguiente
-    [ ] Función avanza
+    [X] Función iniciarIterador
+    [X] Función existeSiguiente?
+    [X] Función siguienteYavanza
     [ ] Pruebas de las funciones de coleccionITF programadas por él
 
 Abel:
