@@ -151,8 +151,8 @@ COMBINADAS de manera NO PARCIAL en "siguienteYavanza".
 */
 
 /*
-    Devuelve por e el siguiente elemento de la coleccionITF c. Además intenta avanza el iterador
-    y devuelve true si y solo si el iterador ha podido avanzar.
+    Si existe un elemento por visitar en c devuelve TRUE, devuelve dicho elemento por e y avanza el iterador.
+    Si no, devuelve falso.
 */
 template<typename T> bool siguienteYavanza(ColeccionITF<T> &c, T &e);
 
@@ -351,27 +351,35 @@ template<typename T> void borrar(const string &ident, ColeccionITF<T> &c){
 */
 template<typename T> void iniciarIterador(ColeccionITF<T> &c){
 
-
+    c.iter = c.primero;
 }
 
 
 /*
-    Devuelve verdad si queda algún ítem por visitar con el iterador de la colección c, devuelve
-    falso si ya se ha visitado el último ítem.
+    Devuelve verdad si queda algún ítem por visitar con el iterador de la colección c (si el iterador no está apuntando a NIL),
+    devuelve falso si ya se ha visitado el último ítem.
 */
 template<typename T> bool existeSiguiente(const ColeccionITF<T> &c){
 
-
+    return (c.iter != nullptr);
 }
 
 
 /*
-    Devuelve por e el siguiente elemento de la coleccionITF c. Además intenta avanza el iterador
-    y devuelve true si y solo si el iterador ha podido avanzar.
+    Si existe un elemento por visitar en c devuelve TRUE, devuelve dicho elemento por e y avanza el iterador.
+    Si no, devuelve falso.
 */
 template<typename T> bool siguienteYavanza(ColeccionITF<T> &c, T &e){
 
+    if(existeSiguiente(c)){ //(si no apunta a NIL)
 
+        e = c.iter->dato;
+        c.iter = c.iter->sig;
+        return true;
+
+    }else{
+        return false;
+    }
 }
 
 
