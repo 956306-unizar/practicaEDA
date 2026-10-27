@@ -1,0 +1,6 @@
+*           # Se ignora todo por defecto
+
+# No ignoramos los archivos cpp, hpp ni txt.
+!*.cpp      
+!*.hpp
+!*.txt
