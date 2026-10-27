@@ -1,11 +1,13 @@
-/* NOMBRES Y NIPS ---- David Maza Luengo 956269
+/* ---- NOMBRES Y NIPS ----
+    Arián ...
+    Abel Martínez Zárate - 956306
+    David Maza Luengo - 956269
 */
 
 #ifndef COLECCIONITF_HPP
 #define COLECCIONITF_HPP
 
 #include "fecha.hpp"
-#include "anuncio.hpp"
 #include <string>
 using namespace std;
 
@@ -214,7 +216,9 @@ template<typename T> struct ColeccionITF{
 template<typename T>
 void crear(ColeccionITF<T> &c){
 
-/////////////////////////////////////////////
+    c.primero = nullptr;
+    c.nElem = 0;
+
 }
 
 
@@ -273,13 +277,61 @@ template<typename T> void anadir(ColeccionITF<T> &c, const T &i){
     }
 }
 
+/*
+    Busca si existe un dato de tipo T, en los nodos que almacena la coleccionITF, que tenga el mismo identificador que el dato de tipo T
+    proporcionado (i). De ser así, el dato que ya se encuentra en la coleccionITF se actualizará con el del parámetro i.
+    Al solo cambiarse el valor de la variable "dato" dentro del nodo que se encuentra en dicha posición, no hará falta hacer más cambios
+    en ninguna otra parte.
+*/
+template<typename T> void actualizar(ColeccionITF<T> &c, const T &i) {
 
+    // Si la lista se encuentra vacía automáticamente dejaremos de intentar buscar el elemento del género T a actualizar.
+    if(c.primero == nullptr) {
 
+        return;
 
-//AQUI VA ACTUALIZAR-----------------------------------------------------------------------------------------!!!!!!!!
+    } 
 
+    string identificadorDelNuevoDato = identificador(i);
+    string identificadorDatoActual = identificador(c.primero->dato);
 
+    if(identificadorDelNuevoDato < identificadorDatoActual) {
 
+        return;
+
+    } else if(identificadorDelNuevoDato == identificadorDatoActual){
+
+        c.primero->dato = i;
+        return;
+
+    }
+
+    // Empezamos comprobando el segundo elemento de la colección, ya que ya se comprobó el primero.
+    Nodo<T>* pAux = c.primero->sig;
+
+    bool actualizado = false;
+
+    while(pAux != nullptr && !actualizado) {
+
+        identificadorDatoActual = identificador(pAux->dato);
+
+        if(identificadorDelNuevoDato < identificadorDatoActual) {
+
+            return;
+
+        } else if(identificadorDatoActual == identificadorDelNuevoDato) {
+
+            pAux->dato = i;
+            actualizado = true;
+
+        } else {
+            pAux = pAux->sig;
+
+        }
+
+    }
+
+}
 
 
 /*
@@ -340,8 +392,135 @@ template<typename T> void borrar(const string &ident, ColeccionITF<T> &c){
 }
 
 
-//etc......................................................................................................
+/*
+    Devuelve verdad si y sólo si en c hay algún ítem con identificador igual a ident.
+*/
+template<typename T>
+bool esta(const string &ident, const ColeccionITF<T> &c) {
 
+    if(c.primero == nullptr){
+        return false; // Si la coleccion está vacía se devuelve false directamente.
+    }
+
+    string identificadorActual = identificador(c.primero->dato);
+
+    if(ident < identificadorActual) {
+
+        return false; // Si el identificador solicitado a buscar es menor que el primero de la lista, se devuelve false directamente.
+
+    } else if(ident == identificadorActual) {
+
+        return true; // Si coincide directamente con el primero, devuelve true.
+
+    }
+
+    Nodo<T>* pAux = c.primero->sig;
+
+    while(pAux != nullptr) {
+
+        identificadorActual = identificador(pAux->dato);
+
+        if(ident < identificadorActual) {
+
+            return false;
+
+        } else if(ident == identificadorActual) {
+
+            return true;
+
+        } else {
+
+            pAux = pAux->sig;
+
+        }
+
+    }
+
+    return false;
+
+}
+
+/*
+    Si en c hay algún ítem con identificador igual a ident, devuelve dicho ítem.
+    PARCIAL: operación no definida si en c no hay ningún ítem con identificador igual a ident.
+*/
+template<typename T>
+T obtenerITF(const string &ident, const ColeccionITF<T> &c) {
+
+    Nodo<T>* pAux = c.primero;
+
+    while(1) {
+
+        if(identificador(pAux->dato) == ident) {
+
+            return pAux->dato;
+
+        } else {
+
+            pAux = pAux->sig;
+
+        }
+
+    }
+    
+}
+
+
+/*
+    Devuelve la cadena resultante de concatenar los identificadores de todos los ítems que hay en c
+    con fecha estrictamente anterior a f, y separados entre sí por la cadena separador.
+*/
+template<typename T>
+string obsoletos(const Fecha &f, const string &separador, const ColeccionITF<T> &c);
+ 
+
+/*
+    Devuelve una colección igual a la resultante de eliminar de c todos los ítems con fecha
+    estrictamente anterior a f.
+*/
+template<typename T
+void purgar(const Fecha &f, ColeccionITF<T> &c);
+
+
+/*
+    Devuelve verdad si y sólo si en c hay algún ítem i con tema igual a t.
+*/
+template<typename T>
+bool existeTema(const string &t, const ColeccionITF<T> &c);
+
+
+/*
+    Devuelve la cadena resultante de concatenar los identificadores de todos los ítems que hay en c
+    con tema igual a t, y separados entre sí por la cadena separador.
+*/
+template<typename T>
+string delTema(const string &t, const string &separador, const ColeccionITF<T> &c);
+
+
+/*
+    Devuelve una colección igual a la resultante de eliminar de c todos los ítems i cuyo tema es igual a t.
+*/
+template<typename T>
+void zanjarTema(const string &t, ColeccionITF<T> &c);
+
+
+
+/*
+    Devuelve verdad si y sólo si c no contiene ningún ítem.
+*/
+template<typename T>
+bool esVacia(const ColeccionITF<T> &c);
+
+
+/*
+    Devuelve el número de ítems que hay en la colección c.
+*/
+template<typename T>
+int tamano(const ColeccionITF<T> &c);
+
+
+
+// --- FUNCIONES DEL ITERADOR ---
 
 
 /*
@@ -349,7 +528,8 @@ template<typename T> void borrar(const string &ident, ColeccionITF<T> &c){
     ítem a visitar sea el que tiene el identificador (lexicográficamente) menor (situación de no
     haber visitado ningún ítem).
 */
-template<typename T> void iniciarIterador(ColeccionITF<T> &c){
+template<typename T>
+void iniciarIterador(ColeccionITF<T> &c){
 
 
 }
@@ -359,7 +539,8 @@ template<typename T> void iniciarIterador(ColeccionITF<T> &c){
     Devuelve verdad si queda algún ítem por visitar con el iterador de la colección c, devuelve
     falso si ya se ha visitado el último ítem.
 */
-template<typename T> bool existeSiguiente(const ColeccionITF<T> &c){
+template<typename T>
+bool existeSiguiente(const ColeccionITF<T> &c){
 
 
 }
@@ -369,7 +550,8 @@ template<typename T> bool existeSiguiente(const ColeccionITF<T> &c){
     Devuelve por e el siguiente elemento de la coleccionITF c. Además intenta avanza el iterador
     y devuelve true si y solo si el iterador ha podido avanzar.
 */
-template<typename T> bool siguienteYavanza(ColeccionITF<T> &c, T &e){
+template<typename T>
+bool siguienteYavanza(ColeccionITF<T> &c, T &e){
 
 
 }
