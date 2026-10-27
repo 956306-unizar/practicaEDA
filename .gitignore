@@ -1,6 +1,8 @@
-*           # Se ignora todo por defecto
+# Se ignora todo por defecto
+*
 
-# No ignoramos los archivos cpp, hpp ni txt.
+# No ignoramos los siguientes tipos de archivo (con el '!' delante).
 !*.cpp      
 !*.hpp
 !*.txt
+!*.git.exe
