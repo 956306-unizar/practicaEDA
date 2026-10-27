@@ -26,7 +26,7 @@ Abel:
     [X] Función actualizar
     [X] Función está?
     [?] Función obtenerITF
-    [ ] Función obsoletos
+    [X] Función obsoletos
     [ ] Función purgar
     [ ] Función existeTema
     [ ] Función delTema
