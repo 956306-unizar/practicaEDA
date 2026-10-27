@@ -471,7 +471,37 @@ T obtenerITF(const string &ident, const ColeccionITF<T> &c) {
     con fecha estrictamente anterior a f, y separados entre sí por la cadena separador.
 */
 template<typename T>
-string obsoletos(const Fecha &f, const string &separador, const ColeccionITF<T> &c);
+string obsoletos(const Fecha &f, const string &separador, const ColeccionITF<T> &c) {
+
+    if(c.primero == nullptr){
+        return ""; // Si la coleccion está vacía se devuelve una cadena vacía directamente.
+    }
+
+    string ids = "";
+
+    Nodo<T>* pAux = c.primero;
+
+    while(pAux != nullptr) {
+
+        if(anterior(fecha(pAux->dato), f)) {
+
+            if(ids != "") {
+
+                ids += separador;
+
+            }
+
+            ids += identificador(pAux->dato);
+
+        }
+
+        pAux = pAux->sig;
+
+    }
+
+    return ids;
+
+}
  
 
 /*
@@ -479,7 +509,11 @@ string obsoletos(const Fecha &f, const string &separador, const ColeccionITF<T> 
     estrictamente anterior a f.
 */
 template<typename T
-void purgar(const Fecha &f, ColeccionITF<T> &c);
+void purgar(const Fecha &f, ColeccionITF<T> &c) {
+
+    
+
+}
 
 
 /*
