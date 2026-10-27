@@ -27,12 +27,12 @@ Abel:
     [X] Función está?
     [?] Función obtenerITF
     [X] Función obsoletos
-    [ ] Función purgar
-    [ ] Función existeTema
-    [ ] Función delTema
-    [ ] Función zanjarTema
-    [ ] Función esVacía?
-    [ ] Función tamaño
+    [X] Función purgar
+    [X] Función existeTema
+    [X] Función delTema
+    [X] Función zanjarTema
+    [X] Función esVacía?
+    [X] Función tamaño
     [ ] Pruebas de las funciones de coleccionITF programadas por él
 
 ----------------------------------------------------------------------

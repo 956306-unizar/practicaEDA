@@ -402,19 +402,8 @@ bool esta(const string &ident, const ColeccionITF<T> &c) {
         return false; // Si la coleccion está vacía se devuelve false directamente.
     }
 
-    string identificadorActual = identificador(c.primero->dato);
-
-    if(ident < identificadorActual) {
-
-        return false; // Si el identificador solicitado a buscar es menor que el primero de la lista, se devuelve false directamente.
-
-    } else if(ident == identificadorActual) {
-
-        return true; // Si coincide directamente con el primero, devuelve true.
-
-    }
-
-    Nodo* pAux = c.primero->sig;
+    Nodo* pAux = c.primero;
+    string identificadorActual;
 
     while(pAux != nullptr) {
 
@@ -539,7 +528,7 @@ void purgar(const Fecha &f, ColeccionITF<T> &c) {
             pAux = pAux->sig;
 
             if(c.iter == pDeleter) {
-                
+
                 c.iter = pAux;
 
             }
@@ -564,7 +553,26 @@ void purgar(const Fecha &f, ColeccionITF<T> &c) {
     Devuelve verdad si y sólo si en c hay algún ítem i con tema igual a t.
 */
 template<typename T>
-bool existeTema(const string &t, const ColeccionITF<T> &c);
+bool existeTema(const string &t, const ColeccionITF<T> &c) {
+
+    Nodo* pAux = c.primero;
+
+    while(pAux != nullptr) {
+
+        if(tema(pAux->dato) == t) {
+            return true;
+
+        } else {
+
+            pAux = pAux->sig;
+
+        }
+
+    }
+
+    return false;
+
+}
 
 
 /*
@@ -572,14 +580,92 @@ bool existeTema(const string &t, const ColeccionITF<T> &c);
     con tema igual a t, y separados entre sí por la cadena separador.
 */
 template<typename T>
-string delTema(const string &t, const string &separador, const ColeccionITF<T> &c);
+string delTema(const string &t, const string &separador, const ColeccionITF<T> &c) {
+
+    if(c.primero == nullptr){
+        return ""; // Si la coleccion está vacía se devuelve una cadena vacía directamente.
+    }
+
+    string ids = "";
+
+    Nodo* pAux = c.primero;
+
+    while(pAux != nullptr) {
+
+        if(tema(pAux->dato) == t) {
+
+            if(ids != "") {
+
+                ids += separador;
+
+            }
+
+            ids += identificador(pAux->dato);
+
+        }
+
+        pAux = pAux->sig;
+
+    }
+
+    return ids;
+
+}
 
 
 /*
     Devuelve una colección igual a la resultante de eliminar de c todos los ítems i cuyo tema es igual a t.
 */
 template<typename T>
-void zanjarTema(const string &t, ColeccionITF<T> &c);
+void zanjarTema(const string &t, ColeccionITF<T> &c) {
+
+    if(c.primero == nullptr) {
+        return;
+
+    } 
+
+    Nodo* pAnt = nullptr;
+    Nodo* pAux = c.primero;
+
+    Nodo* pDeleter;
+
+    while(pAux != nullptr) {
+
+        if(tema(pAux->dato) == t) {
+
+            if(pAux == c.primero) {
+
+                c.primero = c.primero->sig;
+
+            } else {
+
+                pAnt->sig = pAux->sig;
+
+            }
+
+            pDeleter = pAux;
+            pAux = pAux->sig;
+
+            if(c.iter == pDeleter) {
+
+                c.iter = pAux;
+
+            }
+
+            delete(pDeleter);
+            c.nElem--;
+
+        } else {
+
+            pAnt = pAux;
+            pAux = pAux->sig;
+
+        }
+
+
+    }
+
+}
 
 
 
@@ -587,14 +673,22 @@ void zanjarTema(const string &t, ColeccionITF<T> &c);
     Devuelve verdad si y sólo si c no contiene ningún ítem.
 */
 template<typename T>
-bool esVacia(const ColeccionITF<T> &c);
+bool esVacia(const ColeccionITF<T> &c) {
+
+    return c.nElem == 0;
+
+}
 
 
 /*
     Devuelve el número de ítems que hay en la colección c.
 */
 template<typename T>
-int tamano(const ColeccionITF<T> &c);
+int tamano(const ColeccionITF<T> &c) {
+
+    return c.nElem;
+
+}
 
 
 
