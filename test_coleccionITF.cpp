@@ -1,8 +1,21 @@
 #include "coleccionITF.hpp"
+#include "anuncio.hpp"
 
-void probarCrear();
+// CABECERA - DECLARACIÓN DE FUNCIONES
 
+// "Traducción" de las operaciones del parámetro formal.
+string identificador(Anuncio anuncio);
+string tema(Anuncio anuncio);
+Fecha fecha(Anuncio anuncio);
+
+// Funciones que permitirán probar cada una de las funciones implementadas en "coleccionITF".
+void probarCrear(/* Parámetros... */);
+
+
+// Función principal.
 int main(int argc, char* argv[]) {
+
+    ColeccionITF<Anuncio> anuncios;
 
     int opcion = nullptr;
 
@@ -39,7 +52,7 @@ int main(int argc, char* argv[]) {
         switch(opcion) {
 
             case 1:
-                probarCrear();
+                probarCrear(/* Parámetros... */);
                 break;
 
         }
@@ -50,6 +63,25 @@ int main(int argc, char* argv[]) {
 
 }
 
-void probarCrear() {
+string identificador(Anuncio anuncio) {
+
+    return suIdentificador(anuncio);
+
+}
+
+string tema(Anuncio anuncio) {
+
+    return suCategoria(anuncio);
+
+}
+
+Fecha fecha(Anuncio anuncio) {
+
+    return suPublicacion(anuncio);
+
+}
+
+
+void probarCrear(/* Parámetros... */) {
 
 }
