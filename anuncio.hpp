@@ -18,14 +18,14 @@ struct Anuncio;
 // Añadir las referencias a algunos parametros
 
 
-Anuncio crearAnuncio(string &ID, string &tit, string &descrip, string &categ, Fecha &publi, Fecha &final);
+Anuncio crearAnuncio(string ID, string tit, string descrip, string categ, Fecha &publi, Fecha &final);
 string suIdentificador(const Anuncio &e);
 string suTitulo(const Anuncio &e);
-void cambiarTitulo(Anuncio &e, string &n);
+void cambiarTitulo(Anuncio &e, string n);
 string suDescripcion(const Anuncio &e);
-void cambiarDescripcion(Anuncio &e, string &n);
+void cambiarDescripcion(Anuncio &e, string n);
 string suCategoria(const Anuncio &e);
-void cambiarCategoria(Anuncio &e, string &n);
+void cambiarCategoria(Anuncio &e, string n);
 Fecha suPublicacion(const Anuncio &e);
 Fecha suFinalizacion(const Anuncio &e);
 
@@ -34,14 +34,14 @@ string mostrarAnuncio(const Anuncio &e);
 
 struct Anuncio
 {
-    friend Anuncio crearAnuncio(string &ID, string &tit, string &descrip, string &categ, Fecha &publi, Fecha &final);
+    friend Anuncio crearAnuncio(string ID, string tit, string descrip, string categ, Fecha &publi, Fecha &final);
     friend string suIdentificador(const Anuncio &e);
     friend string suTitulo(const Anuncio &e);
-    friend void cambiarTitulo(Anuncio &e, string &n);
+    friend void cambiarTitulo(Anuncio &e, string n);
     friend string suDescripcion(const Anuncio &e);
-    friend void cambiarDescripcion(Anuncio &e, string &n);
+    friend void cambiarDescripcion(Anuncio &e, string n);
     friend string suCategoria(const Anuncio &e);
-    friend void cambiarCategoria(Anuncio &e, string &n);
+    friend void cambiarCategoria(Anuncio &e, string n);
     friend Fecha suPublicacion(const Anuncio &e);
     friend Fecha suFinalizacion(const Anuncio &e);
 
