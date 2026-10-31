@@ -163,7 +163,38 @@ template<typename T> bool siguienteYavanza(ColeccionITF<T> &c, T &e);
 
 
 
-// DECLARACION DEL TAD GENERICO coleccionITF
+// DECLARACION DEL TAD GENERICO coleccionITF y su tipo Nodo
+template<typename T> struct Nodo{ //declarado fuera de coleccionITF para cumplir con el scope a la hora de implementar las funciones
+ 
+    friend void crear<T>(ColeccionITF<T> &c);
+    friend void anadir<T>(ColeccionITF<T> &c, const T &i);
+    friend void actualizar<T>(ColeccionITF<T> &c, const T &i);
+    friend void borrar<T>(const string &ident, ColeccionITF<T> &c);
+    friend bool esta<T>(const string &ident, const ColeccionITF<T> &c);
+    friend T obtenerITF<T>(const string &ident, const ColeccionITF<T> &c);
+    friend string obsoletos<T>(const Fecha &f, const string &separador, const ColeccionITF<T> &c);
+    friend void purgar<T>(const Fecha &f, ColeccionITF<T> &c);
+    friend bool existeTema<T>(const string &t, const ColeccionITF<T> &c);
+    friend string delTema<T>(const string &t, const string &separador, const ColeccionITF<T> &c);
+    friend void zanjarTema<T>(const string &t, ColeccionITF<T> &c);
+    friend bool esVacia<T>(const ColeccionITF<T> &c);
+    friend int tamano<T>(const ColeccionITF<T> &c);
+
+    friend void iniciarIterador<T>(ColeccionITF<T> &c);
+    friend bool existeSiguiente<T>(const ColeccionITF<T> &c);
+    friend bool siguienteYavanza<T>(ColeccionITF<T> &c, T &e);
+    friend struct ColeccionITF<T>;
+
+
+    private: //declaracion de la representacion interna del tipo       
+    /*
+    "Nodo" es un contenedor para el tipo de dato T y un puntero sig que apunte al siguiente Nodo de la lista. Si
+    no hay más elementos, sig apuntará a NIL.
+    */
+        T dato;
+        Nodo<T>* sig;
+};
+
 template<typename T> struct ColeccionITF{
 
     friend void crear<T>(ColeccionITF<T> &c);
@@ -191,19 +222,11 @@ template<typename T> struct ColeccionITF{
         "primero" es un puntero apunta al primer nodo de la lista. Si la colección está vacía apuntará a NIL.
         "nElem" lleva la cuenta de cuantos elementos hay en la colección.
         "iter" es un puntero que servirá como iterador ÚNICAMENTE para las operaciones de este.
-
-        "Nodo" es un contenedor para el tipo de dato T y un puntero sig que apunte al siguiente Nodo de la lista. Si
-        no hay más elementos, sig apuntará a NIL.
         */
-        struct Nodo{
-            T dato;
-            Nodo* sig;
-        };
-        
-        Nodo* primero;
+        Nodo<T>* primero;
         int nElem;
         //CAMPOS ITERADOR
-        Nodo* iter;
+        Nodo<T>* iter;
 
 };
 
