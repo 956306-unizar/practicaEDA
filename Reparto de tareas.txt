@@ -19,7 +19,7 @@ David:
     [X] Función iniciarIterador
     [X] Función existeSiguiente?
     [X] Función siguienteYavanza
-    [ ] Pruebas de las funciones de coleccionITF programadas por él
+    [X] Pruebas de las funciones de coleccionITF programadas por él
 
 Abel:
     [X] Función crear
@@ -39,8 +39,8 @@ Abel:
 PUNTO 3: INTERPRETE DE INSTRUCCIONES
 ----------------------------------------------------------------------
 DAVID:
-    [ ] Instruccion 'A'  (Añadir)
-    [ ] Instruccion 'E'  (Eliminar)
+    [X] Instruccion 'A'  (Añadir)
+    [X] Instruccion 'E'  (Existe)
 
 ABEL:
     [ ] Instruccion 'O'  (Obsoletos)
