@@ -25,7 +25,7 @@ Abel:
     [X] Función crear
     [X] Función actualizar
     [X] Función está?
-    [?] Función obtenerITF
+    [X] Función obtenerITF
     [X] Función obsoletos
     [X] Función purgar
     [X] Función existeTema
@@ -33,7 +33,7 @@ Abel:
     [X] Función zanjarTema
     [X] Función esVacía?
     [X] Función tamaño
-    [ ] Pruebas de las funciones de coleccionITF programadas por él
+    [X] Pruebas de las funciones de coleccionITF programadas por él
 
 ----------------------------------------------------------------------
 PUNTO 3: INTERPRETE DE INSTRUCCIONES
