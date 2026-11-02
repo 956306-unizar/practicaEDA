@@ -1,60 +1,234 @@
 #include "coleccionITF.hpp"
 #include "anuncio.hpp"
 
-// CABECERA - DECLARACIÓN DE FUNCIONES
+// CABECERA - DECLARACIoN DE FUNCIONES
 
-// "Traducción" de las operaciones del parámetro formal.
+// "Traduccion" de las operaciones del parámetro formal.
 string identificador(Anuncio anuncio);
 string tema(Anuncio anuncio);
 Fecha fecha(Anuncio anuncio);
 
-// Funciones que permitirán probar cada una de las funciones implementadas en "coleccionITF".
+void mostrarColeccion(ColeccionITF<Anuncio> &c);
+void evaluacionFuncion(bool exito, string mensajeError = "");
 
-void solicitarOpcionMenu(int &opcion);
+const int NUM_ANUNCIOS_INICIALES = 20;
 
-void probarCrear(ColeccionITF<Anuncio> &c, bool &coleccionCreada);
-void probarAnadir(ColeccionITF<Anuncio> &c);
-void probarActualizar(ColeccionITF<Anuncio> &c);
-void probarBorrar(ColeccionITF<Anuncio> &c);
-void probarEsta(ColeccionITF<Anuncio> &c);
-void probarObtenerITF(ColeccionITF<Anuncio> &c);
-void probarObsoletos(ColeccionITF<Anuncio> &c);
-void probarPurgar(ColeccionITF<Anuncio> &c);
-void probarExisteTema(ColeccionITF<Anuncio> &c);
-void probarDelTema(ColeccionITF<Anuncio> &c);
-void probarZanjarTema(ColeccionITF<Anuncio> &c);
-void probarEsVacia(ColeccionITF<Anuncio> &c);
-void probarTamano(ColeccionITF<Anuncio> &c);
-
-
-// Función principal.
+// Funcion principal.
 int main(int argc, char* argv[]) {
 
-    cout << "PRUEBAS DE 'coleccionITF.hpp'\n"; << endl;
+    bool masInfo = 0;
+
+    if(argc == 2) {
+
+        // En caso de que se quiera más info a la hora de ver las pruebas, el usuario deberá pasar un 1 como único parámetro de ejecución.
+        masInfo = atoi(argv[1]);
+
+    }
+
+    cout << "PRUEBAS DE 'coleccionITF.hpp'\n" << endl;
 
     ColeccionITF<Anuncio> anuncios;
 
-    bool coleccionCreada = false;
+    cout << "Probando la funcion 'crear'... ";
+    crear(anuncios);
+    cout << "EXITO (Ejecucion sin errores)" << endl;
 
-    int opcion = nullptr;
+    // Tambien sirve para comprobar que 'crear' haya implementado su logica correctamente.
+    cout << "\nProbando las funciones 'esVacia' y 'tamano' cuando la coleccion se encuentra vacia...";
+    if(masInfo) cout << endl;
 
-    while(opcion != 0) {
+    bool vacia = esVacia(anuncios);
+    int tamanoColeccion = tamano(anuncios);
 
-        solicitarOpcionMenu(opcion);
+    if(masInfo) {
 
-        // Switch que, según la opción elegida en el menú anteriormente, llamará a una función auxiliar
-        // la cual hara todo tipo de pruebas para probar esa función concreta del TAD genérico "coleccionITF".
-        switch(opcion) {
+        cout << "Resultados esperados: true, 0" << endl;
+        cout << "Resultado obtenidos: " << vacia << ", " << tamanoColeccion << endl;
 
-            case 1:
+    }
 
-                probarCrear(anuncios, coleccionCreada);
+    evaluacionFuncion(vacia && tamanoColeccion == 0);
 
-                break;
+    if(masInfo) {
+        cout << "\nCreando " << NUM_ANUNCIOS_INICIALES <<  "anuncios genericos... " << endl;
+    }
+
+    Anuncio anunciosGenericos[20];
+    string categorias[3] = {"Coche", "Juguete", "Perfume"};
+
+    srand(time(nullptr)); // Para fechas aleatorias.
+
+    for(int i = 1; i <= NUM_ANUNCIOS_INICIALES; i++) {
+
+        string id = "ID";
+
+        if(i < 10) {
+            id += "0";
+        }
+
+        id += to_string(i);
+
+        string titulo = "Anuncio";
+        string descripcion = "Descripcion";
+        string categoria = categorias[i % 3];
+
+        Fecha fecha;
+        bool error;
+        crear(i % 29, i % 13, 2000 + i, fecha, error);
+
+        anunciosGenericos[i - 1] = crearAnuncio(id, titulo, descripcion, categoria, fecha, fecha);
+
+    }
+
+    if(masInfo) {
+
+        cout << "Anuncios creados:" << endl;
+
+        for(int i = 0; i < NUM_ANUNCIOS_INICIALES; i++) {
+
+            Anuncio anuncioAMostrar = anunciosGenericos[i];
+
+            cout << "ID: " << identificador(anuncioAMostrar) << " Tema: " << tema(anuncioAMostrar);
+            cout << " Fecha: " << dia(fecha(anuncioAMostrar)) << '-' << mes(fecha(anuncioAMostrar)) << '-' << anyo(fecha(anuncioAMostrar)) << endl;
 
         }
 
     }
+
+    cout << "\nProbando la funcion 'anadir'... ";
+
+    for(int i = 0; i < 20; i++) {
+
+        anadir(anuncios, anunciosGenericos[i]);
+
+    }
+
+    cout << "EXITO" << endl;
+
+    if(masInfo) {
+        mostrarColeccion(anuncios);
+    }
+
+
+    cout << "\nProbando la funcion 'esta'... ";
+
+    evaluacionFuncion(esta("ID01", anuncios));
+
+
+    cout << "\nProbando la funcion 'obtenerITF'... ";
+
+    Anuncio anuncio = obtenerITF("ID01", anuncios);
+
+    evaluacionFuncion(identificador(anuncio) == "ID01");
+
+
+    cout << "\nProbando la funcion 'actualizar'... ";
+
+    cambiarCategoria(anuncio, "Telefono");
+
+    actualizar(anuncios, anuncio);
+
+    anuncio = obtenerITF("ID01", anuncios);
+
+    if(tema(anuncio) == "Telefono") {
+
+        cout << "EXITO" << endl;
+
+    } else {
+
+        cout << "ERROR" << endl;
+        return 1;
+
+    }
+
+    cout << "\nProbando la funcion 'borrar'... ";
+
+    borrar("ID02", anuncios);
+
+    if(esta("ID02", anuncios)) {
+        
+        cout << "ERROR - El anuncio sigue estando en la coleccion" << endl;
+        return 1;
+
+    }
+
+    Anuncio anuncio2;
+
+    iniciarIterador(anuncios);
+
+    siguienteYavanza(anuncios, anuncio);
+    siguienteYavanza(anuncios, anuncio2);
+
+    string idAnuncio1 = identificador(anuncio);
+    string idAnuncio2 = identificador(anuncio2);
+
+    if(masInfo) {
+        cout << "Resultado esperado: ID01, ID03" << endl;
+        cout << "Resultado obtenido: " << idAnuncio1 << ", " << idAnuncio2 << endl;
+    }
+
+    evaluacionFuncion(idAnuncio1 == "ID01" && idAnuncio2 == "ID03", "El anuncio con ID01 no está seguido por el de ID03 ahora que se borró el de ID02");
+
+
+    cout << "\nProbando la funcion 'obsoletos'... ";
+    if(masInfo) cout << endl;
+
+    Fecha fecha;
+    bool error;
+    crear(1, 1, 2010, fecha, error);
+
+    string resultadoEsperado = "ID01,ID03,ID04,ID05,ID06,ID07,ID08,ID09";
+    string cadenaIDs = obsoletos(fecha, ",", anuncios);
+
+    if(masInfo) {
+        cout << "Resultado esperado: " << resultadoEsperado << endl;
+        cout << "Resultado obtenido: " << cadenaIDs << endl;
+    }
+
+    evaluacionFuncion(cadenaIDs == resultadoEsperado, "El resultado obtenido no coincide con el esperado.");
+
+
+    cout << "\nProbando la funcion 'purgar'... ";
+
+    purgar(fecha, anuncios);
+
+    resultadoEsperado = "";
+    cadenaIDs = obsoletos(fecha, ",", anuncios);
+
+    evaluacionFuncion(cadenaIDs == resultadoEsperado);
+
+
+    cout << "\nProbando la funcion 'existeTema'... ";
+
+    evaluacionFuncion(existeTema("Coche", anuncios));
+
+
+    cout << "\nProbando la funcion 'delTema'... ";
+    if(masInfo) cout << endl;
+
+    resultadoEsperado = "ID12,ID15,ID18";
+    cadenaIDs = delTema("Coche", ",", anuncios);
+
+    if(masInfo) {
+        cout << "Resultado esperado: " << resultadoEsperado << endl;
+        cout << "Resultado obtenido: " << cadenaIDs << endl;
+    }
+
+    evaluacionFuncion(cadenaIDs == resultadoEsperado);
+
+
+    cout << "\nProbando la funcion 'zanjarTema'... ";
+
+    zanjarTema("Coche", anuncios);
+
+    resultadoEsperado = "";
+    cadenaIDs = delTema("Coche", ",", anuncios);
+
+    evaluacionFuncion(cadenaIDs == resultadoEsperado);
+
+
+    cout << "\nTodas las funciones de coleccionITF funcionan CORRECTAMENTE." << endl;
+
 
     return 0;
 
@@ -78,99 +252,42 @@ Fecha fecha(Anuncio anuncio) {
 
 }
 
-void solicitarOpcionMenu(int &opcion) {
+void mostrarColeccion(ColeccionITF<Anuncio> &c) {
 
-        printf(
-            "--- MENU ---\n"
-            "1. Crear coleccion\n"
-            "2. Anadir item\n"
-            "3. Actualizar item\n"
-            "4. Borrar item por identificador\n"
-            "5. Comprobar si esta un item (esta)\n"
-            "6. Obtener item por identificador\n"
-            "7. Listar obsoletos anteriores a fecha\n"
-            "8. Purgar items anteriores a fecha\n"
-            "9. Comprobar si existe tema\n"
-            "10. Listar identificadores de un tema\n"
-            "11. Zanjar tema (eliminar todos del tema)\n"
-            "12. Comprobar si la coleccion es vacia\n"
-            "13. Mostrar tamano de la coleccion\n"
-            "14. Iniciar iterador\n"
-            "15. Comprobar si existe siguiente en iterador\n"
-            "16. Obtener siguiente y avanzar iterador\n"
-            "17. Recorrer y mostrar toda la coleccion (iterador)\n"
-            "----------------------------------------\n"
-            "0. Salir\n"
-        );
+    iniciarIterador(c);
 
-        prinft("Seleccione una opción: ");
-        cin >> opcion;
+    while(existeSiguiente(c)) {
 
-}
+        Anuncio anuncioAMostrar;
+        siguienteYavanza(c, anuncioAMostrar);
 
-void probarCrear(ColeccionITF<Anuncio> &c, bool &coleccionCreada) {
-
-    if(coleccionCreada) {
-
-        cout << "La colección ya se encuentra creada." << endl;
-        return;
+        cout << "ID: " << identificador(anuncioAMostrar) << " Tema: " << tema(anuncioAMostrar);
+        cout << " Fecha: " << dia(fecha(anuncioAMostrar)) << '-' << mes(fecha(anuncioAMostrar)) << '-' << anyo(fecha(anuncioAMostrar)) << endl;
 
     }
 
-    cout << "Probando la función 'crear'... ";
-    crear(c);
-    cout << "ÉXITO" << endl;
-
-    coleccionCreada = true;
-
 }
 
-void probarAnadir(ColeccionITF<Anuncio> &c) {
+void evaluacionFuncion(bool exito, string mensajeError) {
 
-    Anuncio anunciosAAnadir[20];
+    if(exito) {
 
-}
+        cout << "EXITO" << endl;
 
-void probarActualizar(ColeccionITF<Anuncio> &c) {
+    } else {
 
-}
+        cout << "ERROR";
 
-void probarBorrar(ColeccionITF<Anuncio> &c) {
+        if(mensajeError != "") {
 
-}
+            cout << " - " << mensajeError;
 
-void probarEsta(ColeccionITF<Anuncio> &c) {
+        }
 
-}
+        cout << endl;
 
-void probarObtenerITF(ColeccionITF<Anuncio> &c) {
+        exit(1);
 
-}
-
-void probarObsoletos(ColeccionITF<Anuncio> &c) {
-
-}
-
-void probarPurgar(ColeccionITF<Anuncio> &c) {
-
-}
-
-void probarExisteTema(ColeccionITF<Anuncio> &c) {
-
-}
-
-void probarDelTema(ColeccionITF<Anuncio> &c) {
-
-}
-
-void probarZanjarTema(ColeccionITF<Anuncio> &c) {
-
-}
-
-void probarEsVacia(ColeccionITF<Anuncio> &c) {
-
-}
-
-void probarTamano(ColeccionITF<Anuncio> &c) {
+    }
 
 }
