@@ -158,84 +158,84 @@ int main(){
 
     ColeccionITF<Anuncio> col;
     crear(col);
-        int contador = 1;
-        Fecha ini, fin;
-        bool placeholder;
-        crear(1, 1, 2000, ini, placeholder);
-        crear(1, 1, 2030, fin, placeholder);
+    int contador = 1;
+    Fecha ini, fin;
+    bool placeholder;
+    crear(1, 1, 2000, ini, placeholder);
+    crear(1, 1, 2030, fin, placeholder);
 
-        string id = "ID" + to_string(contador);
-        Anuncio a1 = crearAnuncio(id, "Producto 1(tit)", "Descripcion del producto 1(desc)", "Ropa(cat)", ini, fin);    
-        anadir(col, a1);
+    string id = "ID" + to_string(contador);
+    Anuncio a1 = crearAnuncio(id, "Producto 1(tit)", "Descripcion del producto 1(desc)", "Ropa(cat)", ini, fin);    
+    anadir(col, a1);
 
-        cout << "Colceccion con anuncio de prueba creada" << endl;
+    cout << "Colceccion con anuncio de prueba creada" << endl;
+    
+    int opcion;
+    do{
         
-        int opcion;
-        do{
-            
 
-            cout << endl
-                << "------------------------------------------------------------------------------------------" << endl
-                << "¿Qué quieres hacer?:" << endl
-                << "0) terminar" << endl 
-                << "1) mostrarla" << endl
-                << "2) añadir anuncio" << endl
-                << "3) borrar anuncio segun ID" << endl
-            ;
-            cin >> opcion;
-            cout << endl
-            << "------------------------------------------------------------------------------------------" << endl;
-            switch (opcion){
-                case 1:{   //MOSTRAR LSITA
-                    
-                    Anuncio tempA;
-                    iniciarIterador(col);
-                    while(siguienteYavanza(col, tempA)){
+        cout << endl
+            << "------------------------------------------------------------------------------------------" << endl
+            << "¿Qué quieres hacer?:" << endl
+            << "0) terminar" << endl 
+            << "1) mostrarla" << endl
+            << "2) añadir anuncio" << endl
+            << "3) borrar anuncio segun ID" << endl
+        ;
+        cin >> opcion;
+        cout << endl
+        << "------------------------------------------------------------------------------------------" << endl;
+        switch (opcion){
+            case 1:{   //MOSTRAR LSITA
+                
+                Anuncio tempA;
+                iniciarIterador(col);
+                while(siguienteYavanza(col, tempA)){
 
-                        cout << mostrarAnuncio(tempA) << endl;
-                    }
+                    cout << mostrarAnuncio(tempA) << endl;
+                }
 
-                    break;
-                }
-                case 2:{   //meter producto nuevo por terminal
-                    
-                    contador++;
-                    id = "ID" + to_string(contador);
-                    a1 = crearAnuncio(id, "Producto 1(tit)", "Descripcion del producto 1(desc)", "Ropa(cat)", ini, fin);
-                    anadir(col,a1);
-                    cout << "anuncio " << contador << " añadido" << endl;
-                    break;
-                }
-                case 3:{   //eliminar producto
-                    
-                    string ident;
-                    cout << "Introduce ID a borrar:";
-                    cin >> ident;
-                    borrar(ident, col);
-                    break;
-                }
-                case 4:{   //buscar si está producto
-                    /*
-                    producto p;
-                    cout << "Introduzca el nombre(SIN ESPACIOS)(CASE SENSITIVE): ";
-                    string nombre;
-                    cin >> nombre;
-                    crear(nombre, 0, p);
-                    
-                    cout << endl;
-                    if(esta(l, p)){
-                        cout << nombre << " está en la lista" << endl;
-                    }else{
-                        cout << nombre << " no se encuentra en la lista" << endl;
-                    }
-                    */
-                    break;
-                }
-                default:{
-                    break;
-                }
+                break;
             }
-        }while(opcion != 0);
+            case 2:{   //meter producto nuevo por terminal
+                
+                contador++;
+                id = "ID" + to_string(contador);
+                a1 = crearAnuncio(id, "Producto 1(tit)", "Descripcion del producto 1(desc)", "Ropa(cat)", ini, fin);
+                anadir(col,a1);
+                cout << "anuncio " << contador << " añadido" << endl;
+                break;
+            }
+            case 3:{   //eliminar producto
+                
+                string ident;
+                cout << "Introduce ID a borrar:";
+                cin >> ident;
+                borrar(ident, col);
+                break;
+            }
+            case 4:{   //buscar si está producto
+                /*
+                producto p;
+                cout << "Introduzca el nombre(SIN ESPACIOS)(CASE SENSITIVE): ";
+                string nombre;
+                cin >> nombre;
+                crear(nombre, 0, p);
+                
+                cout << endl;
+                if(esta(l, p)){
+                    cout << nombre << " está en la lista" << endl;
+                }else{
+                    cout << nombre << " no se encuentra en la lista" << endl;
+                }
+                */
+                break;
+            }
+            default:{
+                break;
+            }
+        }
+    }while(opcion != 0);
 
 
 }
