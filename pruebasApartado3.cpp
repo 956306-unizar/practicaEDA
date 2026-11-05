@@ -3,7 +3,8 @@ _798618_956306_956269
 
 */
 
-#include<iostream>
+#include <iostream>
+#include <fstream>
 
 #include "fecha.hpp"
 #include "anuncio.hpp"
@@ -24,6 +25,93 @@ Fecha fecha(const Anuncio& a){
 }
 
 int main () {
+
+    ifstream lectorFichero("entrada.txt");
+    ofstream escritorFichero("salida.txt");
+
+    if(!lectorFichero.is_open()) {
+
+        cerr << "ERROR: No se ha podido abrir el archivo 'entrada.txt'"
+            << "\nAsegurese de que se encuentra en el mismo nivel del directorio en el que esta este ejecutable." << endl
+
+        return 1;
+
+    } else if(!escritorFichero.is_open()) {
+
+        cerr << "ERROR: No se ha podido abrir o crear el archivo 'salida.txt'" << endl;
+
+        return 1;
+    }
+
+    ColeccionITF<Anuncio> coleccionAnuncios;
+
+    string instruccionActual;
+
+    while(getline(lectorFichero, instruccionActual)) {
+
+        switch(instruccionActual) {
+
+            case "A":
+
+                instrA(lectorFichero, escritorFichero, coleccionAnuncios);
+                break;
+
+            case "C":
+
+                instrC(lectorFichero, escritorFichero, coleccionAnuncios);
+                break;
+            
+            case "O":
+
+                instrO(lectorFichero, escritorFichero, coleccionAnuncios);
+                break;
+            
+            case "E":
+
+                instrE(lectorFichero, escritorFichero, coleccionAnuncios);
+                break;
+
+            case "EC":
+
+                instrEC(lectorFichero, escritorFichero, coleccionAnuncios);
+                break;
+
+            case "B":
+
+                instrB(lectorFichero, escritorFichero, coleccionAnuncios);
+                break;
+            
+            case "BC":
+
+                instrBC(lectorFichero, escritorFichero, coleccionAnuncios);
+                break;
+
+            case "P":
+
+                instrP(lectorFichero, escritorFichero, coleccionAnuncios);
+                break;
+
+            case "LO":
+
+                instrLO(lectorFichero, escritorFichero, coleccionAnuncios);
+                break;
+            
+            case "LC":
+
+                instrLC(lectorFichero, escritorFichero, coleccionAnuncios);
+                break;
+
+            case "LT":
+
+                instrLT(lectorFichero, escritorFichero, coleccionAnuncios);
+                break;
+
+        }
+
+    }
+
+    lectorFichero.close();
+    escritorFichero.close();
 
     return 0;
 
