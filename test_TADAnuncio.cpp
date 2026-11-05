@@ -1,17 +1,12 @@
-/* 
-_798618_956306_956269
-
-g++ -std=c++11 Principal.cpp anuncio.cpp fecha.cpp -o P3_EDA
-*/
-
 #include "anuncio.hpp"
 #include "fecha.hpp"
 
 #include<iostream>
+
 using namespace std;
 
-int main ()
-{
+int main() {
+
     bool error;
 
     Fecha fpubl;
@@ -57,5 +52,4 @@ int main ()
     cout << "\n";
     cout << mostrarAnuncio(e); 
 
-    return 0;
 }

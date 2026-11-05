@@ -3,3 +3,6 @@ Para el uso de las operaciones del parámetro formal ITF de ColeccionITF, cómo 
 
 Funciones a optimizar al máximo. Comparar ejemplos de, por ejemplo, la función "esta" en distintos commits y determinar cuál es más óptima.
 Por ejemplo, la comprobación inicial de si la cadena está vacía.
+
+Deberíamos hacer control de errores, como comprobar que las fechas son correctas, en el apartado 3 al leer el fichero, o asumimos que todo está correcto según el formato?
+pruebasApartado3.cpp : Linea 90
