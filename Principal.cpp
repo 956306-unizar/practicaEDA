@@ -186,13 +186,14 @@ void instrA( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
     }else{  //si ya estaba, no se añade
         escritorFichero << "NO INTRODUCIDO: ";
     }
-
-    escritorFichero << id << ":::"
-         << tit << ":::"
-         << desc << ":::"
-         << cat << ":::"
-         << ano1 << "-" << mes1 << "-" << dia1 << ":::"
-         << ano2 << "-" << mes2 << "-" << dia2 << endl;
+    //identificador, título, categoría, descripción, fecha de publicación y fecha de finalización
+    escritorFichero
+        << id << ":::"
+        << tit << ":::"
+        << cat << ":::"
+        << desc << ":::"
+        << ano1 << "-" << mes1 << "-" << dia1 << ":::"
+        << ano2 << "-" << mes2 << "-" << dia2 << endl;
 }
 
 //-----------------------------------------------------------------------------------------------------C
@@ -257,11 +258,12 @@ void instrC( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
         Anuncio a = crearAnuncio(id, tit, desc, cat, startDate, endDate);
         anadir(c, a);
 
+        //identificador, título, categoría, descripción, fecha de publicación y fecha de finalización
         escritorFichero << "CAMBIADO: "
             << id << ":::"
             << tit << ":::"
-            << desc << ":::"
             << cat << ":::"
+            << desc << ":::"
             << ano1 << "-" << mes1 << "-" << dia1 << ":::"
             << ano2 << "-" << mes2 << "-" << dia2 << endl
         ;
