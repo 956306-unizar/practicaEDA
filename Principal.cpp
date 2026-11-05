@@ -39,7 +39,7 @@ void instrLT(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
 
 
 // --- PROGRAMA PRINCIPAL ---
-int main () {
+int main() {
 
     ifstream lectorFichero("entrada.txt");
     ofstream escritorFichero("salida.txt");
@@ -199,6 +199,24 @@ void instrA( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
 //-----------------------------------------------------------------------------------------------------
 
 /*
+
+Por cada instrucción de tipo “C”, si es posible actualizar en la colección los datos del anuncio correspondiente
+al identificador dado, se escribirá una línea en el fichero de salida que empiece con la cadena “CAMBIADO: ”,
+seguida de la concatenación de todos los datos relativos a la nueva información del anuncio en la colección, en la
+misma línea del fichero y en el siguiente orden: identificador, título, categoría, descripción, fecha de publicación y
+fecha de finalización (separados entre sí por la cadena “:::”, y con las fechas escritas en formato: aaaa-mm-dd).
+Si no es posible actualizar el anuncio de dicho identificador en la colección, se escribirá una línea en el fichero
+de salida que empiece con la cadena “NO CAMBIADO: ”, seguida del identificador dado para la instrucc
+
+*/
+void instrC(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c) {
+
+
+}
+
+//-----------------------------------------------------------------------------------------------------
+
+/*
     Por cada instrucción de tipo “E”, si existe algún anuncio en la colección con un identificador igual al dado, se
     escribirá una línea en el fichero que empiece con la cadena “EXISTENTE: ”. Si no existía ningún anuncio en la
     colección con un identificador igual al dado, se escribirá en el fichero una línea que empiece con la cadena
@@ -235,55 +253,6 @@ void instrE( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
         fout << "DESCONOCIDO: ";
     }
     fout << id << endl;
-}
-
-// -----------------------------------------------------------------------------------------------------
-
-/*
-    Por cada instrucción de tipo “O”, si existe algún anuncio en la colección con el identificador dado, se escribirá una
-    línea que empiece con la cadena “LOCALIZADO: ”, seguida de la concatenación de todos los datos de la
-    información del anuncio localizado en la colección, en la misma línea del fichero y en el siguiente orden:
-    identificador, título, categoría, descripción, fecha de publicación y fecha de finalización (separados entre sí por la
-    cadena “:::”, y con las fechas escritas en formato: aaaa-mm-dd).
-    Si no existía ningún anuncio en la colección con identificador igual al dado, se escribirá en el fichero una línea que
-    empiece con la cadena “NO LOCALIZADO: ”, seguida del identificador dado para la instrucción.
-
-    // La siguiente linea contiene el identificador del anuncio sobre el que se actúa.
-
-    Cuando se procese una instrucción “O”, el programa intentará obtener toda la
-    información relativa al anuncio registrado en la colección con el identificador dado
-
-*/
-void instrO(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c) {
-
-    lectorFichero.ignore();
-
-    string id;
-    getline(lectorFichero, id);
-
-    // Si el anuncio no se encuentra en la colección, se imprime el mensaje que informa de ello
-    // y se sale de la función.
-    if(!esta(id, c)) {
-
-        escritorFichero << "NO LOCALIZADO: " << id << endl;
-        return;
-
-    }
-
-    Anuncio anuncioAMostrar = obtenerITF(id, c);
-
-    Fecha fechaPublicacion = suPublicacion(anuncioAMostrar);
-    Fecha fechaFinalizacion = suFinalizacion(anuncioAMostrar);
-
-    escritorFichero << "LOCALIZADO: "
-        << id << ":::"
-        << suTitulo(anuncioAMostrar) << ":::"
-        << suCategoria(anuncioAMostrar) << ":::"
-        << suDescripcion(anuncioAMostrar) << ":::"
-        << anyo(fechaPublicacion) << '-' << mes(fechaPublicacion) << '-' << anyo(fechaPublicacion) << ":::"
-        << anyo(fechaFinalizacion) << '-' << mes(fechaFinalizacion) << '-' << anyo(fechaFinalizacion)
-        << endl;
-
 }
 
 // -----------------------------------------------------------------------------------------------------
