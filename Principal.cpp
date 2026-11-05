@@ -24,6 +24,21 @@ Fecha fecha(const Anuncio& a){
     return suPublicacion(a);
 }
 
+// Cabeceras funciones auxiliares para las instrucciones
+void instrA(lectorFichero, escritorFichero, coleccionAnuncios);
+void instrC(lectorFichero, escritorFichero, coleccionAnuncios);
+void instrO(lectorFichero, escritorFichero, coleccionAnuncios);
+void instrE(lectorFichero, escritorFichero, coleccionAnuncios);
+void instrEC(lectorFichero, escritorFichero, coleccionAnuncios);
+void instrB(lectorFichero, escritorFichero, coleccionAnuncios);
+void instrBC(lectorFichero, escritorFichero, coleccionAnuncios);
+void instrP(lectorFichero, escritorFichero, coleccionAnuncios);
+void instrLO(lectorFichero, escritorFichero, coleccionAnuncios);
+void instrLC(lectorFichero, escritorFichero, coleccionAnuncios);
+void instrLT(lectorFichero, escritorFichero, coleccionAnuncios);
+
+
+// --- PROGRAMA PRINCIPAL ---
 int main () {
 
     ifstream lectorFichero("entrada.txt");
@@ -76,35 +91,35 @@ int main () {
                 instrEC(lectorFichero, escritorFichero, coleccionAnuncios);
                 break;
 
-            case "B":
+            // case "B":
 
-                instrB(lectorFichero, escritorFichero, coleccionAnuncios);
-                break;
+            //     instrB(lectorFichero, escritorFichero, coleccionAnuncios);
+            //     break;
             
-            case "BC":
+            // case "BC":
 
-                instrBC(lectorFichero, escritorFichero, coleccionAnuncios);
-                break;
+            //     instrBC(lectorFichero, escritorFichero, coleccionAnuncios);
+            //     break;
 
-            case "P":
+            // case "P":
 
-                instrP(lectorFichero, escritorFichero, coleccionAnuncios);
-                break;
+            //     instrP(lectorFichero, escritorFichero, coleccionAnuncios);
+            //     break;
 
-            case "LO":
+            // case "LO":
 
-                instrLO(lectorFichero, escritorFichero, coleccionAnuncios);
-                break;
+            //     instrLO(lectorFichero, escritorFichero, coleccionAnuncios);
+            //     break;
             
-            case "LC":
+            // case "LC":
 
-                instrLC(lectorFichero, escritorFichero, coleccionAnuncios);
-                break;
+            //     instrLC(lectorFichero, escritorFichero, coleccionAnuncios);
+            //     break;
 
-            case "LT":
+            // case "LT":
 
-                instrLT(lectorFichero, escritorFichero, coleccionAnuncios);
-                break;
+            //     instrLT(lectorFichero, escritorFichero, coleccionAnuncios);
+            //     break;
 
         }
 
