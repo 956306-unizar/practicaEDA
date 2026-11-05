@@ -103,7 +103,7 @@ void instrA( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
          << desc << ":::"
          << cat << ":::"
          << ano1 << "-" << mes1 << "-" << dia1 << ":::"
-         << ano2 << "-" << mes2 << "-" << dia2 << endl
+         << ano2 << "-" << mes2 << "-" << dia2 << endl;
 }
 
 //-----------------------------------------------------------------------------------------------------C
@@ -281,7 +281,7 @@ int main(){
     crear(1, 1, 2000, ini, placeholder);
     crear(1, 1, 2030, fin, placeholder);
 
-    string id = "ID" + to_string(contador);
+    string id = "ID0";
     Anuncio a1 = crearAnuncio(id, "Producto 1(tit)", "Descripcion del producto 1(desc)", "Ropa(cat)", ini, fin);    
     anadir(col, a1);
 
@@ -296,8 +296,9 @@ int main(){
             << "¿Qué quieres hacer?:" << endl
             << "0) terminar" << endl 
             << "1) mostrarla" << endl
-            << "2) añadir anuncio" << endl
+            << "2) añadir anuncio con ID ordenado" << endl
             << "3) borrar anuncio segun ID" << endl
+            << "4) añadir anuncio con ID persolanizado" << endl
         ;
         cin >> opcion;
         cout << endl
@@ -314,13 +315,14 @@ int main(){
 
                 break;
             }
-            case 2:{   //meter producto nuevo por terminal
+            case 2:{   //añadir anuncio por orden
                 
-                contador++;
                 id = "ID" + to_string(contador);
                 a1 = crearAnuncio(id, "Producto 1(tit)", "Descripcion del producto 1(desc)", "Ropa(cat)", ini, fin);
                 anadir(col,a1);
-                cout << "anuncio " << contador << " añadido" << endl;
+                cout << "anuncio " << id << " añadido" << endl;
+                contador++;
+
                 break;
             }
             case 3:{   //eliminar producto
@@ -331,21 +333,14 @@ int main(){
                 borrar(ident, col);
                 break;
             }
-            case 4:{   //buscar si está producto
-                /*
-                producto p;
-                cout << "Introduzca el nombre(SIN ESPACIOS)(CASE SENSITIVE): ";
-                string nombre;
-                cin >> nombre;
-                crear(nombre, 0, p);
+            case 4:{   //añadir anuncio id personalizado
                 
-                cout << endl;
-                if(esta(l, p)){
-                    cout << nombre << " está en la lista" << endl;
-                }else{
-                    cout << nombre << " no se encuentra en la lista" << endl;
-                }
-                */
+                cout << "Introduce el id personalizado: ";
+                cin >> id;
+                a1 = crearAnuncio(id, "Producto 4(tit)", "Descripcion del producto 4(desc)", "Ropa4(cat)", ini, fin);
+                anadir(col,a1);
+                cout << "anuncio " << id << " añadido" << endl;
+
                 break;
             }
             default:{

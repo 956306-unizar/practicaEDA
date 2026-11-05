@@ -166,38 +166,8 @@ template<typename T> bool siguienteYavanza(ColeccionITF<T> &c, T &e);
 
 
 
-// DECLARACION DEL TAD GENERICO coleccionITF y su tipo Nodo
-template<typename T> struct Nodo{ //declarado fuera de coleccionITF para cumplir con el scope a la hora de implementar las funciones
- 
-    friend void crear<T>(ColeccionITF<T> &c);
-    friend void anadir<T>(ColeccionITF<T> &c, const T &i);
-    friend void actualizar<T>(ColeccionITF<T> &c, const T &i);
-    friend void borrar<T>(const string &ident, ColeccionITF<T> &c);
-    friend bool esta<T>(const string &ident, const ColeccionITF<T> &c);
-    friend T obtenerITF<T>(const string &ident, const ColeccionITF<T> &c);
-    friend string obsoletos<T>(const Fecha &f, const string &separador, const ColeccionITF<T> &c);
-    friend void purgar<T>(const Fecha &f, ColeccionITF<T> &c);
-    friend bool existeTema<T>(const string &t, const ColeccionITF<T> &c);
-    friend string delTema<T>(const string &t, const string &separador, const ColeccionITF<T> &c);
-    friend void zanjarTema<T>(const string &t, ColeccionITF<T> &c);
-    friend bool esVacia<T>(const ColeccionITF<T> &c);
-    friend int tamano<T>(const ColeccionITF<T> &c);
 
-    friend void iniciarIterador<T>(ColeccionITF<T> &c);
-    friend bool existeSiguiente<T>(const ColeccionITF<T> &c);
-    friend bool siguienteYavanza<T>(ColeccionITF<T> &c, T &e);
-    friend struct ColeccionITF<T>;
-
-
-    private: //declaracion de la representacion interna del tipo       
-    /*
-    "Nodo" es un contenedor para el tipo de dato T y un puntero sig que apunte al siguiente Nodo de la lista. Si
-    no hay más elementos, sig apuntará a NIL.
-    */
-        T dato;
-        Nodo<T>* sig;
-};
-
+// DECLARACION DEL TAD GENERICO coleccionITF
 template<typename T> struct ColeccionITF{
 
     friend void crear<T>(ColeccionITF<T> &c);
@@ -225,11 +195,20 @@ template<typename T> struct ColeccionITF{
         "primero" es un puntero apunta al primer nodo de la lista. Si la colección está vacía apuntará a NIL.
         "nElem" lleva la cuenta de cuantos elementos hay en la colección.
         "iter" es un puntero que servirá como iterador ÚNICAMENTE para las operaciones de este.
+
+        "Nodo" es un contenedor para el tipo de dato T y un puntero sig que apunte al siguiente Nodo de la lista. Si
+        no hay más elementos, sig apuntará a NIL.
         */
-        Nodo<T>* primero;
+       //llamar a nodos asi: typename ColeccionITF<T>::Nodo
+        struct Nodo{
+            T dato;
+            Nodo* sig;
+        };
+        
+        Nodo* primero;
         int nElem;
         //CAMPOS ITERADOR
-        Nodo<T>* iter;
+        Nodo* iter;
 
 };
 
@@ -261,7 +240,7 @@ template<typename T> void anadir(ColeccionITF<T> &c, const T &i){
     if( c.primero == nullptr || identificador(c.primero->dato) > ident ){ //si es lista vacia o el primero es mayor, INSERCION AL PRINCIPIO
         //IMPORTANTE! EVAL. CORTOCIRCUITADA: si c.primero == nullptr no evaluará c.primero->dato con lo que no hara accesos indebidos
         c.nElem++;
-        Nodo<T>* nuevoElem = new Nodo<T>;
+        typename ColeccionITF<T>::Nodo* nuevoElem = new typename ColeccionITF<T>::Nodo;
         nuevoElem->dato = i;
         nuevoElem->sig = c.primero;
         c.primero = nuevoElem;
@@ -274,15 +253,15 @@ template<typename T> void anadir(ColeccionITF<T> &c, const T &i){
 
         //se necesitan dos punteros oruga, para saber la direccion de ambos elementos adyacentes al que vayamos a insertar.
         //(Al ser enlazada unidireccional no podemos ir hacia atrás)
-        Nodo<T>* pAux = c.primero;
-        Nodo<T>* pSig = pAux->sig;
+        typename ColeccionITF<T>::Nodo* pAux = c.primero;
+        typename ColeccionITF<T>::Nodo* pSig = pAux->sig;
 
         while(pSig != nullptr){ //mientras el pAux no sea el ultimo
             //sabemos que pAux.dato es menor estricto que i
 
             if(identificador(pSig->dato) > ident){ //si el siguiente.dato > i: insertar antes de pSig y fin
                 c.nElem++;
-                Nodo<T>* nuevoElem = new Nodo<T>;
+                typename ColeccionITF<T>::Nodo* nuevoElem = new typename ColeccionITF<T>::Nodo;
                 nuevoElem->dato = i;
                 nuevoElem->sig = pSig;
                 pAux->sig = nuevoElem;
@@ -296,7 +275,7 @@ template<typename T> void anadir(ColeccionITF<T> &c, const T &i){
         }
         //si sale es que (pAux->dato = ultimo elem) < i -> INSERCIÓN AL FINAL y fin
         c.nElem++;
-        Nodo<T>* nuevoElem = new Nodo<T>;
+        typename ColeccionITF<T>::Nodo* nuevoElem = new typename ColeccionITF<T>::Nodo;
         nuevoElem->dato = i;
         nuevoElem->sig = pSig; // = nullptr
         pAux->sig = nuevoElem;
@@ -333,7 +312,7 @@ template<typename T> void actualizar(ColeccionITF<T> &c, const T &i) {
     }
 
     // Empezamos comprobando el segundo elemento de la colección, ya que ya se comprobó el primero.
-    Nodo<T>* pAux = c.primero->sig;
+    typename ColeccionITF<T>::Nodo* pAux = c.primero->sig;
 
     bool actualizado = false;
 
@@ -374,7 +353,7 @@ template<typename T> void borrar(const string &ident, ColeccionITF<T> &c){
 
     }else if(identificador(c.primero->dato) == ident){  //si EL PRIMERO YA ES IGUAL: borrar el primero y fin
 
-        Nodo<T>* pKiller = c.primero;    //puntero mercenario apunta al objetivo para poder reasignar c.primero sin perder la direccion
+        typename ColeccionITF<T>::Nodo* pKiller = c.primero;    //puntero mercenario apunta al objetivo para poder reasignar c.primero sin perder la direccion
         //COMPROBAR ITERADOR!!
         if(c.iter == pKiller){      //si el iterador esta en el elemento a borrar, mover el iterador al siguiente elem por visitar.
             c.iter = pKiller->sig;  //si ">X<" es el iterador: (1 >2< 3 4 5 6) y borramos el 2 -> (1 2 >3< 4 5 6) -> (1 >3< 4 5 6)
@@ -390,8 +369,8 @@ template<typename T> void borrar(const string &ident, ColeccionITF<T> &c){
 
     }else{  //seguir buscando un igual mas adelante en la lista con oruga de dos punteros
             //(Dos para poder actualizar los adyacentes al que borremos) (Al ser enlazada unidireccional no podemos ir hacia atrás)
-        Nodo<T>* pAux = c.primero;
-        Nodo<T>* pSig = pAux->sig;
+        typename ColeccionITF<T>::Nodo* pAux = c.primero;
+        typename ColeccionITF<T>::Nodo* pSig = pAux->sig;
         while(pSig != nullptr){ //mientras el pAux no sea el ultimo
             
             //sabemos que pAux->dato != ident
@@ -428,7 +407,7 @@ bool esta(const string &ident, const ColeccionITF<T> &c) {
         return false; // Si la coleccion está vacía se devuelve false directamente.
     }
 
-    Nodo<T>* pAux = c.primero;
+    typename ColeccionITF<T>::Nodo* pAux = c.primero;
     string identificadorActual;
 
     while(pAux != nullptr) {
@@ -462,7 +441,7 @@ bool esta(const string &ident, const ColeccionITF<T> &c) {
 template<typename T>
 T obtenerITF(const string &ident, const ColeccionITF<T> &c) {
 
-    Nodo<T>* pAux = c.primero;
+    typename ColeccionITF<T>::Nodo* pAux = c.primero;
 
     while(1) {
 
@@ -495,7 +474,7 @@ string obsoletos(const Fecha &f, const string &separador, const ColeccionITF<T> 
 
     string ids = "";
 
-    Nodo<T>* pAux = c.primero;
+    typename ColeccionITF<T>::Nodo* pAux = c.primero;
 
     while(pAux != nullptr) 
     {
@@ -528,10 +507,10 @@ void purgar(const Fecha &f, ColeccionITF<T> &c)
         return;
     } 
 
-    Nodo<T>* pAnt = nullptr;
-    Nodo<T>* pAux = c.primero;
+    typename ColeccionITF<T>::Nodo* pAnt = nullptr;
+    typename ColeccionITF<T>::Nodo* pAux = c.primero;
 
-    Nodo<T>* pDeleter;
+    typename ColeccionITF<T>::Nodo* pDeleter;
 
     while(pAux != nullptr) 
     {
@@ -573,7 +552,7 @@ void purgar(const Fecha &f, ColeccionITF<T> &c)
 template<typename T>
 bool existeTema(const string &t, const ColeccionITF<T> &c) {
 
-    Nodo<T>* pAux = c.primero;
+    typename ColeccionITF<T>::Nodo* pAux = c.primero;
 
     while(pAux != nullptr) {
 
@@ -606,7 +585,7 @@ string delTema(const string &t, const string &separador, const ColeccionITF<T> &
 
     string ids = "";
 
-    Nodo<T>* pAux = c.primero;
+    typename ColeccionITF<T>::Nodo* pAux = c.primero;
 
     while(pAux != nullptr) {
 
@@ -642,10 +621,10 @@ void zanjarTema(const string &t, ColeccionITF<T> &c) {
 
     } 
 
-    Nodo<T>* pAnt = nullptr;
-    Nodo<T>* pAux = c.primero;
+    typename ColeccionITF<T>::Nodo* pAnt = nullptr;
+    typename ColeccionITF<T>::Nodo* pAux = c.primero;
 
-    Nodo<T>* pDeleter;
+    typename ColeccionITF<T>::Nodo* pDeleter;
 
     while(pAux != nullptr) {
 
