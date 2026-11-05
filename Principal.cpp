@@ -76,35 +76,35 @@ int main () {
                 instrEC(lectorFichero, escritorFichero, coleccionAnuncios);
                 break;
 
-            case "B":
+            // case "B":
 
-                instrB(lectorFichero, escritorFichero, coleccionAnuncios);
-                break;
+            //     instrB(lectorFichero, escritorFichero, coleccionAnuncios);
+            //     break;
             
-            case "BC":
+            // case "BC":
 
-                instrBC(lectorFichero, escritorFichero, coleccionAnuncios);
-                break;
+            //     instrBC(lectorFichero, escritorFichero, coleccionAnuncios);
+            //     break;
 
-            case "P":
+            // case "P":
 
-                instrP(lectorFichero, escritorFichero, coleccionAnuncios);
-                break;
+            //     instrP(lectorFichero, escritorFichero, coleccionAnuncios);
+            //     break;
 
-            case "LO":
+            // case "LO":
 
-                instrLO(lectorFichero, escritorFichero, coleccionAnuncios);
-                break;
+            //     instrLO(lectorFichero, escritorFichero, coleccionAnuncios);
+            //     break;
             
-            case "LC":
+            // case "LC":
 
-                instrLC(lectorFichero, escritorFichero, coleccionAnuncios);
-                break;
+            //     instrLC(lectorFichero, escritorFichero, coleccionAnuncios);
+            //     break;
 
-            case "LT":
+            // case "LT":
 
-                instrLT(lectorFichero, escritorFichero, coleccionAnuncios);
-                break;
+            //     instrLT(lectorFichero, escritorFichero, coleccionAnuncios);
+            //     break;
 
         }
 
