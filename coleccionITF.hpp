@@ -483,9 +483,10 @@ T obtenerITF(const string &ident, const ColeccionITF<T> &c) {
     con fecha estrictamente anterior a f, y separados entre sí por la cadena separador.
 */
 template<typename T>
-string obsoletos(const Fecha &f, const string &separador, const ColeccionITF<T> &c) {
-
-    if(c.primero == nullptr){
+string obsoletos(const Fecha &f, const string &separador, const ColeccionITF<T> &c) 
+{
+    if(c.primero == nullptr)
+    {
         return ""; // Si la coleccion está vacía se devuelve una cadena vacía directamente.
     }
 
@@ -493,26 +494,22 @@ string obsoletos(const Fecha &f, const string &separador, const ColeccionITF<T> 
 
     Nodo<T>* pAux = c.primero;
 
-    while(pAux != nullptr) {
-
-        if(anterior(fecha(pAux->dato), f)) {
-
-            if(ids != "") {
-
+    while(pAux != nullptr) 
+    {
+        if(anterior(fecha(pAux->dato), f)) 
+        {
+            if(ids != "") 
+            {
                 ids += separador;
-
             }
 
             ids += identificador(pAux->dato);
-
         }
-
+        
         pAux = pAux->sig;
-
     }
 
     return ids;
-
 }
  
 
@@ -521,11 +518,11 @@ string obsoletos(const Fecha &f, const string &separador, const ColeccionITF<T> 
     estrictamente anterior a f.
 */
 template<typename T>
-void purgar(const Fecha &f, ColeccionITF<T> &c) {
-
-    if(c.primero == nullptr) {
+void purgar(const Fecha &f, ColeccionITF<T> &c) 
+{
+    if(c.primero == nullptr) 
+    {
         return;
-
     } 
 
     Nodo<T>* pAnt = nullptr;
@@ -533,44 +530,39 @@ void purgar(const Fecha &f, ColeccionITF<T> &c) {
 
     Nodo<T>* pDeleter;
 
-    while(pAux != nullptr) {
-
-        if(anterior(fecha(pAux->dato), f)) {
-
-            if(pAux == c.primero) {
-
+    while(pAux != nullptr) 
+    {
+        if(anterior(fecha(pAux->dato), f)) 
+        {
+            if(pAux == c.primero) 
+            {
                 c.primero = c.primero->sig;
+            } 
 
-            } else {
-
+            else 
+            {
                 pAnt->sig = pAux->sig;
-
             }
 
             pDeleter = pAux;
             pAux = pAux->sig;
 
-            if(c.iter == pDeleter) {
-
+            if(c.iter == pDeleter) 
+            {
                 c.iter = pAux;
-
             }
 
             delete(pDeleter);
             c.nElem--;
-
-        } else {
-
+        } 
+        
+        else 
+        {
             pAnt = pAux;
             pAux = pAux->sig;
-
         }
-
-
     }
-
 }
-
 
 /*
     Devuelve verdad si y sólo si en c hay algún ítem i con tema igual a t.

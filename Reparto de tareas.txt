@@ -41,6 +41,7 @@ PUNTO 3: INTERPRETE DE INSTRUCCIONES
 DAVID:
     [X] Instruccion 'A'  (Añadir)
     [X] Instruccion 'E'  (Existe)
+    [X] Instruccion 'C'  (Cambiar)
     [X] Instruccion 'B'  (Borrar identificador)
 
 ABEL:

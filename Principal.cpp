@@ -86,12 +86,10 @@ int main() {
 
             instrEC(lectorFichero, escritorFichero, coleccionAnuncios);
 
-        }
-        /*
-        else if (instruccionActual == "B") {
+        } else if (instruccionActual == "B") {
 
             instrB(lectorFichero, escritorFichero, coleccionAnuncios);
-
+/*
         } else if (instruccionActual == "BC") {
 
             instrBC(lectorFichero, escritorFichero, coleccionAnuncios);
@@ -155,7 +153,6 @@ int main() {
 // el caracter A ha sido consumido.
 void instrA( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c ){
 
-    lectorFichero.ignore();   //CONSUMIMOS EL \n-------------------------------------------------------------------?? DEPENDE DE LA IMPLEMENTACION DEL BUCLE DE LECTURA
     //las siguientes 6 lineas contendran la informacion en el orden:
     //id, titulo, descripcion, categoria, publicacion, finalizacion
     string id, tit, desc, cat;
@@ -231,7 +228,6 @@ void instrA( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
 // el caracter C ha sido consumido.
 void instrC( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c ){
 
-    lectorFichero.ignore();   //CONSUMIMOS EL \n-------------------------------------------------------------------?? DEPENDE DE LA IMPLEMENTACION DEL BUCLE DE LECTURA
     //las siguientes 6 lineas contendran la informacion en el orden:
     //id, titulo, descripcion, categoria, publicacion, finalizacion
     string id, tit, desc, cat;
@@ -307,7 +303,6 @@ void instrC( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
 // el caracter E ha sido consumido.
 void instrE( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c ){
     
-    lectorFichero.ignore();   //CONSUMIMOS EL \n-------------------------------------------------------------------?? DEPENDE DE LA IMPLEMENTACION DEL BUCLE DE LECTURA
     //la siguiente linea contendran el id
     string id;
     getline(lectorFichero, id);   //!! getline hace un ignore del \n
@@ -343,13 +338,17 @@ void instrE( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
 // el caracter B ha sido consumido.
 void instrB( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c ){
     
-    lectorFichero.ignore();   //CONSUMIMOS EL \n-------------------------------------------------------------------?? DEPENDE DE LA IMPLEMENTACION DEL BUCLE DE LECTURA
     //la siguiente linea contendran el id
     string id;
     getline(lectorFichero, id);   //!! getline hace un ignore del \n
     if(esta(id, c)){   // si esta, se borra
         borrar(id,c);
-        escritorFichero << "BORRADO: ";
+        
+        if(!esta(id,c)){//si no esta ya, se ha borrado correctamente
+            escritorFichero << "BORRADO: ";
+        }else{          //si sigue estando, no se ha borrado correctamente
+            escritorFichero << "NO BORRADO: ";
+        }
 
     }else{  //si no esta, no se puede borrar
         escritorFichero << "NO BORRADO: ";
@@ -407,15 +406,32 @@ void instrP(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anu
     lectorFichero.ignore();     // Consume el \n
 
     // Obtenemos la fecha para purgar
-    string ano1, mes1, dia1;
+    string ano, mes, dia;
+    Fecha fechaPurgar;
 
     //Se consume también el separador
-    getline(lectorFichero, ano1, '-'); 
-    getline(lectorFichero, mes1, '-');
-    getline(lectorFichero, dia1);
+    getline(lectorFichero, ano, '-'); 
+    getline(lectorFichero, mes, '-');
+    getline(lectorFichero, dia);
 
+    bool errorFecha;
+    crear(stoi(dia), stoi(mes), stoi(ano), fechaPurgar, errorFecha);
+
+    string obsoletos;
     
+    obsoletos = obsoletos(fechaPurgar, ":::", c);
 
+    if (obsoletos != "")
+    {
+        purgar(fechaPurgar, c);
+
+        escritorFichero << "PURGADOS: " << ano << "-" << mes << "-" << dia << endl
+    }
+
+    else 
+    {
+        escritorFichero << "NO PURGADOS: " << ano << "-" << mes << "-" << dia << endl
+    }
 }
 
 // -----------------------------------------------------------------------------------------------------
