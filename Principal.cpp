@@ -25,17 +25,17 @@ Fecha fecha(const Anuncio& a){
 }
 
 // Cabeceras funciones auxiliares para las instrucciones
-void instrA(lectorFichero, escritorFichero, coleccionAnuncios);
-void instrC(lectorFichero, escritorFichero, coleccionAnuncios);
-void instrO(lectorFichero, escritorFichero, coleccionAnuncios);
-void instrE(lectorFichero, escritorFichero, coleccionAnuncios);
-void instrEC(lectorFichero, escritorFichero, coleccionAnuncios);
-void instrB(lectorFichero, escritorFichero, coleccionAnuncios);
-void instrBC(lectorFichero, escritorFichero, coleccionAnuncios);
-void instrP(lectorFichero, escritorFichero, coleccionAnuncios);
-void instrLO(lectorFichero, escritorFichero, coleccionAnuncios);
-void instrLC(lectorFichero, escritorFichero, coleccionAnuncios);
-void instrLT(lectorFichero, escritorFichero, coleccionAnuncios);
+void instrA(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c);
+void instrC(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c);
+void instrO(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c);
+void instrE(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c);
+void instrEC(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c);
+void instrB(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c);
+void instrBC(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c);
+void instrP(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c);
+void instrLO(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c);
+void instrLC(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c);
+void instrLT(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c);
 
 
 // --- PROGRAMA PRINCIPAL ---
@@ -47,7 +47,7 @@ int main () {
     if(!lectorFichero.is_open()) {
 
         cerr << "ERROR: No se ha podido abrir el archivo 'entrada.txt'"
-            << "\nAsegurese de que se encuentra en el mismo nivel del directorio en el que esta este ejecutable." << endl
+            << "\nAsegurese de que se encuentra en el mismo nivel del directorio en el que esta este ejecutable." << endl;
 
         return 1;
 
@@ -64,64 +64,54 @@ int main () {
 
     while(getline(lectorFichero, instruccionActual)) {
 
-        switch(instruccionActual) {
+        if (instruccionActual == "A") {
 
-            case "A":
+            instrA(lectorFichero, escritorFichero, coleccionAnuncios);
 
-                instrA(lectorFichero, escritorFichero, coleccionAnuncios);
-                break;
+        } else if (instruccionActual == "C") {
 
-            case "C":
+            instrC(lectorFichero, escritorFichero, coleccionAnuncios);
 
-                instrC(lectorFichero, escritorFichero, coleccionAnuncios);
-                break;
+        } else if (instruccionActual == "O") {
+
+            instrO(lectorFichero, escritorFichero, coleccionAnuncios);
             
-            case "O":
+        } else if (instruccionActual == "E") {
 
-                instrO(lectorFichero, escritorFichero, coleccionAnuncios);
-                break;
-            
-            case "E":
+            instrE(lectorFichero, escritorFichero, coleccionAnuncios);
 
-                instrE(lectorFichero, escritorFichero, coleccionAnuncios);
-                break;
+        } else if (instruccionActual == "EC") {
 
-            case "EC":
-
-                instrEC(lectorFichero, escritorFichero, coleccionAnuncios);
-                break;
-
-            // case "B":
-
-            //     instrB(lectorFichero, escritorFichero, coleccionAnuncios);
-            //     break;
-            
-            // case "BC":
-
-            //     instrBC(lectorFichero, escritorFichero, coleccionAnuncios);
-            //     break;
-
-            // case "P":
-
-            //     instrP(lectorFichero, escritorFichero, coleccionAnuncios);
-            //     break;
-
-            // case "LO":
-
-            //     instrLO(lectorFichero, escritorFichero, coleccionAnuncios);
-            //     break;
-            
-            // case "LC":
-
-            //     instrLC(lectorFichero, escritorFichero, coleccionAnuncios);
-            //     break;
-
-            // case "LT":
-
-            //     instrLT(lectorFichero, escritorFichero, coleccionAnuncios);
-            //     break;
+            instrEC(lectorFichero, escritorFichero, coleccionAnuncios);
 
         }
+        /*
+        else if (instruccionActual == "B") {
+
+            instrB(lectorFichero, escritorFichero, coleccionAnuncios);
+
+        } else if (instruccionActual == "BC") {
+
+            instrBC(lectorFichero, escritorFichero, coleccionAnuncios);
+
+        } else if (instruccionActual == "P") {
+
+            instrP(lectorFichero, escritorFichero, coleccionAnuncios);
+
+        } else if (instruccionActual == "LO") {
+
+            instrLO(lectorFichero, escritorFichero, coleccionAnuncios);
+
+        } else if (instruccionActual == "LC") {
+
+            instrLC(lectorFichero, escritorFichero, coleccionAnuncios);
+
+        } else if (instruccionActual == "LT") {
+
+            instrLT(lectorFichero, escritorFichero, coleccionAnuncios);
+
+        }
+        */
 
     }
 
@@ -318,7 +308,7 @@ void instrEC(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
     string categoria;
     getline(lectorFichero, categoria);
 
-    if(existeTema(categoria)) {
+    if(existeTema(categoria, c)) {
 
         escritorFichero << "CATEGORIA CONOCIDA: " << categoria << endl;
 
