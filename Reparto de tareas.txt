@@ -60,4 +60,4 @@ Leyenda: [X] Hecho | [ ] Pendiente / En proceso | [?] En espera de respuesta a d
 ======================================================================
 
 
-DEMASIADAS PROTECCIONES!!!!
+DEMASIADAS PROTECCIONES - ordenes de 2n, 3n, etc!!!!
