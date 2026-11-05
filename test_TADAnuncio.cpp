@@ -1,7 +1,7 @@
 #include "anuncio.hpp"
 #include "fecha.hpp"
 
-#include <iostream>
+#include<iostream>
 
 using namespace std;
 
@@ -21,7 +21,6 @@ int main() {
     crear(25, 4, 2002, ffin, error);
 
     // Prueba de las funciones creadas
-
     Anuncio e = crearAnuncio(id, articulo, descripcion, categoria, fpubl, ffin);  
 
     cout << "\n";
@@ -51,5 +50,8 @@ int main() {
     
     cout << "\n";
     cout << mostrarAnuncio(e); 
+
+    // 
+
 
 }

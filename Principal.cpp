@@ -319,13 +319,55 @@ void instrEC(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
 
 /*
 
+    Por  cada  instrucción  de  tipo  “P”,  si  existían  anuncios  en  la  colección  con  fecha  de  publicación  estrictamente  
+    anterior a la dada, se escribirá una línea que empiece con la cadena “PURGADOS: ”, si no existía ningún anuncio 
+    en la colección con fecha de publicación estrictamente anterior a la dada, se escribirá una línea que empiece con la 
+    cadena “NO PURGADOS: ”. En ambos casos, la cadena escrita irá seguida a continuación, y en la misma línea 
+    del fichero, por la fecha utilizada en la operación (formato: aaaa-mm-dd ).
+
+*/
+void instrP(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c) 
+{  
+    lectorFichero.ignore();     // Consume el \n
+
+    // Obtenemos la fecha para purgar
+    string ano1, mes1, dia1;
+
+    //Se consume también el separador
+    getline(fin, ano1, '-'); 
+    getline(fin, mes1, '-');
+    getline(fin, dia1);
+
+    
+
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+/*
+
+    Por cada instrucción de tipo “LO”, se escribirá una línea que empiece con la cadena “ANTERIORES A: ” seguida 
+    de la fecha utilizada en la operación (con formato: aaaa-mm-dd), seguida de la cadena “ --- ”, seguida por la 
+    concatenación de los identificadores de los anuncios de la colección con fecha de publicación estrictamente anterior 
+    a la dada, separados entre sí por la cadena “:::”. Para finalizar, se concatenará otra vez la cadena “ --- ”.
+
+*/
+void instrLO(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c) 
+{
+
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+/*
+
     Por cada instrucción de tipo “LC”, se escribirá una línea que empiece con la cadena “DE CATEGORIA: ” seguida
     de la categoría utilizada con la operación, seguida de la cadena “ --- ”, seguida por la concatenación de los
     identificadores de los anuncios de la colección con categoría igual a la dada, separados entre sí por la cadena “:::”.
     Antes de finalizar la línea se concatenará otra vez la cadena “ --- ”. 
 
 */
-void instrLC() {
+void instrLC(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c) {
 
 }
 
@@ -345,6 +387,8 @@ void instrLC() {
     con la cadena “-----”. 
 
 */
-void instrLT() {
+void instrLT(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c) {
 
 }
+
+// -----------------------------------------------------------------------------------------------------
