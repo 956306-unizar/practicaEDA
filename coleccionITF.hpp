@@ -22,8 +22,11 @@ using namespace std;
    
    Los Items Temáticos Fechados T necesitan de las siguientes operaciones:
     identificador: devuelve un string con el identificador del item
+    //CABECERA OPERACION IDENTIFICADOR DE <ANUNCIO (aka T)>.HPP!!!!!!!!!!!!!!!!!!!!!!!!!!
     tema: devuelve una cadena con el tema del Item
+    //CABECERA OPERACION IDENTIFICADOR DE <ANUNCIO (aka T)>.HPP!!!!!!!!!!!!!!!!!!!!!!!!!!
     fecha: devuelve un tipo fecha asociada al Item
+    //CABECERA OPERACION IDENTIFICADOR DE <ANUNCIO (aka T)>.HPP!!!!!!!!!!!!!!!!!!!!!!!!!!
 */
 template<typename T> struct ColeccionITF;
 
