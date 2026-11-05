@@ -24,6 +24,21 @@ Fecha fecha(const Anuncio& a){
     return suPublicacion(a);
 }
 
+// Cabeceras funciones auxiliares para las instrucciones
+void instrA(lectorFichero, escritorFichero, coleccionAnuncios);
+void instrC(lectorFichero, escritorFichero, coleccionAnuncios);
+void instrO(lectorFichero, escritorFichero, coleccionAnuncios);
+void instrE(lectorFichero, escritorFichero, coleccionAnuncios);
+void instrEC(lectorFichero, escritorFichero, coleccionAnuncios);
+void instrB(lectorFichero, escritorFichero, coleccionAnuncios);
+void instrBC(lectorFichero, escritorFichero, coleccionAnuncios);
+void instrP(lectorFichero, escritorFichero, coleccionAnuncios);
+void instrLO(lectorFichero, escritorFichero, coleccionAnuncios);
+void instrLC(lectorFichero, escritorFichero, coleccionAnuncios);
+void instrLT(lectorFichero, escritorFichero, coleccionAnuncios);
+
+
+// --- PROGRAMA PRINCIPAL ---
 int main () {
 
     ifstream lectorFichero("entrada.txt");
