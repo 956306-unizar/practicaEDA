@@ -1,6 +1,8 @@
 /* 
 _798618_956306_956269
 
+Comando de compilación en Windows11: g++ .\fecha.cpp .\anuncio.cpp .\coleccionITF.hpp .\Principal.cpp -Wall -Wextra -std=c++11 -o principal.o
+
 */
 
 #include <iostream>
@@ -195,7 +197,7 @@ void instrA( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
          << desc << ":::"
          << cat << ":::"
          << ano1 << "-" << mes1 << "-" << dia1 << ":::"
-         << ano2 << "-" << mes2 << "-" << dia2 << endl
+         << ano2 << "-" << mes2 << "-" << dia2 << endl;
 }
 
 //-----------------------------------------------------------------------------------------------------C
@@ -353,6 +355,40 @@ void instrB( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
         escritorFichero << "NO BORRADO: ";
     }
     escritorFichero << id << endl;
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+/*
+
+    Por cada instrucción de tipo “BC”, si existían anuncios en la colección con categoría igual a la dada, se escribirá
+    una línea que empiece con la cadena “ELIMINADOS: ”, si no existía ningún anuncio en la colección con categoría
+    igual a la dada, se escribirá una línea que empiece con la cadena “NO ELIMINADOS: ”. En ambos casos, la
+    cadena escrita irá seguida a continuación, y en la misma línea del fichero, por la categoría dada para la instrucción.
+
+    Cuando se procese una instrucción “BC”, el programa deberá eliminar de la colección todos los anuncios cuya
+    categoría sea igual a la dada.
+
+*/
+void instrBC(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c) {
+
+    lectorFichero.ignore();
+
+    string categoria;
+    getline(lectorFichero, categoria); // Lectura de la categoría a buscar
+
+    if(existeTema(categoria, c)) {
+
+        zanjarTema(categoria, c);
+
+        escritorFichero << "ELIMINADOS: " << categoria << endl;
+
+    } else {
+
+        escritorFichero << "NO ELIMINADOS: " << categoria << endl;
+
+    }
+
 }
 
 // -----------------------------------------------------------------------------------------------------
