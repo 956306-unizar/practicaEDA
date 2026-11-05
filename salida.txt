@@ -1,0 +1,14 @@
+NO CAMBIADO: ID40
+INTRODUCIDO: ID40:::Maleta pequeña:::En venta:::Maleta con ruedas, pequeña, buen estado.:::2026-09-20:::2026-09-01
+INTRODUCIDO: ID10:::Maleta cabina:::Compra:::Compraria maleta cabina tamaño Ryanair:::2026-09-10:::2026-11-20
+INTRODUCIDO: ID20:::Silla paseo bebe:::En venta:::Vendo silla paseo para bebe:::2026-10-10:::2026-10-10
+NO INTRODUCIDO: ID20:::Silla paseo plegable bebe:::En venta:::Vendo silla paseo plegable para bebe:::2026-10-11:::2026-10-11
+CAMBIADO: ID20:::Silla paseo bebe:::En venta:::Vendo silla paseo plegable para bebe. Precio negociable:::2026-10-21:::2026-10-21
+DESCONOCIDO: ID25
+DESCONOCIDO: iD20
+EXISTENTE: ID20
+INTRODUCIDO: ID30:::Mecedora:::Disponible gratis:::Regalo mecedora en buen estado:::2026-10-01:::2026-06-11
+NO BORRADO: ID25
+BORRADO: ID30
+NO ELIMINADOS: Disponible gratis
+ELIMINADOS: En venta

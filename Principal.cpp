@@ -61,6 +61,7 @@ int main() {
     }
 
     ColeccionITF<Anuncio> coleccionAnuncios;
+    crear(coleccionAnuncios);
 
     string instruccionActual;
 
@@ -68,11 +69,11 @@ int main() {
 
         if (instruccionActual == "A") {
 
-            instrA(lectorFichero, escritorFichero, coleccionAnuncios);            //UNSAFE - esta()
+            instrA(lectorFichero, escritorFichero, coleccionAnuncios);
 
         } else if (instruccionActual == "C") {
 
-//            instrC(lectorFichero, escritorFichero, coleccionAnuncios);            //UNSAFE - esta()
+            instrC(lectorFichero, escritorFichero, coleccionAnuncios);
 
         } else if (instruccionActual == "O") {
 
@@ -80,7 +81,7 @@ int main() {
             
         } else if (instruccionActual == "E") {
 
-//            instrE(lectorFichero, escritorFichero, coleccionAnuncios);        //UNSAFE - esta()
+            instrE(lectorFichero, escritorFichero, coleccionAnuncios);
 
         } else if (instruccionActual == "EC") {
 
@@ -88,7 +89,7 @@ int main() {
 
         } else if (instruccionActual == "B") {
 
-//            instrB(lectorFichero, escritorFichero, coleccionAnuncios);        //UNSAFE - esta()
+            instrB(lectorFichero, escritorFichero, coleccionAnuncios);
 
         } else if (instruccionActual == "BC") {
 

@@ -299,6 +299,7 @@ int main(){
             << "2) añadir anuncio con ID ordenado" << endl
             << "3) borrar anuncio segun ID" << endl
             << "4) añadir anuncio con ID persolanizado" << endl
+            << "5) esta? un id" << endl
         ;
         cin >> opcion;
         cout << endl
@@ -341,6 +342,14 @@ int main(){
                 anadir(col,a1);
                 cout << "anuncio " << id << " añadido" << endl;
 
+                break;
+            }
+            case 5:{   //esta? producto
+                
+                string ident;
+                cout << "Introduce ID a buscar:";
+                cin >> ident;
+                cout << "Esta? = " << esta(ident, col) << endl;
                 break;
             }
             default:{
