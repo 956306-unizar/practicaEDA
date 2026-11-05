@@ -42,7 +42,7 @@ DAVID:
     [X] Instruccion 'A'  (Añadir)
     [X] Instruccion 'E'  (Existe)
 
-    [ ] Instruccion 'C'  (Cambiar info de anuncio en la coleccion)
+    [X] Instruccion 'C'  (Cambiar info de anuncio en la coleccion)
 
 ABEL:
     [X] Instruccion 'O'  (Obsoletos)
