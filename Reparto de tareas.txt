@@ -14,12 +14,12 @@ ARIAN:
 PUNTO 2: TAD COLECCION ITF
 ----------------------------------------------------------------------
 David:
-    [X] Función añadir
-    [X] Función borrar
-    [X] Función iniciarIterador
-    [X] Función existeSiguiente?
-    [X] Función siguienteYavanza
-    [X] Pruebas de las funciones de coleccionITF programadas por él
+    [R] Función añadir
+    [R] Función borrar
+    [R] Función iniciarIterador
+    [R] Función eRisteSiguiente?
+    [R] Función siguienteYavanza
+    [R] Pruebas de las funciones de coleccionITF programadas por él
 
 Abel:
     [X] Función crear
@@ -39,10 +39,10 @@ Abel:
 PUNTO 3: INTERPRETE DE INSTRUCCIONES
 ----------------------------------------------------------------------
 DAVID:
-    [X] Instruccion 'A'  (Añadir)
-    [X] Instruccion 'E'  (Existe)
-    [X] Instruccion 'C'  (Cambiar)
-    [X] Instruccion 'B'  (Borrar identificador)
+    [R] Instruccion 'A'  (Añadir)
+    [R] Instruccion 'E'  (ERiste)
+    [R] Instruccion 'C'  (Cambiar)
+    [R] Instruccion 'B'  (Borrar identificador)
 
 ABEL:
     [X] Instruccion 'O'  (Obsoletos)
@@ -56,8 +56,8 @@ ARIAN:
     [ ] Intruccion 'LO' (Listar obsoletos) 
 
 ======================================================================
-Leyenda: [X] Hecho | [ ] Pendiente / En proceso | [?] En espera de respuesta a duda
+Leyenda: [X] Hecho | [R] En revision | [ ] Pendiente / En proceso | [?] En espera de respuesta a duda
 ======================================================================
 
 
-DEMASIADAS PROTECCIONES - ordenes de 2n, 3n, etc!!!!
+DEMASIADAS PROTECCIONES - ordenes de 2n, 3n, etc!!!!    (tamaño?)
