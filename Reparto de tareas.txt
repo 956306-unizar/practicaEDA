@@ -43,8 +43,8 @@ DAVID:
     [X] Instruccion 'E'  (Existe)
 
 ABEL:
-    [ ] Instruccion 'O'  (Obsoletos)
-    [ ] Instruccion 'EC' (Eliminar por criterio/caducidad)
+    [X] Instruccion 'O'  (Obsoletos)
+    [X] Instruccion 'EC' (Eliminar por criterio/caducidad)
 
 ARIAN:
     [ ] Instruccion 'LC' (Listar coleccion)
