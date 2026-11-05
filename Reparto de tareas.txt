@@ -42,6 +42,8 @@ DAVID:
     [X] Instruccion 'A'  (Añadir)
     [X] Instruccion 'E'  (Existe)
 
+    [X] Instruccion 'C'  (Cambiar info de anuncio en la coleccion)
+
 ABEL:
     [X] Instruccion 'O'  (Obsoletos)
     [X] Instruccion 'EC' (Eliminar por criterio/caducidad)
