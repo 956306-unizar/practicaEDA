@@ -30,6 +30,7 @@ Fecha fecha(const Anuncio& a){
 
 // ============================================================================================INSTRUCCIONES DEL FICHERO
 
+//-----------------------------------------------------------------------------------------------------A
 /*
     Por cada instrucción de tipo “A”, si es posible introducir los datos de un nuevo anuncio en la colección, se
     escribirá una línea en el fichero de salida que empiece con la cadena “INTRODUCIDO: ”; si no es posible
@@ -51,6 +52,8 @@ Fecha fecha(const Anuncio& a){
 
     OUT:
         INTRODUCIDO: ID40:::Maleta pequeña:::En venta:::Maleta con ruedas, pequeña, buen estado.:::2026-09-20:::2026-09-01
+    o:
+        NO INTRODUCIDO: ID40:::Maleta pequeña:::En venta:::Maleta con ruedas, pequeña, buen estado.:::2026-09-20:::2026-09-01
     }
     IMPORTANTE: consume el ultimo \n tambien, cuando vuelva de intrA() el siguiente caracter a leer sera la siguiente intruccion
 
@@ -63,8 +66,86 @@ void instrA( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
     //id, titulo, descripcion, categoria, publicacion, finalizacion
     string id, tit, desc, cat;
     Fecha startDate, endDate;
+
     getline(fin, id);   //!! getline hace un ignore del \n
+    getline(fin, tit);
+    getline(fin, desc);
+    getline(fin, cat);
+
+    //ahora la fecha de publicacion
+    string ano1, mes1, dia1;
+    getline(fin, ano1, '-');  //tb consume el separador
+    getline(fin, mes1, '-');
+    getline(fin, dia1);
+    bool errorPubli;
+    crear(stoi(dia1), stoi(mes1), stoi(ano1), startDate, errorPubli);
+
+    //ahora la fecha de finalizacion
+    string ano2, mes2, dia2;
+    getline(fin, ano2, '-');  //tb consume el separador
+    getline(fin, mes2, '-');
+    getline(fin, dia2);
+    bool errorFinal;
+    crear(stoi(dia2), stoi(mes2), stoi(ano2), endDate, errorFinal);
+    //COMPROBAR SI SON FECHAS VALIDAS?????????????????????????????????????????????(errorFinal, errorPubli)
+    
     if(!esta(id, c)){   // si no esta ya, se añade
+        Anuncio a = crearAnuncio(id, tit, desc, cat, startDate, endDate);
+        anadir(c, a);
+        fout << "INTRODUCIDO: ";
+
+    }else{  //si ya estaba, no se añade
+        fout << "NO INTRODUCIDO: ";
+    }
+
+    fout << id << ":::"
+         << tit << ":::"
+         << desc << ":::"
+         << cat << ":::"
+         << ano1 << "-" << mes1 << "-" << dia1 << ":::"
+         << ano2 << "-" << mes2 << "-" << dia2 << endl
+}
+
+//-----------------------------------------------------------------------------------------------------C
+/*
+    Por cada instrucción de tipo “C”, si es posible actualizar en la colección los datos del anuncio correspondiente
+    al identificador dado, se escribirá una línea en el fichero de salida que empiece con la cadena “CAMBIADO: ”,
+    seguida de la concatenación de todos los datos relativos a la nueva información del anuncio en la colección, en la
+    misma línea del fichero y en el siguiente orden: identificador, título, categoría, descripción, fecha de publicación y
+    fecha de finalización (separados entre sí por la cadena “:::”, y con las fechas escritas en formato: aaaa-mm-dd).
+    Si no es posible actualizar el anuncio de dicho identificador en la colección, se escribirá una línea en el fichero
+    de salida que empiece con la cadena “NO CAMBIADO: ”, seguida del identificador dado para la instrucción
+
+    EJEMPLO{
+    IN:
+        C
+        ID20
+        Silla paseo bebe
+        Vendo silla paseo plegable para bebe. Precio negociable
+        En venta
+        2026-10-21
+        2026-10-21
+
+    OUT:
+        CAMBIADO: ID20:::Silla paseo bebe:::En venta:::Vendo silla paseo plegable para bebe. Precio negociable:::2026-10-21:::2026-10-21
+    o:
+        NO CAMBIADO: ID40
+    }
+    IMPORTANTE: consume el ultimo \n tambien, cuando vuelva de intrC() el siguiente caracter a leer sera la siguiente intruccion
+
+*/
+// el caracter C ha sido consumido.
+void instrC( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
+
+    fin.ignore();   //CONSUMIMOS EL \n-------------------------------------------------------------------?? DEPENDE DE LA IMPLEMENTACION DEL BUCLE DE LECTURA
+    //las siguientes 6 lineas contendran la informacion en el orden:
+    //id, titulo, descripcion, categoria, publicacion, finalizacion
+    string id, tit, desc, cat;
+    Fecha startDate, endDate;
+
+    getline(fin, id);   //!! getline hace un ignore del \n
+    
+    if(esta(id, c)){    //si esta ya, se cambia
 
         getline(fin, tit);
         getline(fin, desc);
@@ -90,7 +171,7 @@ void instrA( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
         anadir(c, a);
 
         //COMPROBAR SI SON FECHAS VALIDAS?????????????????????????????????????????????(errorFinal, errorPubli)
-        fout << "INTRODUCIDO: "
+        fout << "CAMBIADO: "
             << id << ":::"
             << tit << ":::"
             << desc << ":::"
@@ -99,91 +180,13 @@ void instrA( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
             << ano2 << "-" << mes2 << "-" << dia2 << endl
         ;
 
-    }else{  //si ya estaba, no se añado
-        fout << "NO INTRODUCIDO: "
+    }else{  //si no estaba, no se puede cambiar
+        fout << "NO CAMBIADO: "
              << id << endl;
     }
 }
 
-//-----------------------------------------------------------------------------------------------------
-
-/*
-    Por cada instrucción de tipo “C”, si es posible actualizar en la colección los datos del anuncio correspondiente
-    al identificador dado, se escribirá una línea en el fichero de salida que empiece con la cadena “CAMBIADO: ”,
-    seguida de la concatenación de todos los datos relativos a la nueva información del anuncio en la colección, en la
-    misma línea del fichero y en el siguiente orden: identificador, título, categoría, descripción, fecha de publicación y
-    fecha de finalización (separados entre sí por la cadena “:::”, y con las fechas escritas en formato: aaaa-mm-dd).
-    Si no es posible actualizar el anuncio de dicho identificador en la colección, se escribirá una línea en el fichero
-    de salida que empiece con la cadena “NO CAMBIADO: ”, seguida del identificador dado para la instrucción
-
-    EJEMPLO{
-    IN:
-        C
-        ID20
-        Silla paseo bebe
-        Vendo silla paseo plegable para bebe. Precio negociable
-        En venta
-        2026-10-21
-        2026-10-21
-
-    OUT:
-        CAMBIADO: ID20:::Silla paseo bebe:::En venta:::Vendo silla paseo plegable para bebe. Precio negociable:::2026-10-21:::2026-10-21
-    }
-    IMPORTANTE: consume el ultimo \n tambien, cuando vuelva de intrA() el siguiente caracter a leer sera la siguiente intruccion
-
-*/
-// el caracter C ha sido consumido.
-void instrC( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
-
-    fin.ignore();   //CONSUMIMOS EL \n-------------------------------------------------------------------?? DEPENDE DE LA IMPLEMENTACION DEL BUCLE DE LECTURA
-    //las siguientes 6 lineas contendran la informacion en el orden:
-    //id, titulo, descripcion, categoria, publicacion, finalizacion
-    string id, tit, desc, cat;
-    Fecha startDate, endDate;
-    getline(fin, id);   //!! getline hace un ignore del \n
-    if(esta(id, c)){    //si ya estaba, se cambia
-        fout << "CAMBIADO: ";
-
-    }else{  //si no estaba, no se puede cambiar
-        fout << "NO CAMBIADO: ";
-    }
-
-    getline(fin, tit);
-    getline(fin, desc);
-    getline(fin, cat);
-
-    //ahora la fecha de publicacion
-    string ano1, mes1, dia1;
-    getline(fin, ano1, '-');  //tb consume el separador
-    getline(fin, mes1, '-');
-    getline(fin, dia1);
-    bool errorPubli;
-    crear(stoi(dia1), stoi(mes1), stoi(ano1), startDate, errorPubli);
-
-    //ahora la fecha de finalizacion
-    string ano2, mes2, dia2;
-    getline(fin, ano2, '-');  //tb consume el separador
-    getline(fin, mes2, '-');
-    getline(fin, dia2);
-    bool errorFinal;
-    crear(stoi(dia2), stoi(mes2), stoi(ano2), endDate, errorFinal);
-
-    Anuncio a = crearAnuncio(id, tit, desc, cat, startDate, endDate);
-    anadir(c, a);
-
-    //COMPROBAR SI SON FECHAS VALIDAS?????????????????????????????????????????????(errorFinal, errorPubli)
-
-    cout << id << ":::"
-         << tit << ":::"
-         << desc << ":::"
-         << cat << ":::"
-         << ano1 << "-" << mes1 << "-" << dia1 << ":::"
-         << ano2 << "-" << mes2 << "-" << dia2 << endl
-}
-
-//-----------------------------------------------------------------------------------------------------
-
-
+//-----------------------------------------------------------------------------------------------------E
 /*
     Por cada instrucción de tipo “E”, si existe algún anuncio en la colección con un identificador igual al dado, se
     escribirá una línea en el fichero que empiece con la cadena “EXISTENTE: ”. Si no existía ningún anuncio en la
@@ -205,7 +208,7 @@ void instrC( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
         DESCONOCIDO: iD20
         EXISTENTE: ID20
     }
-    IMPORTANTE: consume el ultimo \n tambien, cuando vuelva de intrA() el siguiente caracter a leer sera la siguiente intruccion
+    IMPORTANTE: consume el ultimo \n tambien, cuando vuelva de intrE() el siguiente caracter a leer sera la siguiente intruccion
 */
 // el caracter E ha sido consumido.
 void instrE( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
@@ -214,16 +217,51 @@ void instrE( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
     //la siguiente linea contendran el id
     string id;
     getline(fin, id);   //!! getline hace un ignore del \n
-    if(!esta(id, c)){   // si no esta ya, se añade
-
+    if(esta(id, c)){   // si esta, existente
         fout << "EXISTENTE: ";
 
-    }else{  //si ya estaba, no se añado
+    }else{  //si no, no existente
         fout << "DESCONOCIDO: ";
     }
     fout << id << endl;
 }
 
+//-----------------------------------------------------------------------------------------------------B
+/*
+    Por cada instrucción de tipo “B”, si existía algún anuncio en la colección con un identificador igual al dado y este
+    es borrado de la colección, se escribirá una línea que empiece con la cadena “BORRADO: ”, y si no existía ningún
+    anuncio en la colección con un identificador igual al dado o este no es borrado de la colección, se escribirá en el
+    fichero una línea que empiece con la cadena “NO BORRADO: ”. En cualquiera de los dos casos, se seguirá
+    escribiendo a continuación, y en la misma línea del fichero, el identificador dado para la instrucción.
+
+    EJEMPLO{
+    IN:
+        B
+        ID25
+    
+    OUT:
+        BORRADO: ID25
+    o:
+        NO BORRADO: ID25
+    }
+    IMPORTANTE: consume el ultimo \n tambien, cuando vuelva de intrB() el siguiente caracter a leer sera la siguiente intruccion
+*/
+// el caracter B ha sido consumido.
+void instrB( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
+    
+    fin.ignore();   //CONSUMIMOS EL \n-------------------------------------------------------------------?? DEPENDE DE LA IMPLEMENTACION DEL BUCLE DE LECTURA
+    //la siguiente linea contendran el id
+    string id;
+    getline(fin, id);   //!! getline hace un ignore del \n
+    if(esta(id, c)){   // si esta, se borra
+        borrar(id,c);
+        fout << "BORRADO: ";
+
+    }else{  //si no esta, no se puede borrar
+        fout << "NO BORRADO: ";
+    }
+    fout << id << endl;
+}
 
 // ==================================================================================================FUNCIONES PROPIAS
 
