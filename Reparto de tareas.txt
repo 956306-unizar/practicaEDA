@@ -67,3 +67,5 @@ Correciones profe:
 [X] struct Nodo dentro de struct ColeccionITF, llamar con "typename ColeccionITF<T>::Nodo"
 [ ] Reducir "return;"s , caminos, y probar todos los caminos
 [ ] obtenerITF es parcial
+
+IMPORTANTE: esta(id, coleccion) peta a malas: std::bad_alloc

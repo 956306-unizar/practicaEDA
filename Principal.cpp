@@ -68,11 +68,11 @@ int main() {
 
         if (instruccionActual == "A") {
 
-            instrA(lectorFichero, escritorFichero, coleccionAnuncios);
+            instrA(lectorFichero, escritorFichero, coleccionAnuncios);            //UNSAFE - esta()
 
         } else if (instruccionActual == "C") {
 
-            instrC(lectorFichero, escritorFichero, coleccionAnuncios);
+//            instrC(lectorFichero, escritorFichero, coleccionAnuncios);            //UNSAFE - esta()
 
         } else if (instruccionActual == "O") {
 
@@ -80,7 +80,7 @@ int main() {
             
         } else if (instruccionActual == "E") {
 
-            instrE(lectorFichero, escritorFichero, coleccionAnuncios);
+//            instrE(lectorFichero, escritorFichero, coleccionAnuncios);        //UNSAFE - esta()
 
         } else if (instruccionActual == "EC") {
 
@@ -88,7 +88,7 @@ int main() {
 
         } else if (instruccionActual == "B") {
 
-            instrB(lectorFichero, escritorFichero, coleccionAnuncios);
+//            instrB(lectorFichero, escritorFichero, coleccionAnuncios);        //UNSAFE - esta()
 
         } else if (instruccionActual == "BC") {
 
@@ -96,7 +96,7 @@ int main() {
 
         } else if (instruccionActual == "P") {
 
-            instrP(lectorFichero, escritorFichero, coleccionAnuncios);
+//            instrP(lectorFichero, escritorFichero, coleccionAnuncios);
 
         } else if (instruccionActual == "LO") {
 
@@ -170,7 +170,7 @@ void instrA( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
     getline(lectorFichero, dia1);
     bool errorFecha;
     crear(stoi(dia1), stoi(mes1), stoi(ano1), startDate, errorFecha);
-
+    
     //ahora la fecha de finalizacion
     string ano2, mes2, dia2;
     getline(lectorFichero, ano2, '-');  //tb consume el separador
@@ -178,17 +178,20 @@ void instrA( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
     getline(lectorFichero, dia2);
     crear(stoi(dia2), stoi(mes2), stoi(ano2), endDate, errorFecha);
     
+    //cout << "ANTES DE ESTA" << endl;
+
     if(!esta(id, c)){   // si no esta ya, se añade
+
         Anuncio a = crearAnuncio(id, tit, desc, cat, startDate, endDate);
         anadir(c, a);
         escritorFichero << "INTRODUCIDO: ";
+        
 
     }else{  //si ya estaba, no se añade
         escritorFichero << "NO INTRODUCIDO: ";
     }
     //identificador, título, categoría, descripción, fecha de publicación y fecha de finalización
-    escritorFichero
-        << id << ":::"
+    escritorFichero << id << ":::"
         << tit << ":::"
         << cat << ":::"
         << desc << ":::"
@@ -369,8 +372,6 @@ void instrB( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
 */
 void instrBC(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c) {
 
-    lectorFichero.ignore();
-
     string categoria;
     getline(lectorFichero, categoria); // Lectura de la categoría a buscar
 
@@ -401,8 +402,6 @@ void instrBC(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
 */
 void instrP(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c) 
 {  
-    lectorFichero.ignore();     // Consume el \n
-
     // Obtenemos la fecha para purgar
     string ano, mes, dia;
     Fecha fechaPurgar;
