@@ -343,7 +343,11 @@ void instrB( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
     getline(lectorFichero, id);   //!! getline hace un ignore del \n
     if(esta(id, c)){   // si esta, se borra
         borrar(id,c);
-        escritorFichero << "BORRADO: ";
+        if(!esta(id,c)){//si no esta ya, se ha borrado correctamente
+            escritorFichero << "BORRADO: ";
+        }else{          //si sigue estando, no se ha borrado correctamente
+            escritorFichero << "NO BORRADO: ";
+        }
 
     }else{  //si no esta, no se puede borrar
         escritorFichero << "NO BORRADO: ";
