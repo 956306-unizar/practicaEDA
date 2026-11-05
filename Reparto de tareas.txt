@@ -60,4 +60,8 @@ Leyenda: [X] Hecho | [R] En revision | [ ] Pendiente / En proceso | [?] En esper
 ======================================================================
 
 
-DEMASIADAS PROTECCIONES - ordenes de 2n, 3n, etc!!!!    (tamaño?)
+[ ] DEMASIADAS PROTECCIONES en Principal.cpp - ordenes de 2n, 3n, etc!!!!    (tamaño?)
+[ ] Cabeceras apropiadas a la especificacion (no solo copiar del enunciado)
+[X] struct Nodo dentro de struct ColeccionITF, llamar con "typename ColeccionITF<T>::Nodo"
+[ ] Reducir "return;"s , caminos, y probar todos los caminos
+[ ] obtenerITF es parcial
