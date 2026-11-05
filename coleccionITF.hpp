@@ -461,11 +461,13 @@ T obtenerITF(const string &ident, const ColeccionITF<T> &c) {
 
     Nodo<T>* pAux = c.primero;
 
-    while(1) {
+    bool encontrado = false;
+
+    while(!encontrado) {
 
         if(identificador(pAux->dato) == ident) {
 
-            return pAux->dato;
+            encontrado = true;
 
         } else {
 
@@ -474,6 +476,8 @@ T obtenerITF(const string &ident, const ColeccionITF<T> &c) {
         }
 
     }
+
+    return pAux->dato;
     
 }
 
