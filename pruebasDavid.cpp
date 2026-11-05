@@ -52,12 +52,13 @@ Fecha fecha(const Anuncio& a){
     OUT:
         INTRODUCIDO: ID40:::Maleta pequeña:::En venta:::Maleta con ruedas, pequeña, buen estado.:::2026-09-20:::2026-09-01
     }
+    IMPORTANTE: consume el ultimo \n tambien, cuando vuelva de intrA() el siguiente caracter a leer sera la siguiente intruccion
 
 */
 // el caracter A tiene que haber sido consumido, pero el /n no.
 void instrA( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
 
-    fin.ignore();   //CONSUMIMOS EL \n
+    fin.ignore();   //CONSUMIMOS EL \n-------------------------------------------------------------------?? DEPENDE DE LA IMPLEMENTACION DEL BUCLE DE LECTURA
     //las siguientes 6 lineas contendran la informacion en el orden:
     //id, titulo, descripcion, categoria, publicacion, finalizacion
     string id, tit, desc, cat;
@@ -127,11 +128,12 @@ void instrA( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
         DESCONOCIDO: iD20
         EXISTENTE: ID20
     }
+    IMPORTANTE: consume el ultimo \n tambien, cuando vuelva de intrA() el siguiente caracter a leer sera la siguiente intruccion
 */
 // el caracter A tiene que haber sido consumido, pero el /n no.
 void instrE( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
     
-    fin.ignore();   //CONSUMIMOS EL \n
+    fin.ignore();   //CONSUMIMOS EL \n-------------------------------------------------------------------?? DEPENDE DE LA IMPLEMENTACION DEL BUCLE DE LECTURA
     //la siguiente linea contendran el id
     string id;
     getline(fin, id);   //!! getline hace un ignore del \n
