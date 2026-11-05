@@ -1,6 +1,7 @@
 /* 
 _798618_956306_956269
 
+
 */
 
 #include <iostream>
@@ -84,12 +85,10 @@ int main() {
 
             instrEC(lectorFichero, escritorFichero, coleccionAnuncios);
 
-        }
-        /*
-        else if (instruccionActual == "B") {
+        } else if (instruccionActual == "B") {
 
             instrB(lectorFichero, escritorFichero, coleccionAnuncios);
-
+/*
         } else if (instruccionActual == "BC") {
 
             instrBC(lectorFichero, escritorFichero, coleccionAnuncios);
@@ -343,6 +342,7 @@ void instrB( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
     getline(lectorFichero, id);   //!! getline hace un ignore del \n
     if(esta(id, c)){   // si esta, se borra
         borrar(id,c);
+        
         if(!esta(id,c)){//si no esta ya, se ha borrado correctamente
             escritorFichero << "BORRADO: ";
         }else{          //si sigue estando, no se ha borrado correctamente
