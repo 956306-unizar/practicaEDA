@@ -65,44 +65,43 @@ void instrA( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
     Fecha startDate, endDate;
     getline(fin, id);   //!! getline hace un ignore del \n
     if(!esta(id, c)){   // si no esta ya, se añade
-
-        getline(fin, tit);
-        getline(fin, desc);
-        getline(fin, cat);
-
-        //ahora la fecha de publicacion
-        string ano1, mes1, dia1;
-        getline(fin, ano1, '-');  //tb consume el separador
-        getline(fin, mes1, '-');
-        getline(fin, dia1);
-        bool errorPubli;
-        crear(stoi(dia1), stoi(mes1), stoi(ano1), startDate, errorPubli);
-
-        //ahora la fecha de finalizacion
-        string ano2, mes2, dia2;
-        getline(fin, ano2, '-');  //tb consume el separador
-        getline(fin, mes2, '-');
-        getline(fin, dia2);
-        bool errorFinal;
-        crear(stoi(dia2), stoi(mes2), stoi(ano2), endDate, errorFinal);
-
-        Anuncio a = crearAnuncio(id, tit, desc, cat, startDate, endDate);
-        anadir(c, a);
-
-        //COMPROBAR SI SON FECHAS VALIDAS?????????????????????????????????????????????(errorFinal, errorPubli)
-        fout << "INTRODUCIDO: "
-            << id << ":::"
-            << tit << ":::"
-            << desc << ":::"
-            << cat << ":::"
-            << ano1 << "-" << mes1 << "-" << dia1 << ":::"
-            << ano2 << "-" << mes2 << "-" << dia2 << endl
-        ;
+        fout << "INTRODUCIDO: ";
 
     }else{  //si ya estaba, no se añado
-        fout << "NO INTRODUCIDO: "
-             << id << endl;
+        fout << "NO INTRODUCIDO: ";
     }
+
+    getline(fin, tit);
+    getline(fin, desc);
+    getline(fin, cat);
+
+    //ahora la fecha de publicacion
+    string ano1, mes1, dia1;
+    getline(fin, ano1, '-');  //tb consume el separador
+    getline(fin, mes1, '-');
+    getline(fin, dia1);
+    bool errorPubli;
+    crear(stoi(dia1), stoi(mes1), stoi(ano1), startDate, errorPubli);
+
+    //ahora la fecha de finalizacion
+    string ano2, mes2, dia2;
+    getline(fin, ano2, '-');  //tb consume el separador
+    getline(fin, mes2, '-');
+    getline(fin, dia2);
+    bool errorFinal;
+    crear(stoi(dia2), stoi(mes2), stoi(ano2), endDate, errorFinal);
+
+    Anuncio a = crearAnuncio(id, tit, desc, cat, startDate, endDate);
+    anadir(c, a);
+
+    //COMPROBAR SI SON FECHAS VALIDAS?????????????????????????????????????????????(errorFinal, errorPubli)
+
+    cout << id << ":::"
+         << tit << ":::"
+         << desc << ":::"
+         << cat << ":::"
+         << ano1 << "-" << mes1 << "-" << dia1 << ":::"
+         << ano2 << "-" << mes2 << "-" << dia2 << endl
 }
 
 //-----------------------------------------------------------------------------------------------------
@@ -141,44 +140,45 @@ void instrC( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
     string id, tit, desc, cat;
     Fecha startDate, endDate;
     getline(fin, id);   //!! getline hace un ignore del \n
-    if(esta(id, c)){    //si ya estaba, se cambia
-        fout << "CAMBIADO: ";
+    if(esta(id, c)){    //si esta ya, se cambia
+
+        getline(fin, tit);
+        getline(fin, desc);
+        getline(fin, cat);
+
+        //ahora la fecha de publicacion
+        string ano1, mes1, dia1;
+        getline(fin, ano1, '-');  //tb consume el separador
+        getline(fin, mes1, '-');
+        getline(fin, dia1);
+        bool errorPubli;
+        crear(stoi(dia1), stoi(mes1), stoi(ano1), startDate, errorPubli);
+
+        //ahora la fecha de finalizacion
+        string ano2, mes2, dia2;
+        getline(fin, ano2, '-');  //tb consume el separador
+        getline(fin, mes2, '-');
+        getline(fin, dia2);
+        bool errorFinal;
+        crear(stoi(dia2), stoi(mes2), stoi(ano2), endDate, errorFinal);
+
+        Anuncio a = crearAnuncio(id, tit, desc, cat, startDate, endDate);
+        anadir(c, a);
+
+        //COMPROBAR SI SON FECHAS VALIDAS?????????????????????????????????????????????(errorFinal, errorPubli)
+        fout << "CAMBIADO: "
+            << id << ":::"
+            << tit << ":::"
+            << desc << ":::"
+            << cat << ":::"
+            << ano1 << "-" << mes1 << "-" << dia1 << ":::"
+            << ano2 << "-" << mes2 << "-" << dia2 << endl
+        ;
 
     }else{  //si no estaba, no se puede cambiar
-        fout << "NO CAMBIADO: ";
+        fout << "NO CAMBIADO: "
+             << id << endl;
     }
-
-    getline(fin, tit);
-    getline(fin, desc);
-    getline(fin, cat);
-
-    //ahora la fecha de publicacion
-    string ano1, mes1, dia1;
-    getline(fin, ano1, '-');  //tb consume el separador
-    getline(fin, mes1, '-');
-    getline(fin, dia1);
-    bool errorPubli;
-    crear(stoi(dia1), stoi(mes1), stoi(ano1), startDate, errorPubli);
-
-    //ahora la fecha de finalizacion
-    string ano2, mes2, dia2;
-    getline(fin, ano2, '-');  //tb consume el separador
-    getline(fin, mes2, '-');
-    getline(fin, dia2);
-    bool errorFinal;
-    crear(stoi(dia2), stoi(mes2), stoi(ano2), endDate, errorFinal);
-
-    Anuncio a = crearAnuncio(id, tit, desc, cat, startDate, endDate);
-    anadir(c, a);
-
-    //COMPROBAR SI SON FECHAS VALIDAS?????????????????????????????????????????????(errorFinal, errorPubli)
-
-    cout << id << ":::"
-         << tit << ":::"
-         << desc << ":::"
-         << cat << ":::"
-         << ano1 << "-" << mes1 << "-" << dia1 << ":::"
-         << ano2 << "-" << mes2 << "-" << dia2 << endl
 }
 
 //-----------------------------------------------------------------------------------------------------
