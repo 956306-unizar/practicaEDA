@@ -151,32 +151,32 @@ int main() {
 
 */
 // el caracter A ha sido consumido.
-void instrA( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
+void instrA( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c ){
 
-    fin.ignore();   //CONSUMIMOS EL \n-------------------------------------------------------------------?? DEPENDE DE LA IMPLEMENTACION DEL BUCLE DE LECTURA
+    lectorFichero.ignore();   //CONSUMIMOS EL \n-------------------------------------------------------------------?? DEPENDE DE LA IMPLEMENTACION DEL BUCLE DE LECTURA
     //las siguientes 6 lineas contendran la informacion en el orden:
     //id, titulo, descripcion, categoria, publicacion, finalizacion
     string id, tit, desc, cat;
     Fecha startDate, endDate;
 
-    getline(fin, id);   //!! getline hace un ignore del \n
-    getline(fin, tit);
-    getline(fin, desc);
-    getline(fin, cat);
+    getline(lectorFichero, id);   //!! getline hace un ignore del \n
+    getline(lectorFichero, tit);
+    getline(lectorFichero, desc);
+    getline(lectorFichero, cat);
 
     //ahora la fecha de publicacion
     string ano1, mes1, dia1;
-    getline(fin, ano1, '-');  //tb consume el separador
-    getline(fin, mes1, '-');
-    getline(fin, dia1);
+    getline(lectorFichero, ano1, '-');  //tb consume el separador
+    getline(lectorFichero, mes1, '-');
+    getline(lectorFichero, dia1);
     bool errorPubli;
     crear(stoi(dia1), stoi(mes1), stoi(ano1), startDate, errorPubli);
 
     //ahora la fecha de finalizacion
     string ano2, mes2, dia2;
-    getline(fin, ano2, '-');  //tb consume el separador
-    getline(fin, mes2, '-');
-    getline(fin, dia2);
+    getline(lectorFichero, ano2, '-');  //tb consume el separador
+    getline(lectorFichero, mes2, '-');
+    getline(lectorFichero, dia2);
     bool errorFinal;
     crear(stoi(dia2), stoi(mes2), stoi(ano2), endDate, errorFinal);
     //COMPROBAR SI SON FECHAS VALIDAS?????????????????????????????????????????????(errorFinal, errorPubli)
@@ -184,13 +184,13 @@ void instrA( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
     if(!esta(id, c)){   // si no esta ya, se añade
         Anuncio a = crearAnuncio(id, tit, desc, cat, startDate, endDate);
         anadir(c, a);
-        fout << "INTRODUCIDO: ";
+        escritorFichero << "INTRODUCIDO: ";
 
     }else{  //si ya estaba, no se añade
-        fout << "NO INTRODUCIDO: ";
+        escritorFichero << "NO INTRODUCIDO: ";
     }
 
-    fout << id << ":::"
+    escritorFichero << id << ":::"
          << tit << ":::"
          << desc << ":::"
          << cat << ":::"
@@ -227,35 +227,35 @@ void instrA( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
 
 */
 // el caracter C ha sido consumido.
-void instrC( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
+void instrC( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c ){
 
-    fin.ignore();   //CONSUMIMOS EL \n-------------------------------------------------------------------?? DEPENDE DE LA IMPLEMENTACION DEL BUCLE DE LECTURA
+    lectorFichero.ignore();   //CONSUMIMOS EL \n-------------------------------------------------------------------?? DEPENDE DE LA IMPLEMENTACION DEL BUCLE DE LECTURA
     //las siguientes 6 lineas contendran la informacion en el orden:
     //id, titulo, descripcion, categoria, publicacion, finalizacion
     string id, tit, desc, cat;
     Fecha startDate, endDate;
 
-    getline(fin, id);   //!! getline hace un ignore del \n
+    getline(lectorFichero, id);   //!! getline hace un ignore del \n
     
     if(esta(id, c)){    //si esta ya, se cambia
 
-        getline(fin, tit);
-        getline(fin, desc);
-        getline(fin, cat);
+        getline(lectorFichero, tit);
+        getline(lectorFichero, desc);
+        getline(lectorFichero, cat);
 
         //ahora la fecha de publicacion
         string ano1, mes1, dia1;
-        getline(fin, ano1, '-');  //tb consume el separador
-        getline(fin, mes1, '-');
-        getline(fin, dia1);
+        getline(lectorFichero, ano1, '-');  //tb consume el separador
+        getline(lectorFichero, mes1, '-');
+        getline(lectorFichero, dia1);
         bool errorPubli;
         crear(stoi(dia1), stoi(mes1), stoi(ano1), startDate, errorPubli);
 
         //ahora la fecha de finalizacion
         string ano2, mes2, dia2;
-        getline(fin, ano2, '-');  //tb consume el separador
-        getline(fin, mes2, '-');
-        getline(fin, dia2);
+        getline(lectorFichero, ano2, '-');  //tb consume el separador
+        getline(lectorFichero, mes2, '-');
+        getline(lectorFichero, dia2);
         bool errorFinal;
         crear(stoi(dia2), stoi(mes2), stoi(ano2), endDate, errorFinal);
 
@@ -263,7 +263,7 @@ void instrC( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
         anadir(c, a);
 
         //COMPROBAR SI SON FECHAS VALIDAS?????????????????????????????????????????????(errorFinal, errorPubli)
-        fout << "CAMBIADO: "
+        escritorFichero << "CAMBIADO: "
             << id << ":::"
             << tit << ":::"
             << desc << ":::"
@@ -273,7 +273,7 @@ void instrC( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
         ;
 
     }else{  //si no estaba, no se puede cambiar
-        fout << "NO CAMBIADO: "
+        escritorFichero << "NO CAMBIADO: "
              << id << endl;
     }
 }
@@ -303,19 +303,19 @@ void instrC( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
     IMPORTANTE: consume el ultimo \n tambien, cuando vuelva de intrE() el siguiente caracter a leer sera la siguiente intruccion
 */
 // el caracter E ha sido consumido.
-void instrE( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
+void instrE( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c ){
     
-    fin.ignore();   //CONSUMIMOS EL \n-------------------------------------------------------------------?? DEPENDE DE LA IMPLEMENTACION DEL BUCLE DE LECTURA
+    lectorFichero.ignore();   //CONSUMIMOS EL \n-------------------------------------------------------------------?? DEPENDE DE LA IMPLEMENTACION DEL BUCLE DE LECTURA
     //la siguiente linea contendran el id
     string id;
-    getline(fin, id);   //!! getline hace un ignore del \n
+    getline(lectorFichero, id);   //!! getline hace un ignore del \n
     if(esta(id, c)){   // si esta, existente
-        fout << "EXISTENTE: ";
+        escritorFichero << "EXISTENTE: ";
 
     }else{  //si no, no existente
-        fout << "DESCONOCIDO: ";
+        escritorFichero << "DESCONOCIDO: ";
     }
-    fout << id << endl;
+    escritorFichero << id << endl;
 }
 
 //-----------------------------------------------------------------------------------------------------B
@@ -339,20 +339,20 @@ void instrE( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
     IMPORTANTE: consume el ultimo \n tambien, cuando vuelva de intrB() el siguiente caracter a leer sera la siguiente intruccion
 */
 // el caracter B ha sido consumido.
-void instrB( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
+void instrB( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c ){
     
-    fin.ignore();   //CONSUMIMOS EL \n-------------------------------------------------------------------?? DEPENDE DE LA IMPLEMENTACION DEL BUCLE DE LECTURA
+    lectorFichero.ignore();   //CONSUMIMOS EL \n-------------------------------------------------------------------?? DEPENDE DE LA IMPLEMENTACION DEL BUCLE DE LECTURA
     //la siguiente linea contendran el id
     string id;
-    getline(fin, id);   //!! getline hace un ignore del \n
+    getline(lectorFichero, id);   //!! getline hace un ignore del \n
     if(esta(id, c)){   // si esta, se borra
         borrar(id,c);
-        fout << "BORRADO: ";
+        escritorFichero << "BORRADO: ";
 
     }else{  //si no esta, no se puede borrar
-        fout << "NO BORRADO: ";
+        escritorFichero << "NO BORRADO: ";
     }
-    fout << id << endl;
+    escritorFichero << id << endl;
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -374,9 +374,9 @@ void instrP(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anu
     string ano1, mes1, dia1;
 
     //Se consume también el separador
-    getline(fin, ano1, '-'); 
-    getline(fin, mes1, '-');
-    getline(fin, dia1);
+    getline(lectorFichero, ano1, '-'); 
+    getline(lectorFichero, mes1, '-');
+    getline(lectorFichero, dia1);
 
     
 
