@@ -178,8 +178,6 @@ void instrA( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
     getline(lectorFichero, mes2, '-');
     getline(lectorFichero, dia2);
     crear(stoi(dia2), stoi(mes2), stoi(ano2), endDate, errorFecha);
-    
-    //cout << "ANTES DE ESTA" << endl;
 
     if(!esta(id, c)){   // si no esta ya, se añade
 
