@@ -153,7 +153,6 @@ int main() {
 // el caracter A ha sido consumido.
 void instrA( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c ){
 
-    lectorFichero.ignore();   //CONSUMIMOS EL \n-------------------------------------------------------------------?? DEPENDE DE LA IMPLEMENTACION DEL BUCLE DE LECTURA
     //las siguientes 6 lineas contendran la informacion en el orden:
     //id, titulo, descripcion, categoria, publicacion, finalizacion
     string id, tit, desc, cat;
@@ -229,7 +228,6 @@ void instrA( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
 // el caracter C ha sido consumido.
 void instrC( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c ){
 
-    lectorFichero.ignore();   //CONSUMIMOS EL \n-------------------------------------------------------------------?? DEPENDE DE LA IMPLEMENTACION DEL BUCLE DE LECTURA
     //las siguientes 6 lineas contendran la informacion en el orden:
     //id, titulo, descripcion, categoria, publicacion, finalizacion
     string id, tit, desc, cat;
@@ -305,7 +303,6 @@ void instrC( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
 // el caracter E ha sido consumido.
 void instrE( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c ){
     
-    lectorFichero.ignore();   //CONSUMIMOS EL \n-------------------------------------------------------------------?? DEPENDE DE LA IMPLEMENTACION DEL BUCLE DE LECTURA
     //la siguiente linea contendran el id
     string id;
     getline(lectorFichero, id);   //!! getline hace un ignore del \n
@@ -341,7 +338,6 @@ void instrE( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
 // el caracter B ha sido consumido.
 void instrB( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c ){
     
-    lectorFichero.ignore();   //CONSUMIMOS EL \n-------------------------------------------------------------------?? DEPENDE DE LA IMPLEMENTACION DEL BUCLE DE LECTURA
     //la siguiente linea contendran el id
     string id;
     getline(lectorFichero, id);   //!! getline hace un ignore del \n
