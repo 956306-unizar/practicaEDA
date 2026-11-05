@@ -1,7 +1,7 @@
 /* 
 _798618_956306_956269
 
-Comando de compilación en Windows11: g++ .\fecha.cpp .\anuncio.cpp .\coleccionITF.hpp .\Principal.cpp -Wall -Wextra -std=c++11 -o principal.o
+Comando de compilación en Windows11: g++ .\fecha.cpp .\anuncio.cpp .\coleccionITF.hpp .\Principal.cpp -Wall -Wextra -std=c++11 -o Principal
 
 */
 
@@ -76,7 +76,7 @@ int main() {
 
         } else if (instruccionActual == "O") {
 
-            instrO(lectorFichero, escritorFichero, coleccionAnuncios);
+            //instrO(lectorFichero, escritorFichero, coleccionAnuncios);
             
         } else if (instruccionActual == "E") {
 
@@ -84,12 +84,12 @@ int main() {
 
         } else if (instruccionActual == "EC") {
 
-            instrEC(lectorFichero, escritorFichero, coleccionAnuncios);
+            //instrEC(lectorFichero, escritorFichero, coleccionAnuncios);
 
         } else if (instruccionActual == "B") {
 
             instrB(lectorFichero, escritorFichero, coleccionAnuncios);
-/*
+
         } else if (instruccionActual == "BC") {
 
             instrBC(lectorFichero, escritorFichero, coleccionAnuncios);
@@ -100,18 +100,18 @@ int main() {
 
         } else if (instruccionActual == "LO") {
 
-            instrLO(lectorFichero, escritorFichero, coleccionAnuncios);
+            //instrLO(lectorFichero, escritorFichero, coleccionAnuncios);
 
         } else if (instruccionActual == "LC") {
 
-            instrLC(lectorFichero, escritorFichero, coleccionAnuncios);
+            //instrLC(lectorFichero, escritorFichero, coleccionAnuncios);
 
         } else if (instruccionActual == "LT") {
 
-            instrLT(lectorFichero, escritorFichero, coleccionAnuncios);
+            //instrLT(lectorFichero, escritorFichero, coleccionAnuncios);
 
         }
-        */
+        
 
     }
 
@@ -168,17 +168,15 @@ void instrA( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
     getline(lectorFichero, ano1, '-');  //tb consume el separador
     getline(lectorFichero, mes1, '-');
     getline(lectorFichero, dia1);
-    bool errorPubli;
-    crear(stoi(dia1), stoi(mes1), stoi(ano1), startDate, errorPubli);
+    bool errorFecha;
+    crear(stoi(dia1), stoi(mes1), stoi(ano1), startDate, errorFecha);
 
     //ahora la fecha de finalizacion
     string ano2, mes2, dia2;
     getline(lectorFichero, ano2, '-');  //tb consume el separador
     getline(lectorFichero, mes2, '-');
     getline(lectorFichero, dia2);
-    bool errorFinal;
-    crear(stoi(dia2), stoi(mes2), stoi(ano2), endDate, errorFinal);
-    //COMPROBAR SI SON FECHAS VALIDAS?????????????????????????????????????????????(errorFinal, errorPubli)
+    crear(stoi(dia2), stoi(mes2), stoi(ano2), endDate, errorFecha);
     
     if(!esta(id, c)){   // si no esta ya, se añade
         Anuncio a = crearAnuncio(id, tit, desc, cat, startDate, endDate);
@@ -246,21 +244,19 @@ void instrC( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
         getline(lectorFichero, ano1, '-');  //tb consume el separador
         getline(lectorFichero, mes1, '-');
         getline(lectorFichero, dia1);
-        bool errorPubli;
-        crear(stoi(dia1), stoi(mes1), stoi(ano1), startDate, errorPubli);
+        bool errorFecha;
+        crear(stoi(dia1), stoi(mes1), stoi(ano1), startDate, errorFecha);
 
         //ahora la fecha de finalizacion
         string ano2, mes2, dia2;
         getline(lectorFichero, ano2, '-');  //tb consume el separador
         getline(lectorFichero, mes2, '-');
         getline(lectorFichero, dia2);
-        bool errorFinal;
-        crear(stoi(dia2), stoi(mes2), stoi(ano2), endDate, errorFinal);
+        crear(stoi(dia2), stoi(mes2), stoi(ano2), endDate, errorFecha);
 
         Anuncio a = crearAnuncio(id, tit, desc, cat, startDate, endDate);
         anadir(c, a);
 
-        //COMPROBAR SI SON FECHAS VALIDAS?????????????????????????????????????????????(errorFinal, errorPubli)
         escritorFichero << "CAMBIADO: "
             << id << ":::"
             << tit << ":::"
@@ -417,20 +413,20 @@ void instrP(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anu
     bool errorFecha;
     crear(stoi(dia), stoi(mes), stoi(ano), fechaPurgar, errorFecha);
 
-    string obsoletos;
+    string obsoletosString; //si se llama obsoletos (igual que la funcion) confunde al compilador
     
-    obsoletos = obsoletos(fechaPurgar, ":::", c);
+    obsoletosString = obsoletos(fechaPurgar, ":::", c);
 
-    if (obsoletos != "")
+    if (obsoletosString != "")
     {
         purgar(fechaPurgar, c);
 
-        escritorFichero << "PURGADOS: " << ano << "-" << mes << "-" << dia << endl
+        escritorFichero << "PURGADOS: " << ano << "-" << mes << "-" << dia << endl;
     }
 
     else 
     {
-        escritorFichero << "NO PURGADOS: " << ano << "-" << mes << "-" << dia << endl
+        escritorFichero << "NO PURGADOS: " << ano << "-" << mes << "-" << dia << endl;
     }
 }
 

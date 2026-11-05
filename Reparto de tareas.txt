@@ -40,7 +40,7 @@ PUNTO 3: INTERPRETE DE INSTRUCCIONES
 ----------------------------------------------------------------------
 DAVID:
     [R] Instruccion 'A'  (Añadir)
-    [R] Instruccion 'E'  (ERiste)
+    [R] Instruccion 'E'  (Existe)
     [R] Instruccion 'C'  (Cambiar)
     [R] Instruccion 'B'  (Borrar identificador)
 
@@ -59,6 +59,7 @@ ARIAN:
 Leyenda: [X] Hecho | [R] En revision | [ ] Pendiente / En proceso | [?] En espera de respuesta a duda
 ======================================================================
 
+Correciones profe:
 
 [ ] DEMASIADAS PROTECCIONES en Principal.cpp - ordenes de 2n, 3n, etc!!!!    (tamaño?)
 [ ] Cabeceras apropiadas a la especificacion (no solo copiar del enunciado)
