@@ -51,6 +51,8 @@ Fecha fecha(const Anuncio& a){
 
     OUT:
         INTRODUCIDO: ID40:::Maleta pequeña:::En venta:::Maleta con ruedas, pequeña, buen estado.:::2026-09-20:::2026-09-01
+    o:
+        NO INTRODUCIDO: ID40:::Maleta pequeña:::En venta:::Maleta con ruedas, pequeña, buen estado.:::2026-09-20:::2026-09-01
     }
     IMPORTANTE: consume el ultimo \n tambien, cuando vuelva de intrA() el siguiente caracter a leer sera la siguiente intruccion
 
@@ -63,14 +65,8 @@ void instrA( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
     //id, titulo, descripcion, categoria, publicacion, finalizacion
     string id, tit, desc, cat;
     Fecha startDate, endDate;
+
     getline(fin, id);   //!! getline hace un ignore del \n
-    if(!esta(id, c)){   // si no esta ya, se añade
-        fout << "INTRODUCIDO: ";
-
-    }else{  //si ya estaba, no se añado
-        fout << "NO INTRODUCIDO: ";
-    }
-
     getline(fin, tit);
     getline(fin, desc);
     getline(fin, cat);
@@ -90,11 +86,16 @@ void instrA( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
     getline(fin, dia2);
     bool errorFinal;
     crear(stoi(dia2), stoi(mes2), stoi(ano2), endDate, errorFinal);
-
-    Anuncio a = crearAnuncio(id, tit, desc, cat, startDate, endDate);
-    anadir(c, a);
-
     //COMPROBAR SI SON FECHAS VALIDAS?????????????????????????????????????????????(errorFinal, errorPubli)
+    
+    if(!esta(id, c)){   // si no esta ya, se añade
+        Anuncio a = crearAnuncio(id, tit, desc, cat, startDate, endDate);
+        anadir(c, a);
+        fout << "INTRODUCIDO: ";
+
+    }else{  //si ya estaba, no se añade
+        fout << "NO INTRODUCIDO: ";
+    }
 
     cout << id << ":::"
          << tit << ":::"
@@ -127,6 +128,8 @@ void instrA( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
 
     OUT:
         CAMBIADO: ID20:::Silla paseo bebe:::En venta:::Vendo silla paseo plegable para bebe. Precio negociable:::2026-10-21:::2026-10-21
+    o:
+        NO CAMBIADO: ID40
     }
     IMPORTANTE: consume el ultimo \n tambien, cuando vuelva de intrA() el siguiente caracter a leer sera la siguiente intruccion
 
@@ -139,7 +142,9 @@ void instrC( ifstream &fin, ofstream &fout, ColeccionITF<Anuncio> &c ){
     //id, titulo, descripcion, categoria, publicacion, finalizacion
     string id, tit, desc, cat;
     Fecha startDate, endDate;
+
     getline(fin, id);   //!! getline hace un ignore del \n
+    
     if(esta(id, c)){    //si esta ya, se cambia
 
         getline(fin, tit);
