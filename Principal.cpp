@@ -336,15 +336,32 @@ void instrP(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anu
     lectorFichero.ignore();     // Consume el \n
 
     // Obtenemos la fecha para purgar
-    string ano1, mes1, dia1;
+    string ano, mes, dia;
+    Fecha fechaPurgar;
 
     //Se consume también el separador
-    getline(fin, ano1, '-'); 
-    getline(fin, mes1, '-');
-    getline(fin, dia1);
+    getline(lectorFichero, ano, '-'); 
+    getline(lectorFichero, mes, '-');
+    getline(lectorFichero, dia);
 
+    bool errorFecha;
+    crear(stoi(dia), stoi(mes), stoi(ano), fechaPurgar, errorFecha);
+
+    string obsoletos;
     
+    obsoletos = obsoletos(fechaPurgar, ":::", c);
 
+    if (obsoletos != "")
+    {
+        purgar(fechaPurgar, c);
+
+        escritorFichero << "PURGADOS: " << ano << "-" << mes << "-" << dia << endl
+    }
+
+    else 
+    {
+        escritorFichero << "NO PURGADOS: " << ano << "-" << mes << "-" << dia << endl
+    }
 }
 
 // -----------------------------------------------------------------------------------------------------
