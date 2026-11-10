@@ -1,5 +1,5 @@
 /* ---- NOMBRES Y NIPS ----
-    Arián ...
+    Arián Lajara Bueno - 798618
     Abel Martínez Zárate - 956306
     David Maza Luengo - 956269
 */
@@ -221,11 +221,11 @@ template<typename T> struct ColeccionITF{
     Crea una colección de ITF vacía, sin ítems.
 */
 template<typename T>
-void crear(ColeccionITF<T> &c){
-
+void crear(ColeccionITF<T> &c)
+{
     c.primero = nullptr;
     c.nElem = 0;
-
+    c.iter = nullptr;
 }
 
 
@@ -235,52 +235,45 @@ void crear(ColeccionITF<T> &c){
     En caso contrario, devuelve una colección igual a c.
     Además actualizara nElem apropiadamente.
 */
-template<typename T> void anadir(ColeccionITF<T> &c, const T &i){
-    
+template<typename T> void anadir(ColeccionITF<T> &c, const T &i)
+{    
     string ident = identificador(i);
 
-    if( c.primero == nullptr || identificador(c.primero->dato) > ident ){ //si es lista vacia o el primero es mayor, INSERCION AL PRINCIPIO
-        //IMPORTANTE! EVAL. CORTOCIRCUITADA: si c.primero == nullptr no evaluará c.primero->dato con lo que no hara accesos indebidos
+    // Si es lista vacia o el primero es mayor, INSERCION AL PRINCIPIO
+    //IMPORTANTE! EVAL. CORTOCIRCUITADA: si c.primero == nullptr no evaluará c.primero->dato con lo que no hara accesos indebidos
+    if (c.primero == nullptr || identificador(c.primero->dato) > ident)
+    {
         c.nElem++;
         typename ColeccionITF<T>::Nodo* nuevoElem = new typename ColeccionITF<T>::Nodo;
         nuevoElem->dato = i;
         nuevoElem->sig = c.primero;
-        c.primero = nuevoElem;
-        
-
-    }else if(identificador(c.primero->dato) == ident){ //si el primero == i volvemos sin hacer nada
-        return;
+        c.primero = nuevoElem;   
+    }
     
-    }else{  //si no (primero.dato < i), otro punto de inserción(ENTRE MEDIO O FINAL)
-
-        //se necesitan dos punteros oruga, para saber la direccion de ambos elementos adyacentes al que vayamos a insertar.
-        //(Al ser enlazada unidireccional no podemos ir hacia atrás)
+    // En este caso estaremos ante una lista NO vacía y una lista donde no vamos a insertar al inicio. 
+    else if (identificador(c.primero->dato) < ident)
+    {
+        // Se necesitan dos punteros oruga, para saber la direccion de ambos elementos adyacentes al que vayamos a insertar.
+        // (Al ser enlazada unidireccional no podemos ir hacia atrás)
         typename ColeccionITF<T>::Nodo* pAux = c.primero;
         typename ColeccionITF<T>::Nodo* pSig = pAux->sig;
 
-        while(pSig != nullptr){ //mientras el pAux no sea el ultimo
-            //sabemos que pAux.dato es menor estricto que i
-
-            if(identificador(pSig->dato) > ident){ //si el siguiente.dato > i: insertar antes de pSig y fin
-                c.nElem++;
-                typename ColeccionITF<T>::Nodo* nuevoElem = new typename ColeccionITF<T>::Nodo;
-                nuevoElem->dato = i;
-                nuevoElem->sig = pSig;
-                pAux->sig = nuevoElem;
-                return;
-            }else if(identificador(pSig->dato) == ident){ //si el siguiente.dato == i acabamos sin hacer nada
-                return;
-            }
-            //avanzamos punteros de recorrido
+        // Terminaremos cuando pSig sea nullptr (insertar al final) ó cuando encontremos la posición exacta donde insertar (por el medio)
+        while (pSig != nullptr && identificador(pSig->dato) < ident)
+        { 
             pAux = pSig;
             pSig = pAux->sig;
         }
-        //si sale es que (pAux->dato = ultimo elem) < i -> INSERCIÓN AL FINAL y fin
-        c.nElem++;
-        typename ColeccionITF<T>::Nodo* nuevoElem = new typename ColeccionITF<T>::Nodo;
-        nuevoElem->dato = i;
-        nuevoElem->sig = pSig; // = nullptr
-        pAux->sig = nuevoElem;
+
+        // Insertamos si hemos llegado al final ó si el identificador no existe
+        if (pSig == nullptr || identificador(pSig->dato) != ident)
+        {
+            c.nElem++;
+            typename ColeccionITF<T>::Nodo* nuevoElem = new typename ColeccionITF<T>::Nodo;
+            nuevoElem->dato = i;
+            nuevoElem->sig = pSig;
+            pAux->sig = nuevoElem;
+        }
     }
 }
 
