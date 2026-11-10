@@ -7,4 +7,4 @@ Por ejemplo, la comprobación inicial de si la cadena está vacía.
 Deberíamos hacer control de errores, como comprobar que las fechas son correctas, en el apartado 3 al leer el fichero, o asumimos que todo está correcto según el formato?
 Principal.cpp : Linea 180 262 
 
-Que nombre poner al principal?
+Que nombre poner al principal? - Uno claro, also solo entregar UN programa con un main
