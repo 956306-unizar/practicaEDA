@@ -293,50 +293,46 @@ template<typename T> void anadir(ColeccionITF<T> &c, const T &i){
 template<typename T> void actualizar(ColeccionITF<T> &c, const T &i) {
 
     // Si la lista se encuentra vacía automáticamente dejaremos de intentar buscar el elemento del género T a actualizar.
-    if(c.primero == nullptr) {
+    if(c.primero != nullptr) {
 
-        return;
+        string identificadorDelNuevoDato = identificador(i);
+        string identificadorDatoActual = identificador(c.primero->dato);
 
-    } 
+        if(identificadorDelNuevoDato > identificadorDatoActual) {
 
-    string identificadorDelNuevoDato = identificador(i);
-    string identificadorDatoActual = identificador(c.primero->dato);
+            // Empezamos comprobando el segundo elemento de la colección, ya que ya se comprobó el primero.
+            typename ColeccionITF<T>::Nodo* pAux = c.primero->sig;
 
-    if(identificadorDelNuevoDato < identificadorDatoActual) {
+            bool actualizado = false;
+            bool busquedaAunValida = true; // Mientras tenga sentido buscar el elemento debido al orden de los IDs, se seguirá buscando.
 
-        return;
+            while(pAux != nullptr && !actualizado && busquedaAunValida) {
 
-    } else if(identificadorDelNuevoDato == identificadorDatoActual){
+                identificadorDatoActual = identificador(pAux->dato);
 
-        c.primero->dato = i;
-        return;
+                if(identificadorDelNuevoDato < identificadorDatoActual) {
 
-    }
+                    busquedaAunValida = false;
 
-    // Empezamos comprobando el segundo elemento de la colección, ya que ya se comprobó el primero.
-    typename ColeccionITF<T>::Nodo* pAux = c.primero->sig;
+                } else if(identificadorDatoActual == identificadorDelNuevoDato) {
 
-    bool actualizado = false;
+                    pAux->dato = i;
+                    actualizado = true;
 
-    while(pAux != nullptr && !actualizado) {
+                } else {
+                    pAux = pAux->sig;
 
-        identificadorDatoActual = identificador(pAux->dato);
+                }
 
-        if(identificadorDelNuevoDato < identificadorDatoActual) {
+            }
 
-            return;
+        } else if(identificadorDelNuevoDato == identificadorDatoActual){
 
-        } else if(identificadorDatoActual == identificadorDelNuevoDato) {
-
-            pAux->dato = i;
-            actualizado = true;
-
-        } else {
-            pAux = pAux->sig;
+            c.primero->dato = i;
 
         }
 
-    }
+    } 
 
 }
 
@@ -405,34 +401,38 @@ template<typename T> void borrar(const string &ident, ColeccionITF<T> &c){
 template<typename T>
 bool esta(const string &ident, const ColeccionITF<T> &c) {
 
-    if(c.primero == nullptr){
-        return false; // Si la coleccion está vacía se devuelve false directamente.
-    }
+    bool estaEnColeccion = false;
 
-    typename ColeccionITF<T>::Nodo* pAux = c.primero;
-    string identificadorActual;
+    bool busquedaAunValida = true;
 
-    while(pAux != nullptr) {
+    if(c.primero != nullptr){
 
-        identificadorActual = identificador(pAux->dato);
+        typename ColeccionITF<T>::Nodo* pAux = c.primero;
+        string identificadorActual;
 
-        if(ident < identificadorActual) {
+        while(pAux != nullptr && !estaEnColeccion && busquedaAunValida) {
 
-            return false;
+            identificadorActual = identificador(pAux->dato);
 
-        } else if(ident == identificadorActual) {
+            if(ident < identificadorActual) {
 
-            return true;
+                busquedaAunValida = false;
 
-        } else {
+            } else if(ident == identificadorActual) {
 
-            pAux = pAux->sig;
+                estaEnColeccion = true;
+
+            } else {
+
+                pAux = pAux->sig;
+
+            }
 
         }
 
     }
 
-    return false;
+    return estaEnColeccion;
 
 }
 
@@ -461,7 +461,9 @@ T obtenerITF(const string &ident, const ColeccionITF<T> &c) {
 
     }
 
-    return pAux->dato;
+    T itfObtenido = pAux->dato;
+
+    return itfObtenido;
     
 }
 
@@ -471,33 +473,34 @@ T obtenerITF(const string &ident, const ColeccionITF<T> &c) {
     con fecha estrictamente anterior a f, y separados entre sí por la cadena separador.
 */
 template<typename T>
-string obsoletos(const Fecha &f, const string &separador, const ColeccionITF<T> &c) 
-{
-    if(c.primero == nullptr)
-    {
-        return ""; // Si la coleccion está vacía se devuelve una cadena vacía directamente.
-    }
+string obsoletos(const Fecha &f, const string &separador, const ColeccionITF<T> &c) {
 
     string ids = "";
 
-    typename ColeccionITF<T>::Nodo* pAux = c.primero;
+    if(c.primero != nullptr) {
 
-    while(pAux != nullptr) 
-    {
-        if(anterior(fecha(pAux->dato), f)) 
-        {
-            if(ids != "") 
-            {
-                ids += separador;
+        typename ColeccionITF<T>::Nodo* pAux = c.primero;
+
+        while(pAux != nullptr) {
+
+            if(anterior(fecha(pAux->dato), f)) {
+
+                if(ids != "") {
+
+                    ids += separador;
+
+                }
+
+                ids += identificador(pAux->dato);
             }
-
-            ids += identificador(pAux->dato);
+            
+            pAux = pAux->sig;
         }
-        
-        pAux = pAux->sig;
+
     }
 
     return ids;
+
 }
  
 
@@ -506,50 +509,52 @@ string obsoletos(const Fecha &f, const string &separador, const ColeccionITF<T> 
     estrictamente anterior a f.
 */
 template<typename T>
-void purgar(const Fecha &f, ColeccionITF<T> &c) 
-{
-    if(c.primero == nullptr) 
-    {
-        return;
+void purgar(const Fecha &f, ColeccionITF<T> &c) {
+
+    if(c.primero != nullptr) {
+
+        typename ColeccionITF<T>::Nodo* pAnt = nullptr;
+        typename ColeccionITF<T>::Nodo* pAux = c.primero;
+
+        typename ColeccionITF<T>::Nodo* pDeleter;
+
+        while(pAux != nullptr) {
+
+            if(anterior(fecha(pAux->dato), f)) {
+
+                if(pAux == c.primero) {
+
+                    c.primero = c.primero->sig;
+
+                } else {
+
+                    pAnt->sig = pAux->sig;
+
+                }
+
+                pDeleter = pAux;
+                pAux = pAux->sig;
+
+                if(c.iter == pDeleter) {
+
+                    c.iter = pAux;
+
+                }
+
+                delete(pDeleter);
+                c.nElem--;
+
+            } else {
+
+                pAnt = pAux;
+                pAux = pAux->sig;
+
+            }
+
+        }
+
     } 
 
-    typename ColeccionITF<T>::Nodo* pAnt = nullptr;
-    typename ColeccionITF<T>::Nodo* pAux = c.primero;
-
-    typename ColeccionITF<T>::Nodo* pDeleter;
-
-    while(pAux != nullptr) 
-    {
-        if(anterior(fecha(pAux->dato), f)) 
-        {
-            if(pAux == c.primero) 
-            {
-                c.primero = c.primero->sig;
-            } 
-
-            else 
-            {
-                pAnt->sig = pAux->sig;
-            }
-
-            pDeleter = pAux;
-            pAux = pAux->sig;
-
-            if(c.iter == pDeleter) 
-            {
-                c.iter = pAux;
-            }
-
-            delete(pDeleter);
-            c.nElem--;
-        } 
-        
-        else 
-        {
-            pAnt = pAux;
-            pAux = pAux->sig;
-        }
-    }
 }
 
 /*
@@ -558,12 +563,14 @@ void purgar(const Fecha &f, ColeccionITF<T> &c)
 template<typename T>
 bool existeTema(const string &t, const ColeccionITF<T> &c) {
 
+    bool existe = false;
+
     typename ColeccionITF<T>::Nodo* pAux = c.primero;
 
-    while(pAux != nullptr) {
+    while(pAux != nullptr && !existe) {
 
         if(tema(pAux->dato) == t) {
-            return true;
+            existe = true;
 
         } else {
 
@@ -573,7 +580,7 @@ bool existeTema(const string &t, const ColeccionITF<T> &c) {
 
     }
 
-    return false;
+    return existe;
 
 }
 
@@ -585,29 +592,30 @@ bool existeTema(const string &t, const ColeccionITF<T> &c) {
 template<typename T>
 string delTema(const string &t, const string &separador, const ColeccionITF<T> &c) {
 
-    if(c.primero == nullptr){
-        return ""; // Si la coleccion está vacía se devuelve una cadena vacía directamente.
-    }
-
     string ids = "";
 
-    typename ColeccionITF<T>::Nodo* pAux = c.primero;
+    // Si la coleccion está vacía se devuelve una cadena vacía directamente.
+    if(c.primero != nullptr) {
 
-    while(pAux != nullptr) {
+        typename ColeccionITF<T>::Nodo* pAux = c.primero;
 
-        if(tema(pAux->dato) == t) {
+        while(pAux != nullptr) {
 
-            if(ids != "") {
+            if(tema(pAux->dato) == t) {
 
-                ids += separador;
+                if(ids != "") {
+
+                    ids += separador;
+
+                }
+
+                ids += identificador(pAux->dato);
 
             }
 
-            ids += identificador(pAux->dato);
+            pAux = pAux->sig;
 
         }
-
-        pAux = pAux->sig;
 
     }
 
@@ -622,49 +630,47 @@ string delTema(const string &t, const string &separador, const ColeccionITF<T> &
 template<typename T>
 void zanjarTema(const string &t, ColeccionITF<T> &c) {
 
-    if(c.primero == nullptr) {
-        return;
+    if(c.primero != nullptr) {
 
-    } 
+        typename ColeccionITF<T>::Nodo* pAnt = nullptr;
+        typename ColeccionITF<T>::Nodo* pAux = c.primero;
 
-    typename ColeccionITF<T>::Nodo* pAnt = nullptr;
-    typename ColeccionITF<T>::Nodo* pAux = c.primero;
+        typename ColeccionITF<T>::Nodo* pDeleter;
 
-    typename ColeccionITF<T>::Nodo* pDeleter;
+        while(pAux != nullptr) {
 
-    while(pAux != nullptr) {
+            if(tema(pAux->dato) == t) {
 
-        if(tema(pAux->dato) == t) {
+                if(pAux == c.primero) {
 
-            if(pAux == c.primero) {
+                    c.primero = c.primero->sig;
 
-                c.primero = c.primero->sig;
+                } else {
+
+                    pAnt->sig = pAux->sig;
+
+                }
+
+                pDeleter = pAux;
+                pAux = pAux->sig;
+
+                if(c.iter == pDeleter) {
+
+                    c.iter = pAux;
+
+                }
+
+                delete(pDeleter);
+                c.nElem--;
 
             } else {
 
-                pAnt->sig = pAux->sig;
+                pAnt = pAux;
+                pAux = pAux->sig;
 
             }
-
-            pDeleter = pAux;
-            pAux = pAux->sig;
-
-            if(c.iter == pDeleter) {
-
-                c.iter = pAux;
-
-            }
-
-            delete(pDeleter);
-            c.nElem--;
-
-        } else {
-
-            pAnt = pAux;
-            pAux = pAux->sig;
 
         }
-
 
     }
 

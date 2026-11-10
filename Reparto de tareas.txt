@@ -47,7 +47,7 @@ DAVID:
 ABEL:
     [X] Instruccion 'O'  (Obsoletos)
     [X] Instruccion 'EC' (Eliminar por criterio/caducidad)
-    [ ] Instruccion 'BC' (Borrar categoria)
+    [X] Instruccion 'BC' (Borrar categoria)
 
 ARIAN:
     [ ] Instruccion 'LC' (Listar coleccion)
