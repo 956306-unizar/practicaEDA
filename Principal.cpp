@@ -68,7 +68,6 @@ int main() {
     while(getline(lectorFichero, instruccionActual)) {
 
         if (instruccionActual == "A") {
-
             instrA(lectorFichero, escritorFichero, coleccionAnuncios);
 
         } else if (instruccionActual == "C") {
@@ -179,16 +178,19 @@ void instrA( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
     getline(lectorFichero, dia2);
     crear(stoi(dia2), stoi(mes2), stoi(ano2), endDate, errorFecha);
 
-    if(!esta(id, c)){   // si no esta ya, se añade
+    //anadir() ya sabe que hacer si ya estaba el elemento en la coleccion, solo hay que comprobar si se ha añadido o no para la salida.
+    //Ademas esta() tiene coste lineal, mientras que tamano() es cte
+    Anuncio a = crearAnuncio(id, tit, desc, cat, startDate, endDate);
+    int tamCol = tamano(c); 
+    anadir(c, a);
 
-        Anuncio a = crearAnuncio(id, tit, desc, cat, startDate, endDate);
-        anadir(c, a);
-        escritorFichero << "INTRODUCIDO: ";
-        
-
-    }else{  //si ya estaba, no se añade
+    if(tamCol == tamano(c)){    //si no varia el tamano() de la coleccion despues de hacer anadir(), es que ya estaba -> no introducido
         escritorFichero << "NO INTRODUCIDO: ";
+    }else{  //varia el tamaño: no estaba -> introducido
+        escritorFichero << "INTRODUCIDO: ";
     }
+
+    
     //identificador, título, categoría, descripción, fecha de publicación y fecha de finalización
     escritorFichero << id << ":::"
         << tit << ":::"
@@ -234,31 +236,33 @@ void instrC( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
     string id, tit, desc, cat;
     Fecha startDate, endDate;
 
+    //hace falta leer todo de todas formas. Si no lo añade lo tiene que consumir igual
     getline(lectorFichero, id);   //!! getline hace un ignore del \n
-    
-    if(esta(id, c)){    //si esta ya, se cambia
+    getline(lectorFichero, tit);
+    getline(lectorFichero, desc);
+    getline(lectorFichero, cat);
 
-        getline(lectorFichero, tit);
-        getline(lectorFichero, desc);
-        getline(lectorFichero, cat);
+    //ahora la fecha de publicacion
+    string ano1, mes1, dia1;
+    getline(lectorFichero, ano1, '-');  //tb consume el separador
+    getline(lectorFichero, mes1, '-');
+    getline(lectorFichero, dia1);
+    bool errorFecha;
 
-        //ahora la fecha de publicacion
-        string ano1, mes1, dia1;
-        getline(lectorFichero, ano1, '-');  //tb consume el separador
-        getline(lectorFichero, mes1, '-');
-        getline(lectorFichero, dia1);
-        bool errorFecha;
+    //ahora la fecha de finalizacion
+    string ano2, mes2, dia2;
+    getline(lectorFichero, ano2, '-');  //tb consume el separador
+    getline(lectorFichero, mes2, '-');
+    getline(lectorFichero, dia2);
+
+    if(esta(id, c)){    //actualizar() no modifica el tamaño en ningun caso(exito o no) asi que hay que llamar a esta()
+
         crear(stoi(dia1), stoi(mes1), stoi(ano1), startDate, errorFecha);
-
-        //ahora la fecha de finalizacion
-        string ano2, mes2, dia2;
-        getline(lectorFichero, ano2, '-');  //tb consume el separador
-        getline(lectorFichero, mes2, '-');
-        getline(lectorFichero, dia2);
         crear(stoi(dia2), stoi(mes2), stoi(ano2), endDate, errorFecha);
 
         Anuncio a = crearAnuncio(id, tit, desc, cat, startDate, endDate);
-        anadir(c, a);
+        actualizar(c, a);
+        //podria estar desprotegida, pero al tener que llamar a esta() para escribir la salida, se llama condicionalmente para ahorrarte la funcion si no esta().
 
         //identificador, título, categoría, descripción, fecha de publicación y fecha de finalización
         escritorFichero << "CAMBIADO: "
@@ -341,17 +345,15 @@ void instrB( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
     //la siguiente linea contendran el id
     string id;
     getline(lectorFichero, id);   //!! getline hace un ignore del \n
-    if(esta(id, c)){   // si esta, se borra
-        borrar(id,c);
-        
-        if(!esta(id,c)){//si no esta ya, se ha borrado correctamente
-            escritorFichero << "BORRADO: ";
-        }else{          //si sigue estando, no se ha borrado correctamente
-            escritorFichero << "NO BORRADO: ";
-        }
 
-    }else{  //si no esta, no se puede borrar
+    //borrar() ya sabe como comportarse si no esta el id, simplemente no modifica c
+    int tamCol = tamano(c);
+    borrar(id,c);
+
+    if(tamCol == tamano(c)){    //no varia el tamano() de la coleccion despues de hacer borrar() -> no borrado
         escritorFichero << "NO BORRADO: ";
+    }else{  //varia el tamaño: borrado
+        escritorFichero << "BORRADO: ";
     }
     escritorFichero << id << endl;
 }

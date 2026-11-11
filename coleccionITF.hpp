@@ -335,7 +335,7 @@ template<typename T> void actualizar(ColeccionITF<T> &c, const T &i) {
     pero sin ese ítem. En caso contrario, c se queda como está.
 
     También se encarga de actualizar nElem y resuelve posibles casos conflictivos con el iterador
-    Ejemplo: [   si ">X<" es el iterador: (1 >2< 3 4 5 6) y borramos el 2 --> (1 >3< 4 5 6)   ]
+    Ejemplo: [   si ">X<" es la ubicacion del iterador: (1 >2< 3 4 5 6) y borramos el 2 --> (1 >3< 4 5 6)   ]
 */
 template<typename T> void borrar(const string &ident, ColeccionITF<T> &c){
 
