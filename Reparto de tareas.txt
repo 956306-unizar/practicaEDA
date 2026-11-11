@@ -14,11 +14,11 @@ ARIAN:
 PUNTO 2: TAD COLECCION ITF
 ----------------------------------------------------------------------
 David:
-    [R] Función añadir
-    [R] Función borrar
-    [R] Función iniciarIterador
-    [R] Función eRisteSiguiente?
-    [R] Función siguienteYavanza
+    [X] Función añadir
+    [X] Función borrar
+    [X] Función iniciarIterador
+    [X] Función eRisteSiguiente?
+    [X] Función siguienteYavanza
     [R] Pruebas de las funciones de coleccionITF programadas por él
 
 Abel:
@@ -61,11 +61,12 @@ Leyenda: [X] Hecho | [R] En revision | [ ] Pendiente / En proceso | [?] En esper
 
 Correciones profe:
 
-[D] DEMASIADAS PROTECCIONES en Principal.cpp - ordenes de 2n, 3n, etc!!!!    (tamaño?)
-[ ] Cabeceras apropiadas a la especificacion (no solo copiar del enunciado)
+[D  ] DEMASIADAS PROTECCIONES en Principal.cpp - ordenes de 2n, 3n, etc!!!!    (tamaño?)
+[X] Cabeceras publicas apropiadas a la especificacion (no solo copiar del enunciado)
+[D  ] Matchear las cabeceras privadas de la implementacion con las de la especificacion
 [X] Las operaciones requeridas necesitan cabeceras 
 [X] struct Nodo dentro de struct ColeccionITF, llamar con "typename ColeccionITF<T>::Nodo"
-[ ] Reducir "return;"s , caminos, y probar todos los caminos
-[ ] obtenerITF es parcial
+[D  ] Reducir "return;"s , caminos, y probar todos los caminos
+[ ] obtenerITF es parcial -> ponerle un bool?
 
 [inicial del nombre] = "por mi parte revisadas"
