@@ -233,8 +233,8 @@ template<typename T> void anadir(ColeccionITF<T> &c, const T &i)
         c.primero = nuevoElem;   
     }
     
-    // En este caso estaremos ante una lista NO vacía y una lista donde no vamos a insertar al inicio. 
-    else if (identificador(c.primero->dato) < ident)
+    // En este caso estaremos ante una lista NO vacía y una lista donde NO vamos a insertar al inicio. 
+    else if (identificador(c.primero->dato) < ident)    //sabemos que no es mayor, y si es igual no hay que añadir
     {
         // Se necesitan dos punteros oruga, para saber la direccion de ambos elementos adyacentes al que vayamos a insertar.
         // (Al ser enlazada unidireccional no podemos ir hacia atrás)
@@ -342,7 +342,7 @@ template<typename T> void borrar(const string ident, ColeccionITF<T> &c){
             typename ColeccionITF<T>::Nodo* pSig = pAux->sig;
             
             bool encontradoYborrado = false;
-            while(pSig != nullptr && !encontradoYborrado){ //mientras el pAux no sea el ultimo
+            while(pSig != nullptr && !encontradoYborrado){ //mientras el pAux no sea el ultimo y no hayamos borrado al objetivo
             
                 //sabemos que pAux->dato != ident
                 if(identificador(pSig->dato) == ident){ //el SIGUIENTE ES EL QUE BUSCAMOS: borrar pSig y fin
@@ -355,7 +355,7 @@ template<typename T> void borrar(const string ident, ColeccionITF<T> &c){
                     pAux->sig = pSig->sig;  //el anterior apunta al siguiente de pSig
                     delete pSig;            //borras el elem en pSig
                     c.nElem--;              //hay 1 elem menos
-                    encontradoYborrado = true;                 //fin
+                    encontradoYborrado = true;                 //fin - avisar al bucle de que salga
 
                 }else{
                     //actualizar oruga de punteros

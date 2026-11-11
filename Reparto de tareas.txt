@@ -19,7 +19,7 @@ David:
     [X] Función iniciarIterador
     [X] Función eRisteSiguiente?
     [X] Función siguienteYavanza
-    [R] Pruebas de las funciones de coleccionITF programadas por él
+    [X] Pruebas de las funciones de coleccionITF programadas por él
 
 Abel:
     [X] Función crear
