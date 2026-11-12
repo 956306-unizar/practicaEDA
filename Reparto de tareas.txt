@@ -14,21 +14,12 @@ ARIAN:
 PUNTO 2: TAD COLECCION ITF
 ----------------------------------------------------------------------
 David:
-<<<<<<< HEAD
-    [X] Función añadir
-    [X] Función borrar
-    [X] Función iniciarIterador
-    [X] Función eRisteSiguiente?
-    [X] Función siguienteYavanza
-    [X] Pruebas de las funciones de coleccionITF programadas por él
-=======
     [R] Función añadir                      -> modificada por Arián
     [R] Función borrar                      -> modificada por Arián
     [R] Función iniciarIterador
     [R] Función eRisteSiguiente?
     [R] Función siguienteYavanza
     [R] Pruebas de las funciones de coleccionITF programadas por él
->>>>>>> 8ed0d79 (Modificada funcion borrar y propuesta de actualizar)
 
 Abel:
     [X] Función crear                       -> modificada por Arián

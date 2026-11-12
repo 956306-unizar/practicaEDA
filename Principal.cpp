@@ -1,4 +1,4 @@
-/* 
+/*
 _798618_956306_956269
 
 Comando de compilación en Windows11: g++ .\fecha.cpp .\anuncio.cpp .\coleccionITF.hpp .\Principal.cpp -Wall -Wextra -std=c++11 -o Principal
@@ -68,6 +68,7 @@ int main() {
     while(getline(lectorFichero, instruccionActual)) {
 
         if (instruccionActual == "A") {
+
             instrA(lectorFichero, escritorFichero, coleccionAnuncios);
 
         } else if (instruccionActual == "C") {
@@ -77,7 +78,7 @@ int main() {
         } else if (instruccionActual == "O") {
 
             //instrO(lectorFichero, escritorFichero, coleccionAnuncios);
-            
+
         } else if (instruccionActual == "E") {
 
             instrE(lectorFichero, escritorFichero, coleccionAnuncios);
@@ -111,7 +112,7 @@ int main() {
             //instrLT(lectorFichero, escritorFichero, coleccionAnuncios);
 
         }
-        
+
 
     }
 
@@ -168,9 +169,11 @@ void instrA( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
     getline(lectorFichero, ano1, '-');  //tb consume el separador
     getline(lectorFichero, mes1, '-');
     getline(lectorFichero, dia1);
+
+    // Comprobar fechas válidas para crear el anuncio segun el calendario gregoriano??????
     bool errorFecha;
     crear(stoi(dia1), stoi(mes1), stoi(ano1), startDate, errorFecha);
-    
+
     //ahora la fecha de finalizacion
     string ano2, mes2, dia2;
     getline(lectorFichero, ano2, '-');  //tb consume el separador
@@ -181,7 +184,7 @@ void instrA( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
     //anadir() ya sabe que hacer si ya estaba el elemento en la coleccion, solo hay que comprobar si se ha añadido o no para la salida.
     //Ademas esta() tiene coste lineal, mientras que tamano() es cte
     Anuncio a = crearAnuncio(id, tit, desc, cat, startDate, endDate);
-    int tamCol = tamano(c); 
+    int tamCol = tamano(c);
     anadir(c, a);
 
     if(tamCol == tamano(c)){    //si no varia el tamano() de la coleccion despues de hacer anadir(), es que ya estaba -> no introducido
@@ -190,7 +193,7 @@ void instrA( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
         escritorFichero << "INTRODUCIDO: ";
     }
 
-    
+
     //identificador, título, categoría, descripción, fecha de publicación y fecha de finalización
     escritorFichero << id << ":::"
         << tit << ":::"
@@ -296,7 +299,7 @@ void instrC( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
         iD20
         E
         ID20
-    
+
     OUT:
         DESCONOCIDO: ID25
         DESCONOCIDO: iD20
@@ -306,7 +309,7 @@ void instrC( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
 */
 // el caracter E ha sido consumido.
 void instrE( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c ){
-    
+
     //la siguiente linea contendran el id
     string id;
     getline(lectorFichero, id);   //!! getline hace un ignore del \n
@@ -331,7 +334,7 @@ void instrE( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
     IN:
         B
         ID25
-    
+
     OUT:
         BORRADO: ID25
     o:
@@ -341,7 +344,7 @@ void instrE( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
 */
 // el caracter B ha sido consumido.
 void instrB( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c ){
-    
+
     //la siguiente linea contendran el id
     string id;
     getline(lectorFichero, id);   //!! getline hace un ignore del \n
@@ -394,29 +397,31 @@ void instrBC(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
 
 /*
 
-    Por  cada  instrucción  de  tipo  “P”,  si  existían  anuncios  en  la  colección  con  fecha  de  publicación  estrictamente  
-    anterior a la dada, se escribirá una línea que empiece con la cadena “PURGADOS: ”, si no existía ningún anuncio 
-    en la colección con fecha de publicación estrictamente anterior a la dada, se escribirá una línea que empiece con la 
-    cadena “NO PURGADOS: ”. En ambos casos, la cadena escrita irá seguida a continuación, y en la misma línea 
+    Por  cada  instrucción  de  tipo  “P”,  si  existían  anuncios  en  la  colección  con  fecha  de  publicación  estrictamente
+    anterior a la dada, se escribirá una línea que empiece con la cadena “PURGADOS: ”, si no existía ningún anuncio
+    en la colección con fecha de publicación estrictamente anterior a la dada, se escribirá una línea que empiece con la
+    cadena “NO PURGADOS: ”. En ambos casos, la cadena escrita irá seguida a continuación, y en la misma línea
     del fichero, por la fecha utilizada en la operación (formato: aaaa-mm-dd ).
 
 */
-void instrP(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c) 
-{  
+void instrP(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c)
+{
     // Obtenemos la fecha para purgar
     string ano, mes, dia;
     Fecha fechaPurgar;
 
     //Se consume también el separador
-    getline(lectorFichero, ano, '-'); 
+    getline(lectorFichero, ano, '-');
     getline(lectorFichero, mes, '-');
     getline(lectorFichero, dia);
 
     bool errorFecha;
     crear(stoi(dia), stoi(mes), stoi(ano), fechaPurgar, errorFecha);
 
-    string obsoletosString; //si se llama obsoletos (igual que la funcion) confunde al compilador
-    
+    // MIRAR SI errorFecha es false para purgar de verdad???????????
+
+    string obsoletosString = "";; //si se llama obsoletos (igual que la funcion) confunde al compilador
+
     obsoletosString = obsoletos(fechaPurgar, ":::", c);
 
     if (obsoletosString != "")
@@ -426,7 +431,7 @@ void instrP(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anu
         escritorFichero << "PURGADOS: " << ano << "-" << mes << "-" << dia << endl;
     }
 
-    else 
+    else
     {
         escritorFichero << "NO PURGADOS: " << ano << "-" << mes << "-" << dia << endl;
     }
@@ -436,15 +441,33 @@ void instrP(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anu
 
 /*
 
-    Por cada instrucción de tipo “LO”, se escribirá una línea que empiece con la cadena “ANTERIORES A: ” seguida 
-    de la fecha utilizada en la operación (con formato: aaaa-mm-dd), seguida de la cadena “ --- ”, seguida por la 
-    concatenación de los identificadores de los anuncios de la colección con fecha de publicación estrictamente anterior 
+    Por cada instrucción de tipo “LO”, se escribirá una línea que empiece con la cadena “ANTERIORES A: ” seguida
+    de la fecha utilizada en la operación (con formato: aaaa-mm-dd), seguida de la cadena “ --- ”, seguida por la
+    concatenación de los identificadores de los anuncios de la colección con fecha de publicación estrictamente anterior
     a la dada, separados entre sí por la cadena “:::”. Para finalizar, se concatenará otra vez la cadena “ --- ”.
 
 */
-void instrLO(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c) 
+void instrLO(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c)
 {
+    // Obtenemos la fecha para purgar
+    string ano, mes, dia;
+    Fecha fechaLO;
 
+    //Se consume también el separador
+    getline(lectorFichero, ano, '-');
+    getline(lectorFichero, mes, '-');
+    getline(lectorFichero, dia);
+
+    bool errorFecha;
+    crear(stoi(dia), stoi(mes), stoi(ano), fechaLO, errorFecha);
+
+    string separador = " --- ";
+    string obsoletos_LO = "";
+
+    obsoletos_LO = obsoletos(fechaLO, ":::", c);
+
+    escritorFichero << "ANTERIORES A: " << ano << "-" << mes << "-" << dia
+                                        << separador << obsoletos_LO << separador << endl;
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -454,11 +477,25 @@ void instrLO(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
     Por cada instrucción de tipo “LC”, se escribirá una línea que empiece con la cadena “DE CATEGORIA: ” seguida
     de la categoría utilizada con la operación, seguida de la cadena “ --- ”, seguida por la concatenación de los
     identificadores de los anuncios de la colección con categoría igual a la dada, separados entre sí por la cadena “:::”.
-    Antes de finalizar la línea se concatenará otra vez la cadena “ --- ”. 
+    Antes de finalizar la línea se concatenará otra vez la cadena “ --- ”.
 
 */
-void instrLC(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c) {
+void instrLC(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c)
+{
+    // Obtener la categoría a procesar
+    string categoria = "";
+    string categoria_LC = "";
 
+    getline(lectorFichero, categoria);
+
+    if (existeTema(categoria, c))
+    {
+        categoria_LC = delTema(categoria, ":::", c);
+    }
+
+    string separador = " --- ";
+
+    escritorFichero << "DE CATEGORIA: " << categoria << separador << categoria_LC << separador << endl;
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -474,7 +511,7 @@ void instrLC(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
     siendo identificador, categoría, título y descrip, respectivamente el identificador, la categoría, el
     título y la descripción del anuncio, y siendo publicado y finaliza respectivamente las fechas de publicación y
     de finalización del anuncio, con dichas fechas escritas en formato: aaaa-mm-dd. El listado finalizará con una línea
-    con la cadena “-----”. 
+    con la cadena “-----”.
 
 */
 void instrLT(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c) {
