@@ -65,8 +65,8 @@ int main() {
 
     string instruccionActual;
 
-    while(getline(lectorFichero, instruccionActual)) {
-
+    while(getline(lectorFichero, instruccionActual)) 
+    {
         if (instruccionActual == "A") {
 
             instrA(lectorFichero, escritorFichero, coleccionAnuncios);
@@ -97,30 +97,27 @@ int main() {
 
         } else if (instruccionActual == "P") {
 
-//            instrP(lectorFichero, escritorFichero, coleccionAnuncios);
+            instrP(lectorFichero, escritorFichero, coleccionAnuncios);
 
         } else if (instruccionActual == "LO") {
 
-            //instrLO(lectorFichero, escritorFichero, coleccionAnuncios);
+            instrLO(lectorFichero, escritorFichero, coleccionAnuncios);
 
         } else if (instruccionActual == "LC") {
 
-            //instrLC(lectorFichero, escritorFichero, coleccionAnuncios);
+            instrLC(lectorFichero, escritorFichero, coleccionAnuncios);
 
         } else if (instruccionActual == "LT") {
 
-            //instrLT(lectorFichero, escritorFichero, coleccionAnuncios);
+            instrLT(lectorFichero, escritorFichero, coleccionAnuncios);
 
         }
-
-
     }
 
     lectorFichero.close();
     escritorFichero.close();
 
     return 0;
-
 }
 
 //-----------------------------------------------------------------------------------------------------A
@@ -514,8 +511,24 @@ void instrLC(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
     con la cadena “-----”.
 
 */
-void instrLT(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c) {
+void instrLT(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c) 
+{   
+    int tot_anuncios = tamano(c);
+    
+    escritorFichero << "-----LISTADO: " << to_string(tot_anuncios) << endl;
 
+    Anuncio a;
+
+    iniciarIterador(c);
+
+    while (existeSiguiente(c))
+    {
+        siguienteYavanza(c, a);
+        
+        escritorFichero << mostrarAnuncio(a) << endl;
+    }
+
+    escritorFichero << "-----" << endl;
 }
 
 // -----------------------------------------------------------------------------------------------------

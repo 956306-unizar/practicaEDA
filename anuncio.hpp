@@ -29,6 +29,9 @@ void cambiarCategoria(Anuncio &e, string n);
 Fecha suPublicacion(const Anuncio &e);
 Fecha suFinalizacion(const Anuncio &e);
 
+// Función auxiliar para formatear las fecha aaaa-mm-dd
+string formatearFecha(const Fecha &f);
+
 // Función auxiliar para comprobar las funciones implemenetadas
 string mostrarAnuncio(const Anuncio &e);
 
@@ -45,6 +48,7 @@ struct Anuncio
     friend Fecha suPublicacion(const Anuncio &e);
     friend Fecha suFinalizacion(const Anuncio &e);
 
+    friend string formatearFecha(const Fecha &f);
     friend string mostrarAnuncio(const Anuncio &e);
 
     private:

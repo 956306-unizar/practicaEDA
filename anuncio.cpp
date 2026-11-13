@@ -66,22 +66,52 @@ Fecha suFinalizacion(const Anuncio &e)
     return e.finalizacion;
 }
 
-// Función auxiliar para comprobar las funciones implemenetadas
+// Función auxiliar para el formateo de fechas aaaa-mm-dd
+string formatearFecha(const Fecha &f)
+{
+    string format_fecha = "";
+
+    int dia_f = dia(f);
+    int mes_f = mes(f);
+
+    string dia_str = "";
+    string mes_str = "";
+
+    // Formatear "dia"
+    if (dia_f < 10)
+    {
+        dia_str = "0" + to_string(dia_f);    
+    } 
+
+    else 
+    {
+        dia_str = to_string(dia_f);    
+    }
+
+    // Formatear "mes"
+    if (mes_f < 10)
+    {
+        mes_str = "0" + to_string(mes_f);    
+    } 
+
+    else 
+    {
+        mes_str = to_string(mes_f);    
+    }
+
+    format_fecha = to_string(anyo(f)) + "-" + mes_str + "-" + dia_str;  
+
+    return format_fecha;
+}
+
+// Función auxiliar para el "pintado" de la estructra de la instrucción LT
 string mostrarAnuncio(const Anuncio &e)
 {
     string resultado = "";
 
-    resultado += "ID: " + suIdentificador(e) + "\n";
-    resultado += "Titulo: " + suTitulo(e) + "\n";
-    resultado += "Descripcion: " + suDescripcion(e) + "\n";
-    resultado += "Categoria: " + suCategoria(e) + "\n";
-    resultado += "Fecha de publicacion: " + to_string(anyo(suPublicacion(e))) + 
-        "/" + to_string(mes(suPublicacion(e))) + 
-        "/" + to_string(dia(suPublicacion(e))) + "\n";
-
-    resultado += "Fecha de publicacion: " + to_string(anyo(suFinalizacion(e))) + 
-        "/" + to_string(mes(suFinalizacion(e))) + 
-        "/" + to_string(dia(suFinalizacion(e))) + "\n";
+    resultado += "[ " + suIdentificador(e) + " -de-> " + suCategoria(e) +
+                 " ;;; " + suTitulo(e) + " ] (" + formatearFecha(suPublicacion(e)) +        
+                 ") --- " + suDescripcion(e) + " --- (" + formatearFecha(suFinalizacion(e)) + ")";
 
     return resultado;
 }
