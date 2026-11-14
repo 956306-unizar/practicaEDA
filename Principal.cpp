@@ -43,13 +43,15 @@ void instrLT(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
 // --- PROGRAMA PRINCIPAL ---
 int main() {
 
+    cout << "Ejecutando programa..." << endl;
+
     ifstream lectorFichero("entrada.txt");
     ofstream escritorFichero("salida.txt");
 
     if(!lectorFichero.is_open()) {
 
-        cerr << "ERROR: No se ha podido abrir el archivo 'entrada.txt'"
-            << "\nAsegurese de que se encuentra en el mismo nivel del directorio en el que esta este ejecutable." << endl;
+        cerr << "ERROR: No se ha podido abrir el archivo 'entrada.txt'\n"
+            << "Asegurese de que se encuentra en el mismo nivel del directorio en el que esta este ejecutable." << endl;
 
         return 1;
 
@@ -77,7 +79,7 @@ int main() {
 
         } else if (instruccionActual == "O") {
 
-            //instrO(lectorFichero, escritorFichero, coleccionAnuncios);
+            instrO(lectorFichero, escritorFichero, coleccionAnuncios);
 
         } else if (instruccionActual == "E") {
 
@@ -85,7 +87,7 @@ int main() {
 
         } else if (instruccionActual == "EC") {
 
-            //instrEC(lectorFichero, escritorFichero, coleccionAnuncios);
+            instrEC(lectorFichero, escritorFichero, coleccionAnuncios);
 
         } else if (instruccionActual == "B") {
 
@@ -116,6 +118,8 @@ int main() {
 
     lectorFichero.close();
     escritorFichero.close();
+
+    cout << "El programa ha finalizado su ejecución correctamente" << endl;
 
     return 0;
 }
@@ -280,6 +284,56 @@ void instrC( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
     }
 }
 
+//-----------------------------------------------------------------------------------------------------O
+
+
+/*
+
+    Por cada instrucción de tipo “O”, si existe algún anuncio en la colección con el identificador dado, se escribirá una
+    línea que empiece con la cadena “LOCALIZADO: ”, seguida de la concatenación de todos los datos de la
+    información del anuncio localizado en la colección, en la misma línea del fichero y en el siguiente orden:
+    identificador, título, categoría, descripción, fecha de publicación y fecha de finalización (separados entre sí por la
+    cadena “:::”, y con las fechas escritas en formato: aaaa-mm-dd).
+    Si no existía ningún anuncio en la colección con identificador igual al dado, se escribirá en el fichero una línea que
+    empiece con la cadena “NO LOCALIZADO: ”, seguida del identificador dado para la instrucción.
+
+    La siguiente línea del fichero contendrá el identificador de anuncio respecto al cual se actúa o consulta.
+
+*/
+void instrO(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c) {
+
+    string id;
+    getline(lectorFichero, id);
+
+    if(esta(id)) {
+
+        Anuncio anuncioAConsultar = obtenerITF(id); // Esta operación, al ser parcial, se debe proteger con la operación "esta";
+
+        Fecha fechaPublicacionAnuncio = suPublicacion(anuncioAConsultar);
+        Fecha fechaFinalizacionAnuncio = suFinalizacion(anuncioAConsultar);
+
+        escritorFichero << "LOCALIZADO: "
+                        << id << ":::"
+                        << suTitulo(anuncioAConsultar); << ":::"
+                        << suCategoria(anuncioAConsultar); << ":::"
+                        << suDescripcion(anuncioAConsultar); << ":::"
+                        << anyo(fechaPublicacionAnuncio);
+                                 << "-" << mes(fechaPublicacionAnuncio);
+                                 << "-" << dia(fechaPublicacionAnuncio); << ":::"
+                        << anyo(fechaFinalizacionAnuncio);
+                                 << "-" << mes(fechaFinalizacionAnuncio);
+                                 << "-" << dia(fechaFinalizacionAnuncio);
+                        << endl;
+
+
+    } else {
+
+        escritorFichero << "NO LOCALIZADO: " << id << endl;
+
+    }
+
+}
+
 //-----------------------------------------------------------------------------------------------------E
 /*
     Por cada instrucción de tipo “E”, si existe algún anuncio en la colección con un identificador igual al dado, se
@@ -318,6 +372,37 @@ void instrE( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
     }
     escritorFichero << id << endl;
 }
+
+//-----------------------------------------------------------------------------------------------------EC
+
+/*
+
+    Por cada instrucción de tipo “EC”, si existe algún anuncio en la colección con una categoría igual a la dada para la
+    instrucción, se escribirá una línea que empiece con la cadena “CATEGORIA CONOCIDA: ”, y si no existía
+    ningún anuncio en la colección con categoría igual a la dada, se escribirá en el fichero de salida una línea con la
+    cadena “CATEGORIA DESCONOCIDA: ”. En cualquiera de los dos casos, se seguirá escribiendo a continuación,
+    y en la misma línea del fichero, la categoría dada para la instrucción.
+
+    La siguiente línea del fichero contendrá la categoría de los anuncios respecto a la cual se actúa o consulta.
+
+*/
+void instrEC(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c) {
+
+    string categoria;
+    getline(lectorFichero, categoria);
+
+    if(existeTema(categoria)) {
+
+        escritorFichero << "CATEGORIA CONOCIDA: " << categoria << endl;
+
+    } else {
+
+        escritorFichero << "CATEGORIA DESCONOCIDA: " << categoria << endl;
+
+    }
+
+}
+
 
 //-----------------------------------------------------------------------------------------------------B
 /*
@@ -376,6 +461,9 @@ void instrBC(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
     string categoria;
     getline(lectorFichero, categoria); // Lectura de la categoría a buscar
 
+    // Por optimización, solo entraremos a la función "zanjarTema" si existe algo que zanjar, 
+    // NO por proteger a la propia función "zanjarTema", ya que esta no es parcial y se comportará
+    // correctamente en el caso de que la colección no tuviese ningún anuncio con dicha categoría.
     if(existeTema(categoria, c)) {
 
         zanjarTema(categoria, c);
