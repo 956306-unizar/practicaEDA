@@ -284,6 +284,7 @@ void anadir(ColeccionITF<T> &c, const T &i)
     Al solo cambiarse el valor de la variable "dato" dentro del nodo que se encuentra en dicha posición, no hará falta hacer más cambios
     en ninguna otra parte.
 */
+/*
 template<typename T> 
 void actualizar(ColeccionITF<T> &c, const T &i) {
 
@@ -330,8 +331,8 @@ void actualizar(ColeccionITF<T> &c, const T &i) {
     } 
 
 }
+*/
 
-/*
 template<typename T> 
 void actualizar(ColeccionITF<T> &c, const T &i) {
 
@@ -354,7 +355,6 @@ void actualizar(ColeccionITF<T> &c, const T &i) {
         }
     } 
 }
-*/
 
 
 /*

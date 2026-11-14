@@ -69,7 +69,7 @@ int main() {
 
     while(getline(lectorFichero, instruccionActual)) 
     {
-        if (instruccionActual == "A") {
+        if (instruccionActual == "A" || instruccionActual == "A ") {
 
             instrA(lectorFichero, escritorFichero, coleccionAnuncios);
 
@@ -320,7 +320,7 @@ void instrO(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anu
 
     if(esta(id, c)) {
 
-        Anuncio anuncioAConsultar = obtenerITF(id); // Esta operación, al ser parcial, se debe proteger con la operación "esta".
+        Anuncio anuncioAConsultar = obtenerITF(id, c); // Esta operación, al ser parcial, se debe proteger con la operación "esta".
 
         Fecha fechaPublicacionAnuncio = suPublicacion(anuncioAConsultar);
         Fecha fechaFinalizacionAnuncio = suFinalizacion(anuncioAConsultar);
