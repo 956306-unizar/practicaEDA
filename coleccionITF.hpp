@@ -369,7 +369,9 @@ template<typename T> void borrar(const string ident, ColeccionITF<T> &c){
 
 
 /*
-    Devuelve verdad si y sólo si en c hay algún ítem con identificador igual a ident.
+    Devuelve verdad si y sólo si en c hay algún ítem con identificador igual al parámetro ident.
+    Para ello, recorre toda la colección hasta encontrar el elemento, donde no buscará más y se saldrá,
+    o hasta que llegue al fin de la colección, significando que no encontró el elemento en la colección.
 */
 template<typename T>
 bool esta(const string ident, const ColeccionITF<T> &c) {
@@ -410,8 +412,9 @@ bool esta(const string ident, const ColeccionITF<T> &c) {
 }
 
 /*
-    Si en c hay algún ítem con identificador igual a ident, devuelve dicho ítem.
-    PARCIAL: operación no definida si en c no hay ningún ítem con identificador igual a ident.
+    Devuelve el elemento de tipo T con el id especificado en el parámetro ident que se encuentra en la colección.
+    Como precondición el elemento de tipo T DEBERÁ existir y estar dentro de la colección, ya que la función
+    recorre toda la colección, asumiendo que esto es así, hasta hallar el elemento.
 */
 template<typename T>
 T obtenerITF(const string ident, const ColeccionITF<T> &c) {
@@ -444,6 +447,8 @@ T obtenerITF(const string ident, const ColeccionITF<T> &c) {
 /*
     Devuelve la cadena resultante de concatenar los identificadores de todos los ítems que hay en c
     con fecha estrictamente anterior a f, y separados entre sí por la cadena separador.
+    Para ello recorre toda la colección y agrega a un string, que comienza vacío (""), todos los IDs,
+    de los elementos de tipo T que cumplen la condición nombrada anteriormente, separados por el parámetro separador.
 */
 template<typename T>
 string obsoletos(const Fecha &f, const string separador, const ColeccionITF<T> &c) {
