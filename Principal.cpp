@@ -318,7 +318,7 @@ void instrO(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anu
     string id;
     getline(lectorFichero, id);
 
-    if(esta(id)) {
+    if(esta(id, c)) {
 
         Anuncio anuncioAConsultar = obtenerITF(id); // Esta operación, al ser parcial, se debe proteger con la operación "esta";
 
@@ -406,7 +406,7 @@ void instrEC(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
     string categoria;
     getline(lectorFichero, categoria);
 
-    if(existeTema(categoria)) {
+    if(existeTema(categoria, c)) {
 
         escritorFichero << "CATEGORIA CONOCIDA: " << categoria << endl;
 
