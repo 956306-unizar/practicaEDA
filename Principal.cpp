@@ -312,14 +312,16 @@ void instrO(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anu
         Fecha fechaPublicacionAnuncio = suPublicacion(anuncioAConsultar);
         Fecha fechaFinalizacionAnuncio = suFinalizacion(anuncioAConsultar);
 
+        string separador = ":::";
+
         escritorFichero << "LOCALIZADO: "
-                        << id << ":::"
-                        << suTitulo(anuncioAConsultar); << ":::"
-                        << suCategoria(anuncioAConsultar); << ":::"
-                        << suDescripcion(anuncioAConsultar); << ":::"
+                        << id << separador
+                        << suTitulo(anuncioAConsultar); << separador
+                        << suCategoria(anuncioAConsultar); << separador
+                        << suDescripcion(anuncioAConsultar); << separador
                         << anyo(fechaPublicacionAnuncio);
                                  << "-" << mes(fechaPublicacionAnuncio);
-                                 << "-" << dia(fechaPublicacionAnuncio); << ":::"
+                                 << "-" << dia(fechaPublicacionAnuncio); << separador
                         << anyo(fechaFinalizacionAnuncio);
                                  << "-" << mes(fechaFinalizacionAnuncio);
                                  << "-" << dia(fechaFinalizacionAnuncio);
@@ -569,14 +571,10 @@ void instrLC(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
 {
     // Obtener la categoría a procesar
     string categoria = "";
-    string categoria_LC = "";
 
     getline(lectorFichero, categoria);
 
-    if (existeTema(categoria, c))
-    {
-        categoria_LC = delTema(categoria, ":::", c);
-    }
+    string categoria_LC = delTema(categoria, ":::", c);
 
     string separador = " --- ";
 
