@@ -174,6 +174,9 @@ void instrA( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
     // Comprobar fechas válidas para crear el anuncio segun el calendario gregoriano??????
     bool errorFecha;
     crear(stoi(dia1), stoi(mes1), stoi(ano1), startDate, errorFecha);
+    if(errorFecha){ //El fichero de entrada solo contiene fechas válidas según el calendario gregoriano, si no lo hiciese se avisa por cerr
+        cerr << "ERROR en el fichero de entrada: contiene una fecha que no corresponde con el calendario gregoriano" << endl;
+    }
 
     //ahora la fecha de finalizacion
     string ano2, mes2, dia2;
@@ -181,6 +184,9 @@ void instrA( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
     getline(lectorFichero, mes2, '-');
     getline(lectorFichero, dia2);
     crear(stoi(dia2), stoi(mes2), stoi(ano2), endDate, errorFecha);
+    if(errorFecha){ //El fichero de entrada solo contiene fechas válidas según el calendario gregoriano, si no lo hiciese se avisa por cerr
+        cerr << "ERROR en el fichero de entrada: contiene una fecha que no corresponde con el calendario gregoriano" << endl;
+    }
 
     //anadir() ya sabe que hacer si ya estaba el elemento en la coleccion, solo hay que comprobar si se ha añadido o no para la salida.
     //Ademas esta() tiene coste lineal, mientras que tamano() es cte
@@ -262,7 +268,14 @@ void instrC( ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
     if(esta(id, c)){    //actualizar() no modifica el tamaño en ningun caso(exito o no) asi que hay que llamar a esta()
 
         crear(stoi(dia1), stoi(mes1), stoi(ano1), startDate, errorFecha);
+        if(errorFecha){ //El fichero de entrada solo contiene fechas válidas según el calendario gregoriano, si no lo hiciese se avisa por cerr
+            cerr << "ERROR en el fichero de entrada: contiene una fecha que no corresponde con el calendario gregoriano" << endl;
+        }
+        
         crear(stoi(dia2), stoi(mes2), stoi(ano2), endDate, errorFecha);
+        if(errorFecha){ //El fichero de entrada solo contiene fechas válidas según el calendario gregoriano, si no lo hiciese se avisa por cerr
+            cerr << "ERROR en el fichero de entrada: contiene una fecha que no corresponde con el calendario gregoriano" << endl;
+        }
 
         Anuncio a = crearAnuncio(id, tit, desc, cat, startDate, endDate);
         actualizar(c, a);
@@ -504,6 +517,9 @@ void instrP(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anu
 
     bool errorFecha;
     crear(stoi(dia), stoi(mes), stoi(ano), fechaPurgar, errorFecha);
+    if(errorFecha){ //El fichero de entrada solo contiene fechas válidas según el calendario gregoriano, si no lo hiciese se avisa por cerr
+        cerr << "ERROR en el fichero de entrada: contiene una fecha que no corresponde con el calendario gregoriano" << endl;
+    }
 
     // MIRAR SI errorFecha es false para purgar de verdad???????????
 
@@ -547,6 +563,9 @@ void instrLO(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
 
     bool errorFecha;
     crear(stoi(dia), stoi(mes), stoi(ano), fechaLO, errorFecha);
+    if(errorFecha){ //El fichero de entrada solo contiene fechas válidas según el calendario gregoriano, si no lo hiciese se avisa por cerr
+        cerr << "ERROR en el fichero de entrada: contiene una fecha que no corresponde con el calendario gregoriano" << endl;
+    }
 
     string separador = " --- ";
     string obsoletos_LO = "";
