@@ -329,15 +329,15 @@ void instrO(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anu
 
         escritorFichero << "LOCALIZADO: "
                         << id << separador
-                        << suTitulo(anuncioAConsultar); << separador
-                        << suCategoria(anuncioAConsultar); << separador
-                        << suDescripcion(anuncioAConsultar); << separador
-                        << anyo(fechaPublicacionAnuncio);
-                                 << "-" << mes(fechaPublicacionAnuncio);
-                                 << "-" << dia(fechaPublicacionAnuncio); << separador
-                        << anyo(fechaFinalizacionAnuncio);
-                                 << "-" << mes(fechaFinalizacionAnuncio);
-                                 << "-" << dia(fechaFinalizacionAnuncio);
+                        << suTitulo(anuncioAConsultar) << separador
+                        << suCategoria(anuncioAConsultar) << separador
+                        << suDescripcion(anuncioAConsultar) << separador
+                        << anyo(fechaPublicacionAnuncio)
+                                 << "-" << mes(fechaPublicacionAnuncio)
+                                 << "-" << dia(fechaPublicacionAnuncio) << separador
+                        << anyo(fechaFinalizacionAnuncio)
+                                 << "-" << mes(fechaFinalizacionAnuncio)
+                                 << "-" << dia(fechaFinalizacionAnuncio)
                         << endl;
 
 
