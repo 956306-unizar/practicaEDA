@@ -1,0 +1,192 @@
+-----LISTADO: 0
+-----
+INTRODUCIDO: ANN01:::Portatil oficina:::Informatica:::Portatil 14 pulgadas 8GB RAM:::2026-01-01:::2026-12-31
+INTRODUCIDO: ANN02:::Raton optico:::Informatica:::Raton ergonomico USB:::2026-01-05:::2026-12-31
+INTRODUCIDO: ANN03:::Teclado mecanico:::Informatica:::Teclado RGB switch blue:::2026-01-10:::2026-12-31
+INTRODUCIDO: ANN04:::Monitor 27:::Informatica:::Monitor Full HD IPS:::2026-01-15:::2026-12-31
+INTRODUCIDO: ANN05:::Silla oficina:::Hogar:::Silla ergonomica con ruedas:::2026-02-01:::2026-11-30
+INTRODUCIDO: ANN06:::Mesa despacho:::Hogar:::Mesa de madera minimalista:::2026-02-05:::2026-11-30
+INTRODUCIDO: ANN07:::Lampara LED:::Hogar:::Lampara de escritorio regulable:::2026-02-10:::2026-11-30
+INTRODUCIDO: ANN08:::Estanteria:::Hogar:::Estanteria modular 5 baldas:::2026-02-15:::2026-11-30
+INTRODUCIDO: ANN09:::Bicicleta MTB:::Deportes:::Bicicleta de montana 29 pulgadas:::2026-03-01:::2026-10-31
+INTRODUCIDO: ANN10:::Mochila sport:::Deportes:::Mochila impermeable 30L:::2026-03-05:::2026-10-31
+INTRODUCIDO: ANN11:::Pesas gym:::Deportes:::Juego de mancuernas 15kg:::2026-03-10:::2026-10-31
+INTRODUCIDO: ANN12:::Esterilla yoga:::Deportes:::Esterilla antideslizante 6mm:::2026-03-15:::2026-10-31
+INTRODUCIDO: ANN13:::Camara reflex:::Electronica:::Camara con objetivo 18-55mm:::2026-04-01:::2026-09-30
+INTRODUCIDO: ANN14:::Auriculares BT:::Electronica:::Auriculares inalambricos diadema:::2026-04-05:::2026-09-30
+INTRODUCIDO: ANN15:::Altavoz IPX7:::Electronica:::Altavoz portatil resistente al agua:::2026-04-10:::2026-09-30
+INTRODUCIDO: ANN16:::Smartwatch:::Electronica:::Reloj inteligente con GPS:::2026-04-15:::2026-09-30
+INTRODUCIDO: ANN17:::Casco moto:::Motor:::Casco integral homologado:::2026-05-01:::2026-08-31
+INTRODUCIDO: ANN18:::Caballete taller:::Motor:::Caballete trasero mantenimiento moto:::2026-05-05:::2026-08-31
+INTRODUCIDO: ANN19:::Chaqueta moto:::Motor:::Chaqueta con protecciones:::2026-05-10:::2026-08-31
+INTRODUCIDO: ANN20:::Guantes piel:::Motor:::Guantes verano perforados:::2026-05-15:::2026-08-31
+INTRODUCIDO: ANN21:::Libro C++:::Libros:::Aprende programacion avanzada:::2026-06-01:::2026-12-31
+INTRODUCIDO: ANN22:::Novela historica:::Libros:::Tapa dura edicion coleccionista:::2026-06-05:::2026-12-31
+INTRODUCIDO: ANN23:::Guia Japon:::Libros:::Guia de viajes completa:::2026-06-10:::2026-12-31
+INTRODUCIDO: ANN24:::Comic Manga:::Libros:::Tomo unico shonen:::2026-06-15:::2026-12-31
+NO INTRODUCIDO: ANN01:::Portatil duplicado:::Informatica:::Intento fallo id repetido:::2026-01-02:::2026-12-31
+-----LISTADO: 24
+[ ANN01 -de-> Informatica ;;; Portatil oficina ] (2026-01-01) --- Portatil 14 pulgadas 8GB RAM --- (2026-12-31)
+[ ANN02 -de-> Informatica ;;; Raton optico ] (2026-01-05) --- Raton ergonomico USB --- (2026-12-31)
+[ ANN03 -de-> Informatica ;;; Teclado mecanico ] (2026-01-10) --- Teclado RGB switch blue --- (2026-12-31)
+[ ANN04 -de-> Informatica ;;; Monitor 27 ] (2026-01-15) --- Monitor Full HD IPS --- (2026-12-31)
+[ ANN05 -de-> Hogar ;;; Silla oficina ] (2026-02-01) --- Silla ergonomica con ruedas --- (2026-11-30)
+[ ANN06 -de-> Hogar ;;; Mesa despacho ] (2026-02-05) --- Mesa de madera minimalista --- (2026-11-30)
+[ ANN07 -de-> Hogar ;;; Lampara LED ] (2026-02-10) --- Lampara de escritorio regulable --- (2026-11-30)
+[ ANN08 -de-> Hogar ;;; Estanteria ] (2026-02-15) --- Estanteria modular 5 baldas --- (2026-11-30)
+[ ANN09 -de-> Deportes ;;; Bicicleta MTB ] (2026-03-01) --- Bicicleta de montana 29 pulgadas --- (2026-10-31)
+[ ANN10 -de-> Deportes ;;; Mochila sport ] (2026-03-05) --- Mochila impermeable 30L --- (2026-10-31)
+[ ANN11 -de-> Deportes ;;; Pesas gym ] (2026-03-10) --- Juego de mancuernas 15kg --- (2026-10-31)
+[ ANN12 -de-> Deportes ;;; Esterilla yoga ] (2026-03-15) --- Esterilla antideslizante 6mm --- (2026-10-31)
+[ ANN13 -de-> Electronica ;;; Camara reflex ] (2026-04-01) --- Camara con objetivo 18-55mm --- (2026-09-30)
+[ ANN14 -de-> Electronica ;;; Auriculares BT ] (2026-04-05) --- Auriculares inalambricos diadema --- (2026-09-30)
+[ ANN15 -de-> Electronica ;;; Altavoz IPX7 ] (2026-04-10) --- Altavoz resistente al agua IPX7 --- (2026-09-30)
+[ ANN16 -de-> Electronica ;;; Smartwatch ] (2026-04-15) --- Reloj inteligente con GPS --- (2026-09-30)
+[ ANN17 -de-> Motor ;;; Casco moto ] (2026-05-01) --- Casco integral homologado --- (2026-08-31)
+[ ANN18 -de-> Motor ;;; Caballete taller ] (2026-05-05) --- Caballete trasero mantenimiento moto --- (2026-08-31)
+[ ANN19 -de-> Motor ;;; Chaqueta moto ] (2026-05-10) --- Chaqueta con protecciones --- (2026-08-31)
+[ ANN20 -de-> Motor ;;; Guantes piel ] (2026-05-15) --- Guantes verano perforados --- (2026-08-31)
+[ ANN21 -de-> Libros ;;; Libro C++ ] (2026-06-01) --- Aprende programacion avanzada --- (2026-12-31)
+[ ANN22 -de-> Libros ;;; Novela historica ] (2026-06-05) --- Tapa dura edicion coleccionista --- (2026-12-31)
+[ ANN23 -de-> Libros ;;; Guia Japon ] (2026-06-10) --- Guia de viajes completa --- (2026-12-31)
+[ ANN24 -de-> Libros ;;; Comic Manga ] (2026-06-15) --- Tomo unico shonen --- (2026-12-31)
+-----
+CAMBIADO: ANN01:::Portatil oficina Pro:::Informatica:::Portatil 14 pulgadas 16GB RAM SSD 512GB:::2026-01-02:::2026-12-31
+CAMBIADO: ANN05:::Silla oficina Executive:::Hogar:::Silla ergonomica piel soporte avanzado:::2026-02-02:::2026-11-30
+CAMBIADO: ANN09:::Bicicleta MTB Pro:::Deportes:::Bicicleta de montana doble suspension:::2026-03-02:::2026-10-31
+CAMBIADO: ANN13:::Camara reflex Pro:::Electronica:::Camara con objetivo 18-135mm estabilizado:::2026-04-02:::2026-09-30
+CAMBIADO: ANN17:::Casco moto Modular:::Motor:::Casco modular con visor solar:::2026-05-02:::2026-08-31
+CAMBIADO: ANN21:::Libro C++ Master:::Libros:::Algoritmos avanzados en C++ y Java:::2026-06-02:::2026-12-31
+NO CAMBIADO: FAILSIGN
+LOCALIZADO: ANN01:::Portatil oficina Pro:::Informatica:::Portatil 14 pulgadas 16GB RAM SSD 512GB:::2026-01-02:::2026-12-31
+LOCALIZADO: ANN05:::Silla oficina Executive:::Hogar:::Silla ergonomica piel soporte avanzado:::2026-02-02:::2026-11-30
+LOCALIZADO: ANN09:::Bicicleta MTB Pro:::Deportes:::Bicicleta de montana doble suspension:::2026-03-02:::2026-10-31
+LOCALIZADO: ANN13:::Camara reflex Pro:::Electronica:::Camara con objetivo 18-135mm estabilizado:::2026-04-02:::2026-09-30
+LOCALIZADO: ANN17:::Casco moto Modular:::Motor:::Casco modular con visor solar:::2026-05-02:::2026-08-31
+LOCALIZADO: ANN21:::Libro C++ Master:::Libros:::Algoritmos avanzados en C++ y Java:::2026-06-02:::2026-12-31
+NO LOCALIZADO: FAILSIGN
+EXISTENTE: ANN02
+EXISTENTE: ANN06
+EXISTENTE: ANN10
+EXISTENTE: ANN14
+EXISTENTE: ANN18
+EXISTENTE: ANN22
+DESCONOCIDO: FAILSIGN
+CATEGORIA CONOCIDA: Informatica
+CATEGORIA CONOCIDA: Hogar
+CATEGORIA CONOCIDA: Deportes
+CATEGORIA CONOCIDA: Electronica
+CATEGORIA CONOCIDA: Motor
+CATEGORIA CONOCIDA: Libros
+CATEGORIA DESCONOCIDA: Inmobiliaria
+ANTERIORES A: 2026-02-01 --- ANN01:::ANN02:::ANN03:::ANN04 --- 
+ANTERIORES A: 2026-03-01 --- ANN01:::ANN02:::ANN03:::ANN04:::ANN05:::ANN06:::ANN07:::ANN08 --- 
+ANTERIORES A: 2026-04-01 --- ANN01:::ANN02:::ANN03:::ANN04:::ANN05:::ANN06:::ANN07:::ANN08:::ANN09:::ANN10:::ANN11:::ANN12 --- 
+ANTERIORES A: 2026-05-01 --- ANN01:::ANN02:::ANN03:::ANN04:::ANN05:::ANN06:::ANN07:::ANN08:::ANN09:::ANN10:::ANN11:::ANN12:::ANN13:::ANN14:::ANN15:::ANN16 --- 
+ANTERIORES A: 2026-06-01 --- ANN01:::ANN02:::ANN03:::ANN04:::ANN05:::ANN06:::ANN07:::ANN08:::ANN09:::ANN10:::ANN11:::ANN12:::ANN13:::ANN14:::ANN15:::ANN16:::ANN17:::ANN18:::ANN19:::ANN20 --- 
+DE CATEGORIA: Informatica --- ANN01:::ANN02:::ANN03:::ANN04 --- 
+DE CATEGORIA: Hogar --- ANN05:::ANN06:::ANN07:::ANN08 --- 
+DE CATEGORIA: Deportes --- ANN09:::ANN10:::ANN11:::ANN12 --- 
+DE CATEGORIA: Electronica --- ANN13:::ANN14:::ANN15:::ANN16 --- 
+DE CATEGORIA: Motor --- ANN17:::ANN18:::ANN19:::ANN20 --- 
+DE CATEGORIA: Libros --- ANN21:::ANN22:::ANN23:::ANN24 --- 
+DE CATEGORIA: Inmobiliaria ---  --- 
+-----LISTADO: 24
+[ ANN01 -de-> Informatica ;;; Portatil oficina Pro ] (2026-01-02) --- Portatil 14 pulgadas 16GB RAM SSD 512GB --- (2026-12-31)
+[ ANN02 -de-> Informatica ;;; Raton optico ] (2026-01-05) --- Raton ergonomico USB --- (2026-12-31)
+[ ANN03 -de-> Informatica ;;; Teclado mecanico ] (2026-01-10) --- Teclado RGB switch blue --- (2026-12-31)
+[ ANN04 -de-> Informatica ;;; Monitor 27 ] (2026-01-15) --- Monitor Full HD IPS --- (2026-12-31)
+[ ANN05 -de-> Hogar ;;; Silla oficina Executive ] (2026-02-02) --- Silla ergonomica piel soporte avanzado --- (2026-11-30)
+[ ANN06 -de-> Hogar ;;; Mesa despacho ] (2026-02-05) --- Mesa de madera minimalista --- (2026-11-30)
+[ ANN07 -de-> Hogar ;;; Lampara LED ] (2026-02-10) --- Lampara de escritorio regulable --- (2026-11-30)
+[ ANN08 -de-> Hogar ;;; Estanteria ] (2026-02-15) --- Estanteria modular 5 baldas --- (2026-11-30)
+[ ANN09 -de-> Deportes ;;; Bicicleta MTB Pro ] (2026-03-02) --- Bicicleta de montana doble suspension --- (2026-10-31)
+[ ANN10 -de-> Deportes ;;; Mochila sport ] (2026-03-05) --- Mochila impermeable 30L --- (2026-10-31)
+[ ANN11 -de-> Deportes ;;; Pesas gym ] (2026-03-10) --- Juego de mancuernas 15kg --- (2026-10-31)
+[ ANN12 -de-> Deportes ;;; Esterilla yoga ] (2026-03-15) --- Esterilla antideslizante 6mm --- (2026-10-31)
+[ ANN13 -de-> Electronica ;;; Camara reflex Pro ] (2026-04-02) --- Camara con objetivo 18-135mm estabilizado --- (2026-09-30)
+[ ANN14 -de-> Electronica ;;; Auriculares BT ] (2026-04-05) --- Auriculares inalambricos diadema --- (2026-09-30)
+[ ANN15 -de-> Electronica ;;; Altavoz IPX7 ] (2026-04-10) --- Altavoz resistente al agua IPX7 --- (2026-09-30)
+[ ANN16 -de-> Electronica ;;; Smartwatch ] (2026-04-15) --- Reloj inteligente con GPS --- (2026-09-30)
+[ ANN17 -de-> Motor ;;; Casco moto Modular ] (2026-05-02) --- Casco modular con visor solar --- (2026-08-31)
+[ ANN18 -de-> Motor ;;; Caballete taller ] (2026-05-05) --- Caballete trasero mantenimiento moto --- (2026-08-31)
+[ ANN19 -de-> Motor ;;; Chaqueta moto ] (2026-05-10) --- Chaqueta con protecciones --- (2026-08-31)
+[ ANN20 -de-> Motor ;;; Guantes piel ] (2026-05-15) --- Guantes verano perforados --- (2026-08-31)
+[ ANN21 -de-> Libros ;;; Libro C++ Master ] (2026-06-02) --- Algoritmos avanzados en C++ y Java --- (2026-12-31)
+[ ANN22 -de-> Libros ;;; Novela historica ] (2026-06-05) --- Tapa dura edicion coleccionista --- (2026-12-31)
+[ ANN23 -de-> Libros ;;; Guia Japon ] (2026-06-10) --- Guia de viajes completa --- (2026-12-31)
+[ ANN24 -de-> Libros ;;; Comic Manga ] (2026-06-15) --- Tomo unico shonen --- (2026-12-31)
+-----
+PURGADOS: 2026-02-01
+-----LISTADO: 20
+[ ANN05 -de-> Hogar ;;; Silla oficina Executive ] (2026-02-02) --- Silla ergonomica piel soporte avanzado --- (2026-11-30)
+[ ANN06 -de-> Hogar ;;; Mesa despacho ] (2026-02-05) --- Mesa de madera minimalista --- (2026-11-30)
+[ ANN07 -de-> Hogar ;;; Lampara LED ] (2026-02-10) --- Lampara de escritorio regulable --- (2026-11-30)
+[ ANN08 -de-> Hogar ;;; Estanteria ] (2026-02-15) --- Estanteria modular 5 baldas --- (2026-11-30)
+[ ANN09 -de-> Deportes ;;; Bicicleta MTB Pro ] (2026-03-02) --- Bicicleta de montana doble suspension --- (2026-10-31)
+[ ANN10 -de-> Deportes ;;; Mochila sport ] (2026-03-05) --- Mochila impermeable 30L --- (2026-10-31)
+[ ANN11 -de-> Deportes ;;; Pesas gym ] (2026-03-10) --- Juego de mancuernas 15kg --- (2026-10-31)
+[ ANN12 -de-> Deportes ;;; Esterilla yoga ] (2026-03-15) --- Esterilla antideslizante 6mm --- (2026-10-31)
+[ ANN13 -de-> Electronica ;;; Camara reflex Pro ] (2026-04-02) --- Camara con objetivo 18-135mm estabilizado --- (2026-09-30)
+[ ANN14 -de-> Electronica ;;; Auriculares BT ] (2026-04-05) --- Auriculares inalambricos diadema --- (2026-09-30)
+[ ANN15 -de-> Electronica ;;; Altavoz IPX7 ] (2026-04-10) --- Altavoz resistente al agua IPX7 --- (2026-09-30)
+[ ANN16 -de-> Electronica ;;; Smartwatch ] (2026-04-15) --- Reloj inteligente con GPS --- (2026-09-30)
+[ ANN17 -de-> Motor ;;; Casco moto Modular ] (2026-05-02) --- Casco modular con visor solar --- (2026-08-31)
+[ ANN18 -de-> Motor ;;; Caballete taller ] (2026-05-05) --- Caballete trasero mantenimiento moto --- (2026-08-31)
+[ ANN19 -de-> Motor ;;; Chaqueta moto ] (2026-05-10) --- Chaqueta con protecciones --- (2026-08-31)
+[ ANN20 -de-> Motor ;;; Guantes piel ] (2026-05-15) --- Guantes verano perforados --- (2026-08-31)
+[ ANN21 -de-> Libros ;;; Libro C++ Master ] (2026-06-02) --- Algoritmos avanzados en C++ y Java --- (2026-12-31)
+[ ANN22 -de-> Libros ;;; Novela historica ] (2026-06-05) --- Tapa dura edicion coleccionista --- (2026-12-31)
+[ ANN23 -de-> Libros ;;; Guia Japon ] (2026-06-10) --- Guia de viajes completa --- (2026-12-31)
+[ ANN24 -de-> Libros ;;; Comic Manga ] (2026-06-15) --- Tomo unico shonen --- (2026-12-31)
+-----
+PURGADOS: 2026-03-01
+-----LISTADO: 16
+[ ANN09 -de-> Deportes ;;; Bicicleta MTB Pro ] (2026-03-02) --- Bicicleta de montana doble suspension --- (2026-10-31)
+[ ANN10 -de-> Deportes ;;; Mochila sport ] (2026-03-05) --- Mochila impermeable 30L --- (2026-10-31)
+[ ANN11 -de-> Deportes ;;; Pesas gym ] (2026-03-10) --- Juego de mancuernas 15kg --- (2026-10-31)
+[ ANN12 -de-> Deportes ;;; Esterilla yoga ] (2026-03-15) --- Esterilla antideslizante 6mm --- (2026-10-31)
+[ ANN13 -de-> Electronica ;;; Camara reflex Pro ] (2026-04-02) --- Camara con objetivo 18-135mm estabilizado --- (2026-09-30)
+[ ANN14 -de-> Electronica ;;; Auriculares BT ] (2026-04-05) --- Auriculares inalambricos diadema --- (2026-09-30)
+[ ANN15 -de-> Electronica ;;; Altavoz IPX7 ] (2026-04-10) --- Altavoz resistente al agua IPX7 --- (2026-09-30)
+[ ANN16 -de-> Electronica ;;; Smartwatch ] (2026-04-15) --- Reloj inteligente con GPS --- (2026-09-30)
+[ ANN17 -de-> Motor ;;; Casco moto Modular ] (2026-05-02) --- Casco modular con visor solar --- (2026-08-31)
+[ ANN18 -de-> Motor ;;; Caballete taller ] (2026-05-05) --- Caballete trasero mantenimiento moto --- (2026-08-31)
+[ ANN19 -de-> Motor ;;; Chaqueta moto ] (2026-05-10) --- Chaqueta con protecciones --- (2026-08-31)
+[ ANN20 -de-> Motor ;;; Guantes piel ] (2026-05-15) --- Guantes verano perforados --- (2026-08-31)
+[ ANN21 -de-> Libros ;;; Libro C++ Master ] (2026-06-02) --- Algoritmos avanzados en C++ y Java --- (2026-12-31)
+[ ANN22 -de-> Libros ;;; Novela historica ] (2026-06-05) --- Tapa dura edicion coleccionista --- (2026-12-31)
+[ ANN23 -de-> Libros ;;; Guia Japon ] (2026-06-10) --- Guia de viajes completa --- (2026-12-31)
+[ ANN24 -de-> Libros ;;; Comic Manga ] (2026-06-15) --- Tomo unico shonen --- (2026-12-31)
+-----
+PURGADOS: 2026-04-01
+-----LISTADO: 12
+[ ANN13 -de-> Electronica ;;; Camara reflex Pro ] (2026-04-02) --- Camara con objetivo 18-135mm estabilizado --- (2026-09-30)
+[ ANN14 -de-> Electronica ;;; Auriculares BT ] (2026-04-05) --- Auriculares inalambricos diadema --- (2026-09-30)
+[ ANN15 -de-> Electronica ;;; Altavoz IPX7 ] (2026-04-10) --- Altavoz resistente al agua IPX7 --- (2026-09-30)
+[ ANN16 -de-> Electronica ;;; Smartwatch ] (2026-04-15) --- Reloj inteligente con GPS --- (2026-09-30)
+[ ANN17 -de-> Motor ;;; Casco moto Modular ] (2026-05-02) --- Casco modular con visor solar --- (2026-08-31)
+[ ANN18 -de-> Motor ;;; Caballete taller ] (2026-05-05) --- Caballete trasero mantenimiento moto --- (2026-08-31)
+[ ANN19 -de-> Motor ;;; Chaqueta moto ] (2026-05-10) --- Chaqueta con protecciones --- (2026-08-31)
+[ ANN20 -de-> Motor ;;; Guantes piel ] (2026-05-15) --- Guantes verano perforados --- (2026-08-31)
+[ ANN21 -de-> Libros ;;; Libro C++ Master ] (2026-06-02) --- Algoritmos avanzados en C++ y Java --- (2026-12-31)
+[ ANN22 -de-> Libros ;;; Novela historica ] (2026-06-05) --- Tapa dura edicion coleccionista --- (2026-12-31)
+[ ANN23 -de-> Libros ;;; Guia Japon ] (2026-06-10) --- Guia de viajes completa --- (2026-12-31)
+[ ANN24 -de-> Libros ;;; Comic Manga ] (2026-06-15) --- Tomo unico shonen --- (2026-12-31)
+-----
+NO BORRADO: ANN02
+NO BORRADO: ANN06
+NO BORRADO: ANN10
+BORRADO: ANN14
+BORRADO: ANN18
+BORRADO: ANN22
+NO BORRADO: FAILSIGN
+NO ELIMINADOS: Informatica
+NO ELIMINADOS: Hogar
+NO ELIMINADOS: Deportes
+ELIMINADOS: Electronica
+ELIMINADOS: Motor
+ELIMINADOS: Libros
+NO ELIMINADOS: Inmobiliaria
+-----LISTADO: 0
+-----

@@ -1,0 +1,52 @@
+-----LISTADO: 0
+-----
+INTRODUCIDO: MOTO1:::Yamaha R3:::Motor:::Moto en buen estado:::2026-04-01:::2026-08-01
+INTRODUCIDO: INMO1:::Piso céntrico:::Inmobiliaria:::Piso de 2 habitaciones:::2026-01-15:::2026-12-31
+INTRODUCIDO: DEP1:::Bicicleta montaña:::Deportes:::Bici MTB doble suspensión:::2026-02-10:::2026-05-10
+INTRODUCIDO: LIB1:::El Quijote:::Libros:::Edición antigua:::2026-03-05:::2026-09-05
+INTRODUCIDO: ELEC1:::Smart TV 55:::Electronica:::Televisor 4K OLED:::2026-02-20:::2026-07-20
+INTRODUCIDO: MOTO2:::Honda Civic:::Motor:::Coche familiar:::2026-05-01:::2026-10-01
+INTRODUCIDO: DEP2:::Tabla de surf:::Deportes:::Tabla epoxy 6.0:::2026-03-15:::2026-06-15
+NO INTRODUCIDO: MOTO1:::Yamaha R3 duplicada:::Motor:::Intento duplicado:::2026-04-02:::2026-08-02
+-----LISTADO: 7
+[ DEP1 -de-> Deportes ;;; Bicicleta montaña ] (2026-02-10) --- Bici MTB doble suspensión --- (2026-05-10)
+[ DEP2 -de-> Deportes ;;; Tabla de surf ] (2026-03-15) --- Tabla epoxy 6.0 --- (2026-06-15)
+[ ELEC1 -de-> Electronica ;;; Smart TV 55 ] (2026-02-20) --- Televisor 4K OLED --- (2026-07-20)
+[ INMO1 -de-> Inmobiliaria ;;; Piso céntrico ] (2026-01-15) --- Piso de 2 habitaciones --- (2026-12-31)
+[ LIB1 -de-> Libros ;;; El Quijote ] (2026-03-05) --- Edición antigua --- (2026-09-05)
+[ MOTO1 -de-> Motor ;;; Yamaha R3 ] (2026-04-01) --- Moto en buen estado --- (2026-08-01)
+[ MOTO2 -de-> Motor ;;; Honda Civic ] (2026-05-01) --- Coche familiar --- (2026-10-01)
+-----
+CAMBIADO: MOTO1:::Yamaha R3 ABS:::Motor:::Moto en perfecto estado, con ABS:::2026-04-05:::2026-08-15
+NO CAMBIADO: Z_FAKE
+LOCALIZADO: MOTO1:::Yamaha R3 ABS:::Motor:::Moto en perfecto estado, con ABS:::2026-04-05:::2026-08-15
+NO LOCALIZADO: Z_FAKE
+EXISTENTE: LIB1
+DESCONOCIDO: Z_FAKE
+CATEGORIA CONOCIDA: Deportes
+CATEGORIA DESCONOCIDA: Musica
+BORRADO: LIB1
+NO BORRADO: Z_FAKE
+-----LISTADO: 6
+[ DEP1 -de-> Deportes ;;; Bicicleta montaña ] (2026-02-10) --- Bici MTB doble suspensión --- (2026-05-10)
+[ DEP2 -de-> Deportes ;;; Tabla de surf ] (2026-03-15) --- Tabla epoxy 6.0 --- (2026-06-15)
+[ ELEC1 -de-> Electronica ;;; Smart TV 55 ] (2026-02-20) --- Televisor 4K OLED --- (2026-07-20)
+[ INMO1 -de-> Inmobiliaria ;;; Piso céntrico ] (2026-01-15) --- Piso de 2 habitaciones --- (2026-12-31)
+[ MOTO1 -de-> Motor ;;; Yamaha R3 ABS ] (2026-04-05) --- Moto en perfecto estado, con ABS --- (2026-08-15)
+[ MOTO2 -de-> Motor ;;; Honda Civic ] (2026-05-01) --- Coche familiar --- (2026-10-01)
+-----
+DE CATEGORIA: Deportes --- DEP1:::DEP2 --- 
+DE CATEGORIA: Musica ---  --- 
+ANTERIORES A: 2026-03-01 --- DEP1:::ELEC1:::INMO1 --- 
+ANTERIORES A: 2026-05-01 --- DEP1:::DEP2:::ELEC1:::INMO1:::MOTO1 --- 
+PURGADOS: 2026-03-01
+-----LISTADO: 3
+[ DEP2 -de-> Deportes ;;; Tabla de surf ] (2026-03-15) --- Tabla epoxy 6.0 --- (2026-06-15)
+[ MOTO1 -de-> Motor ;;; Yamaha R3 ABS ] (2026-04-05) --- Moto en perfecto estado, con ABS --- (2026-08-15)
+[ MOTO2 -de-> Motor ;;; Honda Civic ] (2026-05-01) --- Coche familiar --- (2026-10-01)
+-----
+ELIMINADOS: Motor
+NO ELIMINADOS: Musica
+-----LISTADO: 1
+[ DEP2 -de-> Deportes ;;; Tabla de surf ] (2026-03-15) --- Tabla epoxy 6.0 --- (2026-06-15)
+-----

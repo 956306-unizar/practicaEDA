@@ -12,6 +12,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <iomanip>
 
 #include "fecha.hpp"
 #include "anuncio.hpp"
@@ -337,12 +338,14 @@ void instrO(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anu
                         << suTitulo(anuncioAConsultar) << separador
                         << suCategoria(anuncioAConsultar) << separador
                         << suDescripcion(anuncioAConsultar) << separador
+
+                        << setfill('0')
                         << anyo(fechaPublicacionAnuncio)
-                                 << "-" << mes(fechaPublicacionAnuncio)
-                                 << "-" << dia(fechaPublicacionAnuncio) << separador
+                        << "-" << setw(2) << mes(fechaPublicacionAnuncio)
+                        << "-" << setw(2) << dia(fechaPublicacionAnuncio) << separador
                         << anyo(fechaFinalizacionAnuncio)
-                                 << "-" << mes(fechaFinalizacionAnuncio)
-                                 << "-" << dia(fechaFinalizacionAnuncio)
+                        << "-" << setw(2) << mes(fechaFinalizacionAnuncio)
+                        << "-" << setw(2) << dia(fechaFinalizacionAnuncio)
                         << endl;
 
 

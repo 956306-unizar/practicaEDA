@@ -1,0 +1,53 @@
+-----LISTADO: 0
+-----
+INTRODUCIDO: PROD3:::Monitor 27 pulgadas:::Electronica:::Monitor 4K IPS en perfecto estado:::2026-03-01:::2026-05-01
+INTRODUCIDO: PROD1:::Portatil i7:::Electronica:::Portatil de alta gama con 16GB RAM:::2026-01-10:::2026-06-10
+INTRODUCIDO: PROD2:::Teclado RGB:::Electronica:::Teclado mecanico switch blue:::2026-02-15:::2026-04-15
+NO INTRODUCIDO: PROD1:::Portatil i7 duplicado:::Electronica:::Intento de duplicar:::2026-01-11:::2026-06-11
+-----LISTADO: 3
+[ PROD1 -de-> Electronica ;;; Portatil i7 ] (2026-01-10) --- Portatil de alta gama con 16GB RAM --- (2026-06-10)
+[ PROD2 -de-> Electronica ;;; Teclado RGB ] (2026-02-15) --- Teclado mecanico switch blue --- (2026-04-15)
+[ PROD3 -de-> Electronica ;;; Monitor 27 pulgadas ] (2026-03-01) --- Monitor 4K IPS en perfecto estado --- (2026-05-01)
+-----
+CAMBIADO: PROD2:::Teclado RGB Pro:::Electronica:::Teclado mecanico switch red, silencioso:::2026-02-20:::2026-04-20
+NO CAMBIADO: Z_FAIL
+LOCALIZADO: PROD2:::Teclado RGB Pro:::Electronica:::Teclado mecanico switch red, silencioso:::2026-02-20:::2026-04-20
+NO LOCALIZADO: Z_FAIL
+EXISTENTE: PROD1
+DESCONOCIDO: Z_FAIL
+CATEGORIA CONOCIDA: Electronica
+CATEGORIA DESCONOCIDA: Hogar
+BORRADO: PROD3
+NO BORRADO: Z_FAIL
+-----LISTADO: 2
+[ PROD1 -de-> Electronica ;;; Portatil i7 ] (2026-01-10) --- Portatil de alta gama con 16GB RAM --- (2026-06-10)
+[ PROD2 -de-> Electronica ;;; Teclado RGB Pro ] (2026-02-20) --- Teclado mecanico switch red, silencioso --- (2026-04-20)
+-----
+DE CATEGORIA: Electronica --- PROD1:::PROD2 --- 
+DE CATEGORIA: Hogar ---  --- 
+ANTERIORES A: 2026-02-01 --- PROD1 --- 
+ANTERIORES A: 2026-03-01 --- PROD1:::PROD2 --- 
+INTRODUCIDO: CASA1:::Sofá 3 plazas:::Hogar:::Sofá cómodo color gris:::2026-03-20:::2026-07-20
+INTRODUCIDO: CASA2:::Mesa comedor:::Hogar:::Mesa de madera extensible:::2026-03-25:::2026-08-25
+-----LISTADO: 4
+[ CASA1 -de-> Hogar ;;; Sofá 3 plazas ] (2026-03-20) --- Sofá cómodo color gris --- (2026-07-20)
+[ CASA2 -de-> Hogar ;;; Mesa comedor ] (2026-03-25) --- Mesa de madera extensible --- (2026-08-25)
+[ PROD1 -de-> Electronica ;;; Portatil i7 ] (2026-01-10) --- Portatil de alta gama con 16GB RAM --- (2026-06-10)
+[ PROD2 -de-> Electronica ;;; Teclado RGB Pro ] (2026-02-20) --- Teclado mecanico switch red, silencioso --- (2026-04-20)
+-----
+PURGADOS: 2026-02-01
+-----LISTADO: 3
+[ CASA1 -de-> Hogar ;;; Sofá 3 plazas ] (2026-03-20) --- Sofá cómodo color gris --- (2026-07-20)
+[ CASA2 -de-> Hogar ;;; Mesa comedor ] (2026-03-25) --- Mesa de madera extensible --- (2026-08-25)
+[ PROD2 -de-> Electronica ;;; Teclado RGB Pro ] (2026-02-20) --- Teclado mecanico switch red, silencioso --- (2026-04-20)
+-----
+ELIMINADOS: Electronica
+-----LISTADO: 2
+[ CASA1 -de-> Hogar ;;; Sofá 3 plazas ] (2026-03-20) --- Sofá cómodo color gris --- (2026-07-20)
+[ CASA2 -de-> Hogar ;;; Mesa comedor ] (2026-03-25) --- Mesa de madera extensible --- (2026-08-25)
+-----
+NO ELIMINADOS: Inmobiliaria
+-----LISTADO: 2
+[ CASA1 -de-> Hogar ;;; Sofá 3 plazas ] (2026-03-20) --- Sofá cómodo color gris --- (2026-07-20)
+[ CASA2 -de-> Hogar ;;; Mesa comedor ] (2026-03-25) --- Mesa de madera extensible --- (2026-08-25)
+-----

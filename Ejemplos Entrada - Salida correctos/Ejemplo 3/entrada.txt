@@ -1,0 +1,151 @@
+LT
+A
+ART01
+Sofa moderno
+Sofa de tres plazas tapizado en tela gris
+Hogar
+2026-01-10
+2026-06-10
+A
+ART02
+Mesa de centro
+Mesa auxiliar de madera maciza
+Hogar
+2026-01-15
+2026-06-15
+A
+ART03
+Portatil ultraligero
+Portatil de 14 pulgadas con 16GB RAM
+Informatica
+2026-01-20
+2026-07-20
+A
+ART04
+Monitor curvo
+Monitor gaming de 27 pulgadas 144Hz
+Informatica
+2026-02-01
+2026-08-01
+A
+ART05
+Bicicleta de carretera
+Bicicleta ligera de aluminio con 22 velocidades
+Deportes
+2026-02-10
+2026-09-10
+A
+ART06
+Mochila de senderismo
+Mochila impermeable de 40 litros
+Deportes
+2026-02-15
+2026-09-15
+A
+ART07
+Camara de fotos
+Camara evil con objetivo intercambiable
+Electronica
+2026-03-01
+2026-10-01
+A
+ART08
+Auriculares de diadema
+Auriculares bluetooth con cancelacion de ruido
+Electronica
+2026-03-10
+2026-10-30
+A
+ART01
+Sofa moderno duplicado
+Intento de insertar ID repetido
+Hogar
+2026-01-12
+2026-06-12
+LT
+C
+ART03
+Portatil ultraligero Pro
+Portatil de 14 pulgadas con 32GB RAM y 1TB SSD
+Informatica
+2026-01-25
+2026-07-25
+C
+X_FAIL
+No existe este anuncio
+Prueba de cambio fallido
+Informatica
+2026-01-01
+2026-01-02
+O
+ART03
+O
+X_FAIL
+E
+ART05
+E
+X_FAIL
+EC
+Informatica
+EC
+Juguetes
+LO
+2026-02-01
+LO
+2026-03-01
+LC
+Informatica
+LC
+Juguetes
+LT
+P
+2026-02-01
+LT
+B
+ART01
+B
+X_FAIL
+BC
+Hogar
+BC
+Juguetes
+LT
+A
+ART01
+Sofa moderno renovado
+Sofa de tres plazas tapizado en terciopelo azul
+Hogar
+2026-03-05
+2026-11-05
+A
+ART09
+Estanteria metalica
+Estanteria modular de 5 baldas
+Hogar
+2026-03-15
+2026-12-01
+LT
+C
+ART09
+Estanteria metalica reforzada
+Estanteria modular de 5 baldas soporta 150kg
+Hogar
+2026-03-20
+2026-12-15
+O
+ART09
+E
+ART09
+EC
+Hogar
+LC
+Hogar
+LO
+2026-04-01
+P
+2026-03-01
+B
+ART02
+BC
+Deportes
+LT

@@ -1,0 +1,105 @@
+LT
+A
+MOTO1
+Yamaha R3
+Moto en buen estado
+Motor
+2026-04-01
+2026-08-01
+A
+INMO1
+Piso céntrico
+Piso de 2 habitaciones
+Inmobiliaria
+2026-01-15
+2026-12-31
+A
+DEP1
+Bicicleta montaña
+Bici MTB doble suspensión
+Deportes
+2026-02-10
+2026-05-10
+A
+LIB1
+El Quijote
+Edición antigua
+Libros
+2026-03-05
+2026-09-05
+A
+ELEC1
+Smart TV 55
+Televisor 4K OLED
+Electronica
+2026-02-20
+2026-07-20
+A
+MOTO2
+Honda Civic
+Coche familiar
+Motor
+2026-05-01
+2026-10-01
+A
+DEP2
+Tabla de surf
+Tabla epoxy 6.0
+Deportes
+2026-03-15
+2026-06-15
+A
+MOTO1
+Yamaha R3 duplicada
+Intento duplicado
+Motor
+2026-04-02
+2026-08-02
+LT
+C
+MOTO1
+Yamaha R3 ABS
+Moto en perfecto estado, con ABS
+Motor
+2026-04-05
+2026-08-15
+C
+Z_FAKE
+No existe
+Prueba fallo cambio
+Motor
+2026-01-01
+2026-01-02
+O
+MOTO1
+O
+Z_FAKE
+E
+LIB1
+E
+Z_FAKE
+EC
+Deportes
+EC
+Musica
+B
+LIB1
+B
+Z_FAKE
+LT
+LC
+Deportes
+LC
+Musica
+LO
+2026-03-01
+LO
+2026-05-01
+P
+2026-03-01
+LT
+BC
+Motor
+BC
+Musica
+LT

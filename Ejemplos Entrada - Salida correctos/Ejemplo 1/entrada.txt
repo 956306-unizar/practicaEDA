@@ -1,0 +1,93 @@
+LT
+A
+PROD3
+Monitor 27 pulgadas
+Monitor 4K IPS en perfecto estado
+Electronica
+2026-03-01
+2026-05-01
+A
+PROD1
+Portatil i7
+Portatil de alta gama con 16GB RAM
+Electronica
+2026-01-10
+2026-06-10
+A
+PROD2
+Teclado RGB
+Teclado mecanico switch blue
+Electronica
+2026-02-15
+2026-04-15
+A
+PROD1
+Portatil i7 duplicado
+Intento de duplicar
+Electronica
+2026-01-11
+2026-06-11
+LT
+C
+PROD2
+Teclado RGB Pro
+Teclado mecanico switch red, silencioso
+Electronica
+2026-02-20
+2026-04-20
+C
+Z_FAIL
+No existe
+Prueba fallo
+Electronica
+2026-01-01
+2026-01-02
+O
+PROD2
+O
+Z_FAIL
+E
+PROD1
+E
+Z_FAIL
+EC
+Electronica
+EC
+Hogar
+B
+PROD3
+B
+Z_FAIL
+LT
+LC
+Electronica
+LC
+Hogar
+LO
+2026-02-01
+LO
+2026-03-01
+A
+CASA1
+Sofá 3 plazas
+Sofá cómodo color gris
+Hogar
+2026-03-20
+2026-07-20
+A
+CASA2
+Mesa comedor
+Mesa de madera extensible
+Hogar
+2026-03-25
+2026-08-25
+LT
+P
+2026-02-01
+LT
+BC
+Electronica
+LT
+BC
+Inmobiliaria
+LT

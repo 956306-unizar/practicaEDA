@@ -1,0 +1,324 @@
+LT
+A
+PROD01
+Portatil Lenovo
+Portatil de oficina con 8GB RAM
+Informatica
+2026-01-01
+2026-12-31
+A
+PROD02
+Ratón inalambrico
+Ratón ergonomico con receptor USB
+Informatica
+2026-01-05
+2026-12-31
+A
+PROD03
+Teclado mecanico
+Teclado RGB switch brown
+Informatica
+2026-01-10
+2026-12-31
+A
+PROD04
+Monitor 24 pulgadas
+Monitor Full HD IPS
+Informatica
+2026-01-15
+2026-12-31
+A
+PROD05
+Silla de oficina
+Silla ergonomica con soporte lumbar
+Hogar
+2026-02-01
+2026-11-30
+A
+PROD06
+Mesa de escritorio
+Mesa de madera minimalista
+Hogar
+2026-02-05
+2026-11-30
+A
+PROD07
+Lampara de pie
+Lampara LED regulable
+Hogar
+2026-02-10
+2026-11-30
+A
+PROD08
+Estanteria metalica
+Estanteria modular 5 baldas
+Hogar
+2026-02-15
+2026-11-30
+A
+PROD09
+Bicicleta de montana
+Bicicleta MTB 29 pulgadas
+Deportes
+2026-03-01
+2026-10-31
+A
+PROD10
+Mochila impermeable
+Mochila para senderismo 30L
+Deportes
+2026-03-05
+2026-10-31
+A
+PROD11
+Pesas ajustables
+Juego de mancuernas 20kg
+Deportes
+2026-03-10
+2026-10-31
+A
+PROD12
+Esterilla yoga
+Esterilla antideslizante 6mm
+Deportes
+2026-03-15
+2026-10-31
+A
+PROD13
+Camara reflex
+Camara con objetivo 18-55mm
+Electronica
+2026-04-01
+2026-09-30
+A
+PROD14
+Auriculares bluetooth
+Auriculares inalambricos de diadema
+Electronica
+2026-04-05
+2026-09-30
+A
+PROD15
+Altavoz portatil
+Altavoz resistente al agua IPX7
+Electronica
+2026-04-10
+2026-09-30
+A
+PROD16
+Smartwatch deportivo
+Reloj inteligente con GPS
+Electronica
+2026-04-15
+2026-09-30
+A
+PROD17
+Casco de moto
+Casco integral homologado
+Motor
+2026-05-01
+2026-08-31
+A
+PROD18
+Caballete de taller
+Caballete para mantenimiento de moto
+Motor
+2026-05-05
+2026-08-31
+A
+PROD19
+Chaqueta de cordura
+Chaqueta con protecciones para moto
+Motor
+2026-05-10
+2026-08-31
+A
+PROD20
+Guantes de piel
+Guantes verano perforados para moto
+Motor
+2026-05-15
+2026-08-31
+A
+PROD21
+Libro de programacion
+Aprende estructuras de datos
+Libros
+2026-06-01
+2026-12-31
+A
+PROD22
+Novela historica
+Tapa dura edicion coleccionista
+Libros
+2026-06-05
+2026-12-31
+A
+PROD23
+Guia de viajes
+Guia completa de Japon
+Libros
+2026-06-10
+2026-12-31
+A
+PROD24
+Comic manga
+Tomo unico coleccion shonen
+Libros
+2026-06-15
+2026-12-31
+LT
+C
+PROD01
+Portatil Lenovo Pro
+Portatil de oficina con 16GB RAM y SSD 512GB
+Informatica
+2026-01-02
+2026-12-31
+C
+PROD05
+Silla de oficina Executive
+Silla ergonomica de piel con soporte lumbar avanzado
+Hogar
+2026-02-02
+2026-11-30
+C
+PROD09
+Bicicleta de montana Pro
+Bicicleta MTB 29 pulgadas doble suspension
+Deportes
+2026-03-02
+2026-10-31
+C
+PROD13
+Camara reflex Avanzada
+Camara con objetivo 18-135mm estabilizado
+Electronica
+2026-04-02
+2026-09-30
+C
+PROD17
+Casco de moto Modular
+Casco modular con visor solar integrado
+Motor
+2026-05-02
+2026-08-31
+C
+PROD21
+Libro de programacion avanzado
+Aprende algoritmos avanzados en Java y C++
+Libros
+2026-06-02
+2026-12-31
+C
+FAVORITO_FAIL
+Anuncio falso
+No deberia actualizarse
+Informatica
+2026-01-01
+2026-01-02
+O
+PROD01
+O
+PROD05
+O
+PROD09
+O
+PROD13
+O
+PROD17
+O
+PROD21
+O
+FAVORITO_FAIL
+E
+PROD02
+E
+PROD06
+E
+PROD10
+E
+PROD14
+E
+PROD18
+E
+PROD22
+E
+FAVORITO_FAIL
+EC
+Informatica
+EC
+Hogar
+EC
+Deportes
+EC
+Electronica
+EC
+Motor
+EC
+Libros
+EC
+Inmobiliaria
+LO
+2026-02-01
+LO
+2026-03-01
+LO
+2026-04-01
+LO
+2026-05-01
+LO
+2026-06-01
+LC
+Informatica
+LC
+Hogar
+LC
+Deportes
+LC
+Electronica
+LC
+Motor
+LC
+Libros
+LC
+Inmobiliaria
+LT
+P
+2026-02-01
+LT
+P
+2026-03-01
+LT
+P
+2026-04-01
+LT
+B
+PROD02
+B
+PROD06
+B
+PROD10
+B
+PROD14
+B
+PROD18
+B
+PROD22
+B
+FAVORITO_FAIL
+BC
+Informatica
+BC
+Hogar
+BC
+Deportes
+BC
+Electronica
+BC
+Motor
+BC
+Libros
+BC
+Inmobiliaria
+LT

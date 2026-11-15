@@ -1,11 +1,13 @@
-# Se ignora todo por defecto
-*
+# 1. Ignorar todo en la raíz del proyecto por defecto
+/*
 
-# Se evita ignorar las propias carpetas
-!*/
+# 2. Permitir explícitamente la carpeta de ejemplos para que Git pueda entrar en ella
+!/Ejemplos Entrada - Salida correctos/
 
-# No ignoramos los siguientes tipos de archivo (con el '!' delante).
-!*.cpp      
+# 3. Permitir los archivos específicos dentro de esa carpeta de ejemplos
+!/Ejemplos Entrada - Salida correctos/*.txt
+
+# 4. Permitir los tipos de archivos de código que quieres rastrear en general
+!*.cpp
 !*.hpp
-!*.txt
 !*.git.exe

@@ -1,0 +1,88 @@
+-----LISTADO: 0
+-----
+INTRODUCIDO: ART01:::Sofa moderno:::Hogar:::Sofa de tres plazas tapizado en tela gris:::2026-01-10:::2026-06-10
+INTRODUCIDO: ART02:::Mesa de centro:::Hogar:::Mesa auxiliar de madera maciza:::2026-01-15:::2026-06-15
+INTRODUCIDO: ART03:::Portatil ultraligero:::Informatica:::Portatil de 14 pulgadas con 16GB RAM:::2026-01-20:::2026-07-20
+INTRODUCIDO: ART04:::Monitor curvo:::Informatica:::Monitor gaming de 27 pulgadas 144Hz:::2026-02-01:::2026-08-01
+INTRODUCIDO: ART05:::Bicicleta de carretera:::Deportes:::Bicicleta ligera de aluminio con 22 velocidades:::2026-02-10:::2026-09-10
+INTRODUCIDO: ART06:::Mochila de senderismo:::Deportes:::Mochila impermeable de 40 litros:::2026-02-15:::2026-09-15
+INTRODUCIDO: ART07:::Camara de fotos:::Electronica:::Camara evil con objetivo intercambiable:::2026-03-01:::2026-10-01
+INTRODUCIDO: ART08:::Auriculares de diadema:::Electronica:::Auriculares bluetooth con cancelacion de ruido:::2026-03-10:::2026-10-30
+NO INTRODUCIDO: ART01:::Sofa moderno duplicado:::Hogar:::Intento de insertar ID repetido:::2026-01-12:::2026-06-12
+-----LISTADO: 8
+[ ART01 -de-> Hogar ;;; Sofa moderno ] (2026-01-10) --- Sofa de tres plazas tapizado en tela gris --- (2026-06-10)
+[ ART02 -de-> Hogar ;;; Mesa de centro ] (2026-01-15) --- Mesa auxiliar de madera maciza --- (2026-06-15)
+[ ART03 -de-> Informatica ;;; Portatil ultraligero ] (2026-01-20) --- Portatil de 14 pulgadas con 16GB RAM --- (2026-07-20)
+[ ART04 -de-> Informatica ;;; Monitor curvo ] (2026-02-01) --- Monitor gaming de 27 pulgadas 144Hz --- (2026-08-01)
+[ ART05 -de-> Deportes ;;; Bicicleta de carretera ] (2026-02-10) --- Bicicleta ligera de aluminio con 22 velocidades --- (2026-09-10)
+[ ART06 -de-> Deportes ;;; Mochila de senderismo ] (2026-02-15) --- Mochila impermeable de 40 litros --- (2026-09-15)
+[ ART07 -de-> Electronica ;;; Camara de fotos ] (2026-03-01) --- Camara evil con objetivo intercambiable --- (2026-10-01)
+[ ART08 -de-> Electronica ;;; Auriculares de diadema ] (2026-03-10) --- Auriculares bluetooth con cancelacion de ruido --- (2026-10-30)
+-----
+CAMBIADO: ART03:::Portatil ultraligero Pro:::Informatica:::Portatil de 14 pulgadas con 32GB RAM y 1TB SSD:::2026-01-25:::2026-07-25
+NO CAMBIADO: X_FAIL
+LOCALIZADO: ART03:::Portatil ultraligero Pro:::Informatica:::Portatil de 14 pulgadas con 32GB RAM y 1TB SSD:::2026-01-25:::2026-07-25
+NO LOCALIZADO: X_FAIL
+EXISTENTE: ART05
+DESCONOCIDO: X_FAIL
+CATEGORIA CONOCIDA: Informatica
+CATEGORIA DESCONOCIDA: Juguetes
+ANTERIORES A: 2026-02-01 --- ART01:::ART02:::ART03 --- 
+ANTERIORES A: 2026-03-01 --- ART01:::ART02:::ART03:::ART04:::ART05:::ART06 --- 
+DE CATEGORIA: Informatica --- ART03:::ART04 --- 
+DE CATEGORIA: Juguetes ---  --- 
+-----LISTADO: 8
+[ ART01 -de-> Hogar ;;; Sofa moderno ] (2026-01-10) --- Sofa de tres plazas tapizado en tela gris --- (2026-06-10)
+[ ART02 -de-> Hogar ;;; Mesa de centro ] (2026-01-15) --- Mesa auxiliar de madera maciza --- (2026-06-15)
+[ ART03 -de-> Informatica ;;; Portatil ultraligero Pro ] (2026-01-25) --- Portatil de 14 pulgadas con 32GB RAM y 1TB SSD --- (2026-07-25)
+[ ART04 -de-> Informatica ;;; Monitor curvo ] (2026-02-01) --- Monitor gaming de 27 pulgadas 144Hz --- (2026-08-01)
+[ ART05 -de-> Deportes ;;; Bicicleta de carretera ] (2026-02-10) --- Bicicleta ligera de aluminio con 22 velocidades --- (2026-09-10)
+[ ART06 -de-> Deportes ;;; Mochila de senderismo ] (2026-02-15) --- Mochila impermeable de 40 litros --- (2026-09-15)
+[ ART07 -de-> Electronica ;;; Camara de fotos ] (2026-03-01) --- Camara evil con objetivo intercambiable --- (2026-10-01)
+[ ART08 -de-> Electronica ;;; Auriculares de diadema ] (2026-03-10) --- Auriculares bluetooth con cancelacion de ruido --- (2026-10-30)
+-----
+PURGADOS: 2026-02-01
+-----LISTADO: 5
+[ ART04 -de-> Informatica ;;; Monitor curvo ] (2026-02-01) --- Monitor gaming de 27 pulgadas 144Hz --- (2026-08-01)
+[ ART05 -de-> Deportes ;;; Bicicleta de carretera ] (2026-02-10) --- Bicicleta ligera de aluminio con 22 velocidades --- (2026-09-10)
+[ ART06 -de-> Deportes ;;; Mochila de senderismo ] (2026-02-15) --- Mochila impermeable de 40 litros --- (2026-09-15)
+[ ART07 -de-> Electronica ;;; Camara de fotos ] (2026-03-01) --- Camara evil con objetivo intercambiable --- (2026-10-01)
+[ ART08 -de-> Electronica ;;; Auriculares de diadema ] (2026-03-10) --- Auriculares bluetooth con cancelacion de ruido --- (2026-10-30)
+-----
+NO BORRADO: ART01
+NO BORRADO: X_FAIL
+NO ELIMINADOS: Hogar
+NO ELIMINADOS: Juguetes
+-----LISTADO: 5
+[ ART04 -de-> Informatica ;;; Monitor curvo ] (2026-02-01) --- Monitor gaming de 27 pulgadas 144Hz --- (2026-08-01)
+[ ART05 -de-> Deportes ;;; Bicicleta de carretera ] (2026-02-10) --- Bicicleta ligera de aluminio con 22 velocidades --- (2026-09-10)
+[ ART06 -de-> Deportes ;;; Mochila de senderismo ] (2026-02-15) --- Mochila impermeable de 40 litros --- (2026-09-15)
+[ ART07 -de-> Electronica ;;; Camara de fotos ] (2026-03-01) --- Camara evil con objetivo intercambiable --- (2026-10-01)
+[ ART08 -de-> Electronica ;;; Auriculares de diadema ] (2026-03-10) --- Auriculares bluetooth con cancelacion de ruido --- (2026-10-30)
+-----
+INTRODUCIDO: ART01:::Sofa moderno renovado:::Hogar:::Sofa de tres plazas tapizado en terciopelo azul:::2026-03-05:::2026-11-05
+INTRODUCIDO: ART09:::Estanteria metalica:::Hogar:::Estanteria modular de 5 baldas:::2026-03-15:::2026-12-01
+-----LISTADO: 7
+[ ART01 -de-> Hogar ;;; Sofa moderno renovado ] (2026-03-05) --- Sofa de tres plazas tapizado en terciopelo azul --- (2026-11-05)
+[ ART04 -de-> Informatica ;;; Monitor curvo ] (2026-02-01) --- Monitor gaming de 27 pulgadas 144Hz --- (2026-08-01)
+[ ART05 -de-> Deportes ;;; Bicicleta de carretera ] (2026-02-10) --- Bicicleta ligera de aluminio con 22 velocidades --- (2026-09-10)
+[ ART06 -de-> Deportes ;;; Mochila de senderismo ] (2026-02-15) --- Mochila impermeable de 40 litros --- (2026-09-15)
+[ ART07 -de-> Electronica ;;; Camara de fotos ] (2026-03-01) --- Camara evil con objetivo intercambiable --- (2026-10-01)
+[ ART08 -de-> Electronica ;;; Auriculares de diadema ] (2026-03-10) --- Auriculares bluetooth con cancelacion de ruido --- (2026-10-30)
+[ ART09 -de-> Hogar ;;; Estanteria metalica ] (2026-03-15) --- Estanteria modular de 5 baldas --- (2026-12-01)
+-----
+CAMBIADO: ART09:::Estanteria metalica reforzada:::Hogar:::Estanteria modular de 5 baldas soporta 150kg:::2026-03-20:::2026-12-15
+LOCALIZADO: ART09:::Estanteria metalica reforzada:::Hogar:::Estanteria modular de 5 baldas soporta 150kg:::2026-03-20:::2026-12-15
+EXISTENTE: ART09
+CATEGORIA CONOCIDA: Hogar
+DE CATEGORIA: Hogar --- ART01:::ART09 --- 
+ANTERIORES A: 2026-04-01 --- ART01:::ART04:::ART05:::ART06:::ART07:::ART08:::ART09 --- 
+PURGADOS: 2026-03-01
+NO BORRADO: ART02
+NO ELIMINADOS: Deportes
+-----LISTADO: 4
+[ ART01 -de-> Hogar ;;; Sofa moderno renovado ] (2026-03-05) --- Sofa de tres plazas tapizado en terciopelo azul --- (2026-11-05)
+[ ART07 -de-> Electronica ;;; Camara de fotos ] (2026-03-01) --- Camara evil con objetivo intercambiable --- (2026-10-01)
+[ ART08 -de-> Electronica ;;; Auriculares de diadema ] (2026-03-10) --- Auriculares bluetooth con cancelacion de ruido --- (2026-10-30)
+[ ART09 -de-> Hogar ;;; Estanteria metalica reforzada ] (2026-03-20) --- Estanteria modular de 5 baldas soporta 150kg --- (2026-12-15)
+-----

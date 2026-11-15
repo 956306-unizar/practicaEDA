@@ -1,0 +1,191 @@
+-----LISTADO: 0
+-----
+INTRODUCIDO: PROD01:::Portatil Lenovo:::Informatica:::Portatil de oficina con 8GB RAM:::2026-01-01:::2026-12-31
+INTRODUCIDO: PROD02:::Ratón inalambrico:::Informatica:::Ratón ergonomico con receptor USB:::2026-01-05:::2026-12-31
+INTRODUCIDO: PROD03:::Teclado mecanico:::Informatica:::Teclado RGB switch brown:::2026-01-10:::2026-12-31
+INTRODUCIDO: PROD04:::Monitor 24 pulgadas:::Informatica:::Monitor Full HD IPS:::2026-01-15:::2026-12-31
+INTRODUCIDO: PROD05:::Silla de oficina:::Hogar:::Silla ergonomica con soporte lumbar:::2026-02-01:::2026-11-30
+INTRODUCIDO: PROD06:::Mesa de escritorio:::Hogar:::Mesa de madera minimalista:::2026-02-05:::2026-11-30
+INTRODUCIDO: PROD07:::Lampara de pie:::Hogar:::Lampara LED regulable:::2026-02-10:::2026-11-30
+INTRODUCIDO: PROD08:::Estanteria metalica:::Hogar:::Estanteria modular 5 baldas:::2026-02-15:::2026-11-30
+INTRODUCIDO: PROD09:::Bicicleta de montana:::Deportes:::Bicicleta MTB 29 pulgadas:::2026-03-01:::2026-10-31
+INTRODUCIDO: PROD10:::Mochila impermeable:::Deportes:::Mochila para senderismo 30L:::2026-03-05:::2026-10-31
+INTRODUCIDO: PROD11:::Pesas ajustables:::Deportes:::Juego de mancuernas 20kg:::2026-03-10:::2026-10-31
+INTRODUCIDO: PROD12:::Esterilla yoga:::Deportes:::Esterilla antideslizante 6mm:::2026-03-15:::2026-10-31
+INTRODUCIDO: PROD13:::Camara reflex:::Electronica:::Camara con objetivo 18-55mm:::2026-04-01:::2026-09-30
+INTRODUCIDO: PROD14:::Auriculares bluetooth:::Electronica:::Auriculares inalambricos de diadema:::2026-04-05:::2026-09-30
+INTRODUCIDO: PROD15:::Altavoz portatil:::Electronica:::Altavoz resistente al agua IPX7:::2026-04-10:::2026-09-30
+INTRODUCIDO: PROD16:::Smartwatch deportivo:::Electronica:::Reloj inteligente con GPS:::2026-04-15:::2026-09-30
+INTRODUCIDO: PROD17:::Casco de moto:::Motor:::Casco integral homologado:::2026-05-01:::2026-08-31
+INTRODUCIDO: PROD18:::Caballete de taller:::Motor:::Caballete para mantenimiento de moto:::2026-05-05:::2026-08-31
+INTRODUCIDO: PROD19:::Chaqueta de cordura:::Motor:::Chaqueta con protecciones para moto:::2026-05-10:::2026-08-31
+INTRODUCIDO: PROD20:::Guantes de piel:::Motor:::Guantes verano perforados para moto:::2026-05-15:::2026-08-31
+INTRODUCIDO: PROD21:::Libro de programacion:::Libros:::Aprende estructuras de datos:::2026-06-01:::2026-12-31
+INTRODUCIDO: PROD22:::Novela historica:::Libros:::Tapa dura edicion coleccionista:::2026-06-05:::2026-12-31
+INTRODUCIDO: PROD23:::Guia de viajes:::Libros:::Guia completa de Japon:::2026-06-10:::2026-12-31
+INTRODUCIDO: PROD24:::Comic manga:::Libros:::Tomo unico coleccion shonen:::2026-06-15:::2026-12-31
+-----LISTADO: 24
+[ PROD01 -de-> Informatica ;;; Portatil Lenovo ] (2026-01-01) --- Portatil de oficina con 8GB RAM --- (2026-12-31)
+[ PROD02 -de-> Informatica ;;; Ratón inalambrico ] (2026-01-05) --- Ratón ergonomico con receptor USB --- (2026-12-31)
+[ PROD03 -de-> Informatica ;;; Teclado mecanico ] (2026-01-10) --- Teclado RGB switch brown --- (2026-12-31)
+[ PROD04 -de-> Informatica ;;; Monitor 24 pulgadas ] (2026-01-15) --- Monitor Full HD IPS --- (2026-12-31)
+[ PROD05 -de-> Hogar ;;; Silla de oficina ] (2026-02-01) --- Silla ergonomica con soporte lumbar --- (2026-11-30)
+[ PROD06 -de-> Hogar ;;; Mesa de escritorio ] (2026-02-05) --- Mesa de madera minimalista --- (2026-11-30)
+[ PROD07 -de-> Hogar ;;; Lampara de pie ] (2026-02-10) --- Lampara LED regulable --- (2026-11-30)
+[ PROD08 -de-> Hogar ;;; Estanteria metalica ] (2026-02-15) --- Estanteria modular 5 baldas --- (2026-11-30)
+[ PROD09 -de-> Deportes ;;; Bicicleta de montana ] (2026-03-01) --- Bicicleta MTB 29 pulgadas --- (2026-10-31)
+[ PROD10 -de-> Deportes ;;; Mochila impermeable ] (2026-03-05) --- Mochila para senderismo 30L --- (2026-10-31)
+[ PROD11 -de-> Deportes ;;; Pesas ajustables ] (2026-03-10) --- Juego de mancuernas 20kg --- (2026-10-31)
+[ PROD12 -de-> Deportes ;;; Esterilla yoga ] (2026-03-15) --- Esterilla antideslizante 6mm --- (2026-10-31)
+[ PROD13 -de-> Electronica ;;; Camara reflex ] (2026-04-01) --- Camara con objetivo 18-55mm --- (2026-09-30)
+[ PROD14 -de-> Electronica ;;; Auriculares bluetooth ] (2026-04-05) --- Auriculares inalambricos de diadema --- (2026-09-30)
+[ PROD15 -de-> Electronica ;;; Altavoz portatil ] (2026-04-10) --- Altavoz resistente al agua IPX7 --- (2026-09-30)
+[ PROD16 -de-> Electronica ;;; Smartwatch deportivo ] (2026-04-15) --- Reloj inteligente con GPS --- (2026-09-30)
+[ PROD17 -de-> Motor ;;; Casco de moto ] (2026-05-01) --- Casco integral homologado --- (2026-08-31)
+[ PROD18 -de-> Motor ;;; Caballete de taller ] (2026-05-05) --- Caballete para mantenimiento de moto --- (2026-08-31)
+[ PROD19 -de-> Motor ;;; Chaqueta de cordura ] (2026-05-10) --- Chaqueta con protecciones para moto --- (2026-08-31)
+[ PROD20 -de-> Motor ;;; Guantes de piel ] (2026-05-15) --- Guantes verano perforados para moto --- (2026-08-31)
+[ PROD21 -de-> Libros ;;; Libro de programacion ] (2026-06-01) --- Aprende estructuras de datos --- (2026-12-31)
+[ PROD22 -de-> Libros ;;; Novela historica ] (2026-06-05) --- Tapa dura edicion coleccionista --- (2026-12-31)
+[ PROD23 -de-> Libros ;;; Guia de viajes ] (2026-06-10) --- Guia completa de Japon --- (2026-12-31)
+[ PROD24 -de-> Libros ;;; Comic manga ] (2026-06-15) --- Tomo unico coleccion shonen --- (2026-12-31)
+-----
+CAMBIADO: PROD01:::Portatil Lenovo Pro:::Informatica:::Portatil de oficina con 16GB RAM y SSD 512GB:::2026-01-02:::2026-12-31
+CAMBIADO: PROD05:::Silla de oficina Executive:::Hogar:::Silla ergonomica de piel con soporte lumbar avanzado:::2026-02-02:::2026-11-30
+CAMBIADO: PROD09:::Bicicleta de montana Pro:::Deportes:::Bicicleta MTB 29 pulgadas doble suspension:::2026-03-02:::2026-10-31
+CAMBIADO: PROD13:::Camara reflex Avanzada:::Electronica:::Camara con objetivo 18-135mm estabilizado:::2026-04-02:::2026-09-30
+CAMBIADO: PROD17:::Casco de moto Modular:::Motor:::Casco modular con visor solar integrado:::2026-05-02:::2026-08-31
+CAMBIADO: PROD21:::Libro de programacion avanzado:::Libros:::Aprende algoritmos avanzados en Java y C++:::2026-06-02:::2026-12-31
+NO CAMBIADO: FAVORITO_FAIL
+LOCALIZADO: PROD01:::Portatil Lenovo Pro:::Informatica:::Portatil de oficina con 16GB RAM y SSD 512GB:::2026-01-02:::2026-12-31
+LOCALIZADO: PROD05:::Silla de oficina Executive:::Hogar:::Silla ergonomica de piel con soporte lumbar avanzado:::2026-02-02:::2026-11-30
+LOCALIZADO: PROD09:::Bicicleta de montana Pro:::Deportes:::Bicicleta MTB 29 pulgadas doble suspension:::2026-03-02:::2026-10-31
+LOCALIZADO: PROD13:::Camara reflex Avanzada:::Electronica:::Camara con objetivo 18-135mm estabilizado:::2026-04-02:::2026-09-30
+LOCALIZADO: PROD17:::Casco de moto Modular:::Motor:::Casco modular con visor solar integrado:::2026-05-02:::2026-08-31
+LOCALIZADO: PROD21:::Libro de programacion avanzado:::Libros:::Aprende algoritmos avanzados en Java y C++:::2026-06-02:::2026-12-31
+NO LOCALIZADO: FAVORITO_FAIL
+EXISTENTE: PROD02
+EXISTENTE: PROD06
+EXISTENTE: PROD10
+EXISTENTE: PROD14
+EXISTENTE: PROD18
+EXISTENTE: PROD22
+DESCONOCIDO: FAVORITO_FAIL
+CATEGORIA CONOCIDA: Informatica
+CATEGORIA CONOCIDA: Hogar
+CATEGORIA CONOCIDA: Deportes
+CATEGORIA CONOCIDA: Electronica
+CATEGORIA CONOCIDA: Motor
+CATEGORIA CONOCIDA: Libros
+CATEGORIA DESCONOCIDA: Inmobiliaria
+ANTERIORES A: 2026-02-01 --- PROD01:::PROD02:::PROD03:::PROD04 --- 
+ANTERIORES A: 2026-03-01 --- PROD01:::PROD02:::PROD03:::PROD04:::PROD05:::PROD06:::PROD07:::PROD08 --- 
+ANTERIORES A: 2026-04-01 --- PROD01:::PROD02:::PROD03:::PROD04:::PROD05:::PROD06:::PROD07:::PROD08:::PROD09:::PROD10:::PROD11:::PROD12 --- 
+ANTERIORES A: 2026-05-01 --- PROD01:::PROD02:::PROD03:::PROD04:::PROD05:::PROD06:::PROD07:::PROD08:::PROD09:::PROD10:::PROD11:::PROD12:::PROD13:::PROD14:::PROD15:::PROD16 --- 
+ANTERIORES A: 2026-06-01 --- PROD01:::PROD02:::PROD03:::PROD04:::PROD05:::PROD06:::PROD07:::PROD08:::PROD09:::PROD10:::PROD11:::PROD12:::PROD13:::PROD14:::PROD15:::PROD16:::PROD17:::PROD18:::PROD19:::PROD20 --- 
+DE CATEGORIA: Informatica --- PROD01:::PROD02:::PROD03:::PROD04 --- 
+DE CATEGORIA: Hogar --- PROD05:::PROD06:::PROD07:::PROD08 --- 
+DE CATEGORIA: Deportes --- PROD09:::PROD10:::PROD11:::PROD12 --- 
+DE CATEGORIA: Electronica --- PROD13:::PROD14:::PROD15:::PROD16 --- 
+DE CATEGORIA: Motor --- PROD17:::PROD18:::PROD19:::PROD20 --- 
+DE CATEGORIA: Libros --- PROD21:::PROD22:::PROD23:::PROD24 --- 
+DE CATEGORIA: Inmobiliaria ---  --- 
+-----LISTADO: 24
+[ PROD01 -de-> Informatica ;;; Portatil Lenovo Pro ] (2026-01-02) --- Portatil de oficina con 16GB RAM y SSD 512GB --- (2026-12-31)
+[ PROD02 -de-> Informatica ;;; Ratón inalambrico ] (2026-01-05) --- Ratón ergonomico con receptor USB --- (2026-12-31)
+[ PROD03 -de-> Informatica ;;; Teclado mecanico ] (2026-01-10) --- Teclado RGB switch brown --- (2026-12-31)
+[ PROD04 -de-> Informatica ;;; Monitor 24 pulgadas ] (2026-01-15) --- Monitor Full HD IPS --- (2026-12-31)
+[ PROD05 -de-> Hogar ;;; Silla de oficina Executive ] (2026-02-02) --- Silla ergonomica de piel con soporte lumbar avanzado --- (2026-11-30)
+[ PROD06 -de-> Hogar ;;; Mesa de escritorio ] (2026-02-05) --- Mesa de madera minimalista --- (2026-11-30)
+[ PROD07 -de-> Hogar ;;; Lampara de pie ] (2026-02-10) --- Lampara LED regulable --- (2026-11-30)
+[ PROD08 -de-> Hogar ;;; Estanteria metalica ] (2026-02-15) --- Estanteria modular 5 baldas --- (2026-11-30)
+[ PROD09 -de-> Deportes ;;; Bicicleta de montana Pro ] (2026-03-02) --- Bicicleta MTB 29 pulgadas doble suspension --- (2026-10-31)
+[ PROD10 -de-> Deportes ;;; Mochila impermeable ] (2026-03-05) --- Mochila para senderismo 30L --- (2026-10-31)
+[ PROD11 -de-> Deportes ;;; Pesas ajustables ] (2026-03-10) --- Juego de mancuernas 20kg --- (2026-10-31)
+[ PROD12 -de-> Deportes ;;; Esterilla yoga ] (2026-03-15) --- Esterilla antideslizante 6mm --- (2026-10-31)
+[ PROD13 -de-> Electronica ;;; Camara reflex Avanzada ] (2026-04-02) --- Camara con objetivo 18-135mm estabilizado --- (2026-09-30)
+[ PROD14 -de-> Electronica ;;; Auriculares bluetooth ] (2026-04-05) --- Auriculares inalambricos de diadema --- (2026-09-30)
+[ PROD15 -de-> Electronica ;;; Altavoz portatil ] (2026-04-10) --- Altavoz resistente al agua IPX7 --- (2026-09-30)
+[ PROD16 -de-> Electronica ;;; Smartwatch deportivo ] (2026-04-15) --- Reloj inteligente con GPS --- (2026-09-30)
+[ PROD17 -de-> Motor ;;; Casco de moto Modular ] (2026-05-02) --- Casco modular con visor solar integrado --- (2026-08-31)
+[ PROD18 -de-> Motor ;;; Caballete de taller ] (2026-05-05) --- Caballete para mantenimiento de moto --- (2026-08-31)
+[ PROD19 -de-> Motor ;;; Chaqueta de cordura ] (2026-05-10) --- Chaqueta con protecciones para moto --- (2026-08-31)
+[ PROD20 -de-> Motor ;;; Guantes de piel ] (2026-05-15) --- Guantes verano perforados para moto --- (2026-08-31)
+[ PROD21 -de-> Libros ;;; Libro de programacion avanzado ] (2026-06-02) --- Aprende algoritmos avanzados en Java y C++ --- (2026-12-31)
+[ PROD22 -de-> Libros ;;; Novela historica ] (2026-06-05) --- Tapa dura edicion coleccionista --- (2026-12-31)
+[ PROD23 -de-> Libros ;;; Guia de viajes ] (2026-06-10) --- Guia completa de Japon --- (2026-12-31)
+[ PROD24 -de-> Libros ;;; Comic manga ] (2026-06-15) --- Tomo unico coleccion shonen --- (2026-12-31)
+-----
+PURGADOS: 2026-02-01
+-----LISTADO: 20
+[ PROD05 -de-> Hogar ;;; Silla de oficina Executive ] (2026-02-02) --- Silla ergonomica de piel con soporte lumbar avanzado --- (2026-11-30)
+[ PROD06 -de-> Hogar ;;; Mesa de escritorio ] (2026-02-05) --- Mesa de madera minimalista --- (2026-11-30)
+[ PROD07 -de-> Hogar ;;; Lampara de pie ] (2026-02-10) --- Lampara LED regulable --- (2026-11-30)
+[ PROD08 -de-> Hogar ;;; Estanteria metalica ] (2026-02-15) --- Estanteria modular 5 baldas --- (2026-11-30)
+[ PROD09 -de-> Deportes ;;; Bicicleta de montana Pro ] (2026-03-02) --- Bicicleta MTB 29 pulgadas doble suspension --- (2026-10-31)
+[ PROD10 -de-> Deportes ;;; Mochila impermeable ] (2026-03-05) --- Mochila para senderismo 30L --- (2026-10-31)
+[ PROD11 -de-> Deportes ;;; Pesas ajustables ] (2026-03-10) --- Juego de mancuernas 20kg --- (2026-10-31)
+[ PROD12 -de-> Deportes ;;; Esterilla yoga ] (2026-03-15) --- Esterilla antideslizante 6mm --- (2026-10-31)
+[ PROD13 -de-> Electronica ;;; Camara reflex Avanzada ] (2026-04-02) --- Camara con objetivo 18-135mm estabilizado --- (2026-09-30)
+[ PROD14 -de-> Electronica ;;; Auriculares bluetooth ] (2026-04-05) --- Auriculares inalambricos de diadema --- (2026-09-30)
+[ PROD15 -de-> Electronica ;;; Altavoz portatil ] (2026-04-10) --- Altavoz resistente al agua IPX7 --- (2026-09-30)
+[ PROD16 -de-> Electronica ;;; Smartwatch deportivo ] (2026-04-15) --- Reloj inteligente con GPS --- (2026-09-30)
+[ PROD17 -de-> Motor ;;; Casco de moto Modular ] (2026-05-02) --- Casco modular con visor solar integrado --- (2026-08-31)
+[ PROD18 -de-> Motor ;;; Caballete de taller ] (2026-05-05) --- Caballete para mantenimiento de moto --- (2026-08-31)
+[ PROD19 -de-> Motor ;;; Chaqueta de cordura ] (2026-05-10) --- Chaqueta con protecciones para moto --- (2026-08-31)
+[ PROD20 -de-> Motor ;;; Guantes de piel ] (2026-05-15) --- Guantes verano perforados para moto --- (2026-08-31)
+[ PROD21 -de-> Libros ;;; Libro de programacion avanzado ] (2026-06-02) --- Aprende algoritmos avanzados en Java y C++ --- (2026-12-31)
+[ PROD22 -de-> Libros ;;; Novela historica ] (2026-06-05) --- Tapa dura edicion coleccionista --- (2026-12-31)
+[ PROD23 -de-> Libros ;;; Guia de viajes ] (2026-06-10) --- Guia completa de Japon --- (2026-12-31)
+[ PROD24 -de-> Libros ;;; Comic manga ] (2026-06-15) --- Tomo unico coleccion shonen --- (2026-12-31)
+-----
+PURGADOS: 2026-03-01
+-----LISTADO: 16
+[ PROD09 -de-> Deportes ;;; Bicicleta de montana Pro ] (2026-03-02) --- Bicicleta MTB 29 pulgadas doble suspension --- (2026-10-31)
+[ PROD10 -de-> Deportes ;;; Mochila impermeable ] (2026-03-05) --- Mochila para senderismo 30L --- (2026-10-31)
+[ PROD11 -de-> Deportes ;;; Pesas ajustables ] (2026-03-10) --- Juego de mancuernas 20kg --- (2026-10-31)
+[ PROD12 -de-> Deportes ;;; Esterilla yoga ] (2026-03-15) --- Esterilla antideslizante 6mm --- (2026-10-31)
+[ PROD13 -de-> Electronica ;;; Camara reflex Avanzada ] (2026-04-02) --- Camara con objetivo 18-135mm estabilizado --- (2026-09-30)
+[ PROD14 -de-> Electronica ;;; Auriculares bluetooth ] (2026-04-05) --- Auriculares inalambricos de diadema --- (2026-09-30)
+[ PROD15 -de-> Electronica ;;; Altavoz portatil ] (2026-04-10) --- Altavoz resistente al agua IPX7 --- (2026-09-30)
+[ PROD16 -de-> Electronica ;;; Smartwatch deportivo ] (2026-04-15) --- Reloj inteligente con GPS --- (2026-09-30)
+[ PROD17 -de-> Motor ;;; Casco de moto Modular ] (2026-05-02) --- Casco modular con visor solar integrado --- (2026-08-31)
+[ PROD18 -de-> Motor ;;; Caballete de taller ] (2026-05-05) --- Caballete para mantenimiento de moto --- (2026-08-31)
+[ PROD19 -de-> Motor ;;; Chaqueta de cordura ] (2026-05-10) --- Chaqueta con protecciones para moto --- (2026-08-31)
+[ PROD20 -de-> Motor ;;; Guantes de piel ] (2026-05-15) --- Guantes verano perforados para moto --- (2026-08-31)
+[ PROD21 -de-> Libros ;;; Libro de programacion avanzado ] (2026-06-02) --- Aprende algoritmos avanzados en Java y C++ --- (2026-12-31)
+[ PROD22 -de-> Libros ;;; Novela historica ] (2026-06-05) --- Tapa dura edicion coleccionista --- (2026-12-31)
+[ PROD23 -de-> Libros ;;; Guia de viajes ] (2026-06-10) --- Guia completa de Japon --- (2026-12-31)
+[ PROD24 -de-> Libros ;;; Comic manga ] (2026-06-15) --- Tomo unico coleccion shonen --- (2026-12-31)
+-----
+PURGADOS: 2026-04-01
+-----LISTADO: 12
+[ PROD13 -de-> Electronica ;;; Camara reflex Avanzada ] (2026-04-02) --- Camara con objetivo 18-135mm estabilizado --- (2026-09-30)
+[ PROD14 -de-> Electronica ;;; Auriculares bluetooth ] (2026-04-05) --- Auriculares inalambricos de diadema --- (2026-09-30)
+[ PROD15 -de-> Electronica ;;; Altavoz portatil ] (2026-04-10) --- Altavoz resistente al agua IPX7 --- (2026-09-30)
+[ PROD16 -de-> Electronica ;;; Smartwatch deportivo ] (2026-04-15) --- Reloj inteligente con GPS --- (2026-09-30)
+[ PROD17 -de-> Motor ;;; Casco de moto Modular ] (2026-05-02) --- Casco modular con visor solar integrado --- (2026-08-31)
+[ PROD18 -de-> Motor ;;; Caballete de taller ] (2026-05-05) --- Caballete para mantenimiento de moto --- (2026-08-31)
+[ PROD19 -de-> Motor ;;; Chaqueta de cordura ] (2026-05-10) --- Chaqueta con protecciones para moto --- (2026-08-31)
+[ PROD20 -de-> Motor ;;; Guantes de piel ] (2026-05-15) --- Guantes verano perforados para moto --- (2026-08-31)
+[ PROD21 -de-> Libros ;;; Libro de programacion avanzado ] (2026-06-02) --- Aprende algoritmos avanzados en Java y C++ --- (2026-12-31)
+[ PROD22 -de-> Libros ;;; Novela historica ] (2026-06-05) --- Tapa dura edicion coleccionista --- (2026-12-31)
+[ PROD23 -de-> Libros ;;; Guia de viajes ] (2026-06-10) --- Guia completa de Japon --- (2026-12-31)
+[ PROD24 -de-> Libros ;;; Comic manga ] (2026-06-15) --- Tomo unico coleccion shonen --- (2026-12-31)
+-----
+NO BORRADO: PROD02
+NO BORRADO: PROD06
+NO BORRADO: PROD10
+BORRADO: PROD14
+BORRADO: PROD18
+BORRADO: PROD22
+NO BORRADO: FAVORITO_FAIL
+NO ELIMINADOS: Informatica
+NO ELIMINADOS: Hogar
+NO ELIMINADOS: Deportes
+ELIMINADOS: Electronica
+ELIMINADOS: Motor
+ELIMINADOS: Libros
+NO ELIMINADOS: Inmobiliaria
+-----LISTADO: 0
+-----
