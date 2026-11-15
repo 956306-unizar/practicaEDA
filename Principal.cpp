@@ -72,60 +72,10 @@ int main() {
     crear(coleccionAnuncios);
 
     string instruccionActual;
-/*
-    while(getline(lectorFichero, instruccionActual)) 
-    {
-        if (instruccionActual == "A") {
-
-            instrA(lectorFichero, escritorFichero, coleccionAnuncios);
-
-        } else if (instruccionActual == "C") {
-
-            instrC(lectorFichero, escritorFichero, coleccionAnuncios);
-
-        } else if (instruccionActual == "O") {
-
-            instrO(lectorFichero, escritorFichero, coleccionAnuncios);
-
-        } else if (instruccionActual == "E") {
-
-            instrE(lectorFichero, escritorFichero, coleccionAnuncios);
-
-        } else if (instruccionActual == "EC") {
-
-            instrEC(lectorFichero, escritorFichero, coleccionAnuncios);
-
-        } else if (instruccionActual == "B") {
-
-            instrB(lectorFichero, escritorFichero, coleccionAnuncios);
-
-        } else if (instruccionActual == "BC") {
-
-            instrBC(lectorFichero, escritorFichero, coleccionAnuncios);
-
-        } else if (instruccionActual == "P") {
-
-            instrP(lectorFichero, escritorFichero, coleccionAnuncios);
-
-        } else if (instruccionActual == "LO") {
-
-            instrLO(lectorFichero, escritorFichero, coleccionAnuncios);
-
-        } else if (instruccionActual == "LC") {
-
-            instrLC(lectorFichero, escritorFichero, coleccionAnuncios);
-
-        } else if (instruccionActual == "LT") {
-
-            instrLT(escritorFichero, coleccionAnuncios);
-
-        }
-    }
-*/
 
     while(getline(lectorFichero, instruccionActual)) 
     {   //instrucciones A C O E EC B BC P LO LC LT
-        instruccionActual = instruccionActual + "X";    //nos aseguramos que el string tenga al menos 2 de largo para poder comprobar la 2a posicion
+        instruccionActual = instruccionActual + "X";    //nos aseguramos que el string tenga al menos 2 de largo para poder comprobar la 2a posicion - X no se usa en ninguna instr.
         if(instruccionActual[0] == 'A'){
             instrA(lectorFichero, escritorFichero, coleccionAnuncios);
 
