@@ -71,51 +71,58 @@ int main() {
     ColeccionITF<Anuncio> coleccionAnuncios;
     crear(coleccionAnuncios);
 
-    string instruccionActual;
+    string instruccionActual, descartar;
 
-    while(getline(lectorFichero, instruccionActual)) 
-    {   //instrucciones A C O E EC B BC P LO LC LT
-        instruccionActual = instruccionActual + "X";    //nos aseguramos que el string tenga al menos 2 de largo para poder comprobar la 2a posicion - X no se usa en ninguna instr.
-        if(instruccionActual[0] == 'A'){
+    while( lectorFichero >> instruccionActual )
+    {
+        getline(lectorFichero, descartar);  //quitamos los posibles espacios y el \n
+        if (instruccionActual == "A") {
+
             instrA(lectorFichero, escritorFichero, coleccionAnuncios);
 
-        }else if(instruccionActual[0] == 'C'){
+        } else if (instruccionActual == "C") {
+
             instrC(lectorFichero, escritorFichero, coleccionAnuncios);
 
-        }else if(instruccionActual[0] == 'O'){
+        } else if (instruccionActual == "O") {
+
             instrO(lectorFichero, escritorFichero, coleccionAnuncios);
 
-        }else if(instruccionActual[0] == 'E'){   //E o EC
-            if(instruccionActual[1] == 'C'){
-                instrEC(lectorFichero, escritorFichero, coleccionAnuncios); //si es "EC"
+        } else if (instruccionActual == "E") {
 
-            }else{
-                instrE(lectorFichero, escritorFichero, coleccionAnuncios);  //si no, es "E " -> E
-            }
+            instrE(lectorFichero, escritorFichero, coleccionAnuncios);
 
-        }else if(instruccionActual[0] == 'B'){   //B o BC
-            if(instruccionActual[1] == 'C'){
-                instrBC(lectorFichero, escritorFichero, coleccionAnuncios); //si es "BC"
+        } else if (instruccionActual == "EC") {
 
-            }else{
-                instrB(lectorFichero, escritorFichero, coleccionAnuncios);  //si no, es "B " -> B
-            }
+            instrEC(lectorFichero, escritorFichero, coleccionAnuncios);
 
-        }else if(instruccionActual[0] == 'P'){
+        } else if (instruccionActual == "B") {
+
+            instrB(lectorFichero, escritorFichero, coleccionAnuncios);
+
+        } else if (instruccionActual == "BC") {
+
+            instrBC(lectorFichero, escritorFichero, coleccionAnuncios);
+
+        } else if (instruccionActual == "P") {
+
             instrP(lectorFichero, escritorFichero, coleccionAnuncios);
 
-        }else if(instruccionActual[0] == 'L'){   //LO LC o LT
-            if(instruccionActual[1] == 'O'){
-                instrLO(lectorFichero, escritorFichero, coleccionAnuncios); //si es "LO"
+        } else if (instruccionActual == "LO") {
 
-            }else if(instruccionActual[1] == 'C'){
-                instrLC(lectorFichero, escritorFichero, coleccionAnuncios); //si es "LC"
+            instrLO(lectorFichero, escritorFichero, coleccionAnuncios);
 
-            }else if(instruccionActual[1] == 'T'){
-                instrLT(escritorFichero, coleccionAnuncios); //si es "LT"
-            }
+        } else if (instruccionActual == "LC") {
+
+            instrLC(lectorFichero, escritorFichero, coleccionAnuncios);
+
+        } else if (instruccionActual == "LT") {
+
+            instrLT(escritorFichero, coleccionAnuncios);
+
         }
     }
+
 
 
     lectorFichero.close();
