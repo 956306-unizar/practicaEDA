@@ -37,7 +37,7 @@ void instrBC(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
 void instrP(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c);
 void instrLO(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c);
 void instrLC(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c);
-void instrLT(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c);
+void instrLT(ofstream &escritorFichero, ColeccionITF<Anuncio> &c);
 
 
 // --- PROGRAMA PRINCIPAL ---
@@ -69,7 +69,7 @@ int main() {
 
     while(getline(lectorFichero, instruccionActual)) 
     {
-        if (instruccionActual == "A" || instruccionActual == "A ") {
+        if (instruccionActual == "A") {
 
             instrA(lectorFichero, escritorFichero, coleccionAnuncios);
 
@@ -111,7 +111,7 @@ int main() {
 
         } else if (instruccionActual == "LT") {
 
-            instrLT(lectorFichero, escritorFichero, coleccionAnuncios);
+            instrLT(escritorFichero, coleccionAnuncios);
 
         }
     }
@@ -119,7 +119,7 @@ int main() {
     lectorFichero.close();
     escritorFichero.close();
 
-    cout << "El programa ha finalizado su ejecución correctamente" << endl;
+    cout << "El programa ha finalizado su ejecucion correctamente" << endl;
 
     return 0;
 }
@@ -616,7 +616,7 @@ void instrLC(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<An
     con la cadena “-----”.
 
 */
-void instrLT(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c) 
+void instrLT(ofstream &escritorFichero, ColeccionITF<Anuncio> &c) 
 {   
     int tot_anuncios = tamano(c);
     

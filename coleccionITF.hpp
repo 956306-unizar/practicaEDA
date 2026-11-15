@@ -333,6 +333,12 @@ void actualizar(ColeccionITF<T> &c, const T &i) {
 }
 */
 
+/*
+    Busca si existe un dato de tipo T, en los nodos que almacena la coleccionITF, que tenga el mismo identificador que el dato de tipo T
+    proporcionado (i). De ser así, el dato que ya se encuentra en la coleccionITF se actualizará con el del parámetro i.
+    Al solo cambiarse el valor de la variable "dato" dentro del nodo que se encuentra en dicha posición, no hará falta hacer más cambios
+    en ninguna otra parte.
+*/
 template<typename T> 
 void actualizar(ColeccionITF<T> &c, const T &i) {
 
@@ -341,7 +347,7 @@ void actualizar(ColeccionITF<T> &c, const T &i) {
 
         string identificadorDelNuevoDato = identificador(i);
 
-        // Creamo un puntero al primer nodo para comenzar el recorrido de busqueda
+        // Creamos un puntero al primer nodo para comenzar el recorrido de busqueda
         typename ColeccionITF<T>::Nodo* pAux = c.primero;
 
         while (pAux->sig != nullptr && identificador(pAux->dato) < identificadorDelNuevoDato)
