@@ -1,6 +1,6 @@
 // programa para emplear "coleccionITF" y fechas
 //David Maza Luengo 956269
-//compilar con: g++ pruebasDavid.cpp fecha.cpp anuncio.cpp -std=c++11 -o pruebasDavid
+//compilar con: g++ pruebasDavid.cpp ../fecha.cpp ../anuncio.cpp -Wall -Wextra -std=c++11 -o pruebasDavid
 
 #include <iostream>
 #include <fstream>
@@ -26,7 +26,7 @@ Fecha fecha(const Anuncio& a){
     return suPublicacion(a);
 }
 
-#include "coleccionITF.hpp"
+#include "../coleccionITF.hpp"
 
 // ============================================================================================INSTRUCCIONES DEL FICHERO
 

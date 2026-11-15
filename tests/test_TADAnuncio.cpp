@@ -6,6 +6,8 @@
  * =================================
  */
 
+ // Comando detallado de compilación: g++ ..\anuncio.cpp ..\fecha.cpp .\test_TADAnuncio.cpp -Wall -Wextra -std=c++11 -o testTADAnuncio
+
 #include "../anuncio.hpp"
 #include "../fecha.hpp"
 

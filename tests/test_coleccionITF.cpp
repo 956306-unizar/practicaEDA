@@ -9,7 +9,7 @@
 #include "../coleccionITF.hpp"
 #include "../anuncio.hpp"
 
-// COMANDO DE COMPILACIÓN: g++ .\fecha.cpp .\anuncio.cpp .\coleccionITF.hpp .\test_coleccionITF.cpp -std=c++11 -o testColeccionITF
+// COMANDO DE COMPILACIÓN: g++ ../fecha.cpp ../anuncio.cpp ../coleccionITF.hpp test_coleccionITF.cpp -Wall -Wextra -std=c++11 -o testColeccionITF
 
 // CABECERA - DECLARACIoN DE FUNCIONES
 
@@ -60,7 +60,7 @@ int main(int argc, char* argv[]) {
     evaluacionFuncion(vacia && tamanoColeccion == 0);
 
     if(masInfo) {
-        cout << "\nCreando " << NUM_ANUNCIOS_INICIALES <<  "anuncios genericos... " << endl;
+        cout << "\nCreando " << NUM_ANUNCIOS_INICIALES <<  " anuncios genericos... " << endl;
     }
 
     Anuncio anunciosGenericos[20];
