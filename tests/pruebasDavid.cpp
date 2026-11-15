@@ -6,8 +6,8 @@
 #include <fstream>
 using namespace std;
 
-#include "anuncio.hpp"
-#include "fecha.hpp"
+#include "../anuncio.hpp"
+#include "../fecha.hpp"
 
 /* ====================================================================================IMPLEMENTAR OPERACIONES DEL GENERICO
    Los Items Temáticos Fechados T necesitan de las siguientes operaciones:

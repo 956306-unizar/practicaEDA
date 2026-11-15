@@ -1,7 +1,8 @@
 # 1. Ignorar todo en la raíz del proyecto por defecto
 /*
 
-# 2. Permitir explícitamente la carpeta de ejemplos para que Git pueda entrar en ella
+# 2. Permitir explícitamente las carpetas de ejemplos y tests para que Git pueda entrar en ellas
+!/tests/
 !/Ejemplos Entrada - Salida correctos/
 
 # 3. Permitir los archivos específicos dentro de esa carpeta de ejemplos

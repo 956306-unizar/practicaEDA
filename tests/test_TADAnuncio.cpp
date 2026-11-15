@@ -6,10 +6,10 @@
  * =================================
  */
 
-#include "anuncio.hpp"
-#include "fecha.hpp"
+#include "../anuncio.hpp"
+#include "../fecha.hpp"
 
-#include<iostream>
+#include <iostream>
 
 using namespace std;
 

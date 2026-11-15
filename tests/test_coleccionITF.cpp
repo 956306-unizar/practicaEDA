@@ -6,8 +6,8 @@
  * =================================
  */
 
-#include "coleccionITF.hpp"
-#include "anuncio.hpp"
+#include "../coleccionITF.hpp"
+#include "../anuncio.hpp"
 
 // COMANDO DE COMPILACIÓN: g++ .\fecha.cpp .\anuncio.cpp .\coleccionITF.hpp .\test_coleccionITF.cpp -std=c++11 -o testColeccionITF
 
