@@ -1,8 +1,12 @@
-/* 
-_798618_956306_956269
+/*
+ * =================================
+ * AUTOR DEL CÓDIGO Y SU NIP
+ * =================================
+ * Arián Lajara Bueno   - 798618
+ * =================================
+ */
 
-g++ -std=c++11 Principal.cpp anuncio.cpp fecha.cpp -o P3_EDA
-*/
+// Comando detallado de compulación: g++ -std=c++11 Principal.cpp anuncio.cpp fecha.cpp -o P3_EDA
 
 #include "anuncio.hpp"
 

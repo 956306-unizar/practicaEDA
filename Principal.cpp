@@ -1,9 +1,14 @@
 /*
-_798618_956306_956269
+ * =================================
+ * AUTORES DEL CÓDIGO Y SUS NIPS
+ * =================================
+ * Arián Lajara Bueno   - 798618
+ * Abel Martínez Zárate - 956306
+ * David Maza Luengo    - 956269
+ * =================================
+ */
 
-Comando de compilación en Windows11: g++ .\fecha.cpp .\anuncio.cpp .\coleccionITF.hpp .\Principal.cpp -Wall -Wextra -std=c++11 -o Principal
-
-*/
+// Comando detallado de compilación en Windows11: g++ .\fecha.cpp .\anuncio.cpp .\coleccionITF.hpp .\Principal.cpp -Wall -Wextra -std=c++11 -o Principal
 
 #include <iostream>
 #include <fstream>

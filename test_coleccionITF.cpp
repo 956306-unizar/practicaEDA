@@ -1,3 +1,11 @@
+/*
+ * =================================
+ * AUTOR DEL CÓDIGO Y SU NIP
+ * =================================
+ * Abel Martínez Zárate - 956306
+ * =================================
+ */
+
 #include "coleccionITF.hpp"
 #include "anuncio.hpp"
 

@@ -1,8 +1,12 @@
-/* ---- NOMBRES Y NIPS ----
-    Arián Lajara Bueno - 798618
-    Abel Martínez Zárate - 956306
-    David Maza Luengo - 956269
-*/
+/*
+ * =================================
+ * AUTORES DEL CÓDIGO Y SUS NIPS
+ * =================================
+ * Arián Lajara Bueno   - 798618
+ * Abel Martínez Zárate - 956306
+ * David Maza Luengo    - 956269
+ * =================================
+ */
 
 #ifndef COLECCIONITF_HPP
 #define COLECCIONITF_HPP

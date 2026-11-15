@@ -1,8 +1,10 @@
-/* 
-_798618_956306_956269
-
-g++ -std=c++11 Principal.cpp anuncio.cpp fecha.cpp -o P3_EDA
-*/
+/*
+ * =================================
+ * AUTOR DEL CÓDIGO Y SU NIP
+ * =================================
+ * Arián Lajara Bueno   - 798618
+ * =================================
+ */
 
 #ifndef _ANUNCIO_HPP
 #define _ANUNCIO_HPP

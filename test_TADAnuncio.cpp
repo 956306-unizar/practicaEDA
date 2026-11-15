@@ -1,3 +1,11 @@
+/*
+ * =================================
+ * AUTOR DEL CÓDIGO Y SU NIP
+ * =================================
+ * Arián Lajara Bueno   - 798618
+ * =================================
+ */
+
 #include "anuncio.hpp"
 #include "fecha.hpp"
 
