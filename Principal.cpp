@@ -72,7 +72,7 @@ int main() {
     crear(coleccionAnuncios);
 
     string instruccionActual;
-
+/*
     while(getline(lectorFichero, instruccionActual)) 
     {
         if (instruccionActual == "A") {
@@ -121,6 +121,52 @@ int main() {
 
         }
     }
+*/
+
+    while(getline(lectorFichero, instruccionActual)) 
+    {   //instrucciones A C O E EC B BC P LO LC LT
+        instruccionActual = instruccionActual + "X";    //nos aseguramos que el string tenga al menos 2 de largo para poder comprobar la 2a posicion
+        if(instruccionActual[0] == 'A'){
+            instrA(lectorFichero, escritorFichero, coleccionAnuncios);
+
+        }else if(instruccionActual[0] == 'C'){
+            instrC(lectorFichero, escritorFichero, coleccionAnuncios);
+
+        }else if(instruccionActual[0] == 'O'){
+            instrO(lectorFichero, escritorFichero, coleccionAnuncios);
+
+        }else if(instruccionActual[0] == 'E'){   //E o EC
+            if(instruccionActual[1] == 'C'){
+                instrEC(lectorFichero, escritorFichero, coleccionAnuncios); //si es "EC"
+
+            }else{
+                instrE(lectorFichero, escritorFichero, coleccionAnuncios);  //si no, es "E " -> E
+            }
+
+        }else if(instruccionActual[0] == 'B'){   //B o BC
+            if(instruccionActual[1] == 'C'){
+                instrBC(lectorFichero, escritorFichero, coleccionAnuncios); //si es "BC"
+
+            }else{
+                instrB(lectorFichero, escritorFichero, coleccionAnuncios);  //si no, es "B " -> B
+            }
+
+        }else if(instruccionActual[0] == 'P'){
+            instrP(lectorFichero, escritorFichero, coleccionAnuncios);
+
+        }else if(instruccionActual[0] == 'L'){   //LO LC o LT
+            if(instruccionActual[1] == 'O'){
+                instrLO(lectorFichero, escritorFichero, coleccionAnuncios); //si es "LO"
+
+            }else if(instruccionActual[1] == 'C'){
+                instrLC(lectorFichero, escritorFichero, coleccionAnuncios); //si es "LC"
+
+            }else if(instruccionActual[1] == 'T'){
+                instrLT(escritorFichero, coleccionAnuncios); //si es "LT"
+            }
+        }
+    }
+
 
     lectorFichero.close();
     escritorFichero.close();
