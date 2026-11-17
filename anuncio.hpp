@@ -17,25 +17,39 @@ using namespace std;
 struct Anuncio;
 
 
-// Añadir las referencias a algunos parametros
-
-
+//Devuelve el tipo de dato Anuncio, sus datos rellenos con los parametros correspondientes.
 Anuncio crearAnuncio(string ID, string tit, string descrip, string categ, Fecha &publi, Fecha &final);
+
+//Devuelve la cadena Identificador del Anuncio
 string suIdentificador(const Anuncio &e);
+
+//Devuelve la cadena Titulo del Anuncio
 string suTitulo(const Anuncio &e);
+
+//cambia el Titulo del anuncio e por n
 void cambiarTitulo(Anuncio &e, string n);
+
+//Devuelve la cadena Descripcion del Anuncio
 string suDescripcion(const Anuncio &e);
+
+//cambia la Descripcion del anuncio e por n
 void cambiarDescripcion(Anuncio &e, string n);
+
+//Devuelve la cadena Categoria del Anuncio
 string suCategoria(const Anuncio &e);
+
+//cambia la Categoria del anuncio e por n
 void cambiarCategoria(Anuncio &e, string n);
+
+//Devuelve el tipo Fecha de la fecha de publicacion de e
 Fecha suPublicacion(const Anuncio &e);
+
+//Devuelve el tipo Fecha de la fecha de finalización de e
 Fecha suFinalizacion(const Anuncio &e);
 
-// Función auxiliar para formatear las fecha aaaa-mm-dd
+//Devuelve una cadena con la fecha f en formato "aaaa-mm-dd"
 string formatearFecha(const Fecha &f);
 
-// Función auxiliar para comprobar las funciones implemenetadas
-string mostrarAnuncio(const Anuncio &e);
 
 struct Anuncio
 {

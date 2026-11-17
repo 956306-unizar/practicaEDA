@@ -108,16 +108,4 @@ string formatearFecha(const Fecha &f)
     return format_fecha;
 }
 
-// Función auxiliar para el "pintado" de la estructra de la instrucción LT
-string mostrarAnuncio(const Anuncio &e)
-{
-    string resultado = "";
-
-    resultado += "[ " + suIdentificador(e) + " -de-> " + suCategoria(e) +
-                 " ;;; " + suTitulo(e) + " ] (" + formatearFecha(suPublicacion(e)) +        
-                 ") --- " + suDescripcion(e) + " --- (" + formatearFecha(suFinalizacion(e)) + ")";
-
-    return resultado;
-}
-
 

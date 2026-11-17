@@ -33,6 +33,18 @@ Fecha fecha(const Anuncio& a){
     return suPublicacion(a);
 }
 
+// Función auxiliar para el "pintado" de la estructra de la instrucción LT
+string mostrarAnuncio(const Anuncio &e)
+{
+    string resultado = "";
+
+    resultado += "[ " + suIdentificador(e) + " -de-> " + suCategoria(e) +
+                 " ;;; " + suTitulo(e) + " ] (" + formatearFecha(suPublicacion(e)) +        
+                 ") --- " + suDescripcion(e) + " --- (" + formatearFecha(suFinalizacion(e)) + ")";
+
+    return resultado;
+}
+
 // Cabeceras funciones auxiliares para las instrucciones
 void instrA(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c);
 void instrC(ifstream &lectorFichero, ofstream &escritorFichero, ColeccionITF<Anuncio> &c);
