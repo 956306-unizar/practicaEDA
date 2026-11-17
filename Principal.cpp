@@ -9,6 +9,7 @@
  */
 
 // Comando detallado de compilación en Windows11: g++ .\fecha.cpp .\anuncio.cpp .\coleccionITF.hpp .\Principal.cpp -Wall -Wextra -std=c++11 -o Principal
+// Comando de compilacion UNIX(tambien funciona en windows): g++ fecha.cpp anuncio.cpp coleccionITF.hpp Principal.cpp -std=c++11 -o Principal
 
 #include <iostream>
 #include <fstream>

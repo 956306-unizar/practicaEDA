@@ -1,0 +1,257 @@
+LT
+E
+AN-100
+O
+AN-100
+C
+AN-100
+Titulo fantasma
+Descripcion fantasma
+Motor
+2026-01-15
+2026-02-15
+B
+AN-100
+EC
+Motor
+LC
+Motor
+BC
+Motor
+LO
+2026-12-31
+P
+2026-12-31
+A
+AN-050
+Bicicleta carretera
+Cuadro de aluminio talla M, poco uso
+Deportes y ocio
+2026-03-10
+2026-06-10
+LT
+A
+AN-010
+Portatil ultraligero
+16GB RAM, 512GB SSD, bateria nueva
+Informatica
+2026-01-20
+2026-04-20
+A
+AN-090
+Guitarra acustica
+Incluye funda acolchada y afinador
+Musica
+2026-05-01
+2026-08-01
+A
+AN-030
+Monitor 27 pulgadas
+Panel IPS 144Hz sin pixeles muertos
+Informatica
+2026-02-14
+2026-05-14
+A
+AN-070
+Clases de calculo
+Ingeniero imparte clases particulares
+Servicios profesionales
+2026-04-05
+2026-09-30
+A
+00-URGENTE
+Busco piso compartido
+Estudiante busca habitacion cerca del campus
+Vivienda
+2026-02-28
+2026-03-31
+A
+an-050
+Bicicleta montana
+Suspension delantera, ruedas 29 pulgadas
+Deportes y ocio
+2026-03-10
+2026-07-10
+A
+00-URGENTE
+Titulo repetido
+No debe sobrescribir
+Otros
+2026-12-01
+2026-12-31
+A
+AN-050
+Bici duplicada
+Intento de duplicado en medio
+Deportes y ocio
+2026-11-11
+2026-12-11
+A
+an-050
+Bici minuscula dup
+Intento de duplicado en cola
+Deportes y ocio
+2026-11-12
+2026-12-12
+LT
+E
+00-URGENTE
+E
+AN-050
+E
+an-050
+E
+AN-051
+E
+ZZ-999
+O
+00-URGENTE
+O
+AN-030
+O
+an-050
+O
+AN-999
+EC
+Informatica
+EC
+Servicios profesionales
+EC
+informatica
+EC
+Motor
+LC
+Informatica
+LC
+Deportes y ocio
+LC
+Vivienda
+LC
+Inexistente
+LO
+2026-01-20
+LO
+2026-01-21
+LO
+2026-03-10
+LO
+2026-12-31
+C
+00-URGENTE
+Busco piso urgente
+Zona centro o universidad, maximo 350 euros
+Alquiler
+2026-01-05
+2026-04-01
+C
+AN-050
+Bicicleta carretera carbono
+Rebajada a 450 euros, grupo Shimano 105
+Deportes y ocio
+2026-06-15
+2026-09-15
+C
+an-050
+Componente PC
+Tarjeta grafica segunda mano
+Informatica
+2026-03-12
+2026-07-12
+C
+AN-040
+No existe
+No debe cambiar nada
+Otros
+2026-01-01
+2026-01-02
+O
+00-URGENTE
+EC
+Vivienda
+EC
+Alquiler
+LC
+Informatica
+LO
+2026-01-10
+LT
+B
+00-URGENTE
+B
+00-URGENTE
+B
+AN-050
+B
+an-050
+B
+NO-EXISTE
+LT
+A
+AN-050
+Patinete electrico
+Autonomia 30km, cargador original
+Movilidad
+2026-02-20
+2026-05-20
+E
+AN-050
+O
+AN-050
+LT
+P
+2026-01-20
+LT
+P
+2026-02-20
+EC
+Informatica
+LC
+Informatica
+LT
+A
+AA-001
+Teclado mecanico
+Switches rojos, retroiluminado
+Perifericos
+2026-06-01
+2026-08-01
+A
+AA-002
+Raton inalambrico
+Sensor optico 16000 DPI
+Perifericos
+2026-06-02
+2026-08-02
+A
+ZZ-999
+Alfombrilla XXL
+Base antideslizante 90x40cm
+Perifericos
+2026-06-03
+2026-08-03
+LT
+BC
+Categoria Fantasma
+BC
+Perifericos
+EC
+Perifericos
+LT
+BC
+Movilidad
+P
+2026-04-06
+LT
+P
+2026-05-02
+LT
+E
+AN-090
+O
+AN-090
+B
+AN-090
+P
+2026-12-31
+BC
+Musica

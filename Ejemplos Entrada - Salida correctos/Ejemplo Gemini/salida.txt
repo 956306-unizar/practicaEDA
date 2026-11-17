@@ -1,0 +1,141 @@
+-----LISTADO: 0
+-----
+DESCONOCIDO: AN-100
+NO LOCALIZADO: AN-100
+NO CAMBIADO: AN-100
+NO BORRADO: AN-100
+CATEGORIA DESCONOCIDA: Motor
+DE CATEGORIA: Motor ---  --- 
+NO ELIMINADOS: Motor
+ANTERIORES A: 2026-12-31 ---  --- 
+NO PURGADOS: 2026-12-31
+INTRODUCIDO: AN-050:::Bicicleta carretera:::Deportes y ocio:::Cuadro de aluminio talla M, poco uso:::2026-03-10:::2026-06-10
+-----LISTADO: 1
+[ AN-050 -de-> Deportes y ocio ;;; Bicicleta carretera ] (2026-03-10) --- Cuadro de aluminio talla M, poco uso --- (2026-06-10)
+-----
+INTRODUCIDO: AN-010:::Portatil ultraligero:::Informatica:::16GB RAM, 512GB SSD, bateria nueva:::2026-01-20:::2026-04-20
+INTRODUCIDO: AN-090:::Guitarra acustica:::Musica:::Incluye funda acolchada y afinador:::2026-05-01:::2026-08-01
+INTRODUCIDO: AN-030:::Monitor 27 pulgadas:::Informatica:::Panel IPS 144Hz sin pixeles muertos:::2026-02-14:::2026-05-14
+INTRODUCIDO: AN-070:::Clases de calculo:::Servicios profesionales:::Ingeniero imparte clases particulares:::2026-04-05:::2026-09-30
+INTRODUCIDO: 00-URGENTE:::Busco piso compartido:::Vivienda:::Estudiante busca habitacion cerca del campus:::2026-02-28:::2026-03-31
+INTRODUCIDO: an-050:::Bicicleta montana:::Deportes y ocio:::Suspension delantera, ruedas 29 pulgadas:::2026-03-10:::2026-07-10
+NO INTRODUCIDO: 00-URGENTE:::Titulo repetido:::Otros:::No debe sobrescribir:::2026-12-01:::2026-12-31
+NO INTRODUCIDO: AN-050:::Bici duplicada:::Deportes y ocio:::Intento de duplicado en medio:::2026-11-11:::2026-12-11
+NO INTRODUCIDO: an-050:::Bici minuscula dup:::Deportes y ocio:::Intento de duplicado en cola:::2026-11-12:::2026-12-12
+-----LISTADO: 7
+[ 00-URGENTE -de-> Vivienda ;;; Busco piso compartido ] (2026-02-28) --- Estudiante busca habitacion cerca del campus --- (2026-03-31)
+[ AN-010 -de-> Informatica ;;; Portatil ultraligero ] (2026-01-20) --- 16GB RAM, 512GB SSD, bateria nueva --- (2026-04-20)
+[ AN-030 -de-> Informatica ;;; Monitor 27 pulgadas ] (2026-02-14) --- Panel IPS 144Hz sin pixeles muertos --- (2026-05-14)
+[ AN-050 -de-> Deportes y ocio ;;; Bicicleta carretera ] (2026-03-10) --- Cuadro de aluminio talla M, poco uso --- (2026-06-10)
+[ AN-070 -de-> Servicios profesionales ;;; Clases de calculo ] (2026-04-05) --- Ingeniero imparte clases particulares --- (2026-09-30)
+[ AN-090 -de-> Musica ;;; Guitarra acustica ] (2026-05-01) --- Incluye funda acolchada y afinador --- (2026-08-01)
+[ an-050 -de-> Deportes y ocio ;;; Bicicleta montana ] (2026-03-10) --- Suspension delantera, ruedas 29 pulgadas --- (2026-07-10)
+-----
+EXISTENTE: 00-URGENTE
+EXISTENTE: AN-050
+EXISTENTE: an-050
+DESCONOCIDO: AN-051
+DESCONOCIDO: ZZ-999
+LOCALIZADO: 00-URGENTE:::Busco piso compartido:::Vivienda:::Estudiante busca habitacion cerca del campus:::2026-02-28:::2026-03-31
+LOCALIZADO: AN-030:::Monitor 27 pulgadas:::Informatica:::Panel IPS 144Hz sin pixeles muertos:::2026-02-14:::2026-05-14
+LOCALIZADO: an-050:::Bicicleta montana:::Deportes y ocio:::Suspension delantera, ruedas 29 pulgadas:::2026-03-10:::2026-07-10
+NO LOCALIZADO: AN-999
+CATEGORIA CONOCIDA: Informatica
+CATEGORIA CONOCIDA: Servicios profesionales
+CATEGORIA DESCONOCIDA: informatica
+CATEGORIA DESCONOCIDA: Motor
+DE CATEGORIA: Informatica --- AN-010:::AN-030 --- 
+DE CATEGORIA: Deportes y ocio --- AN-050:::an-050 --- 
+DE CATEGORIA: Vivienda --- 00-URGENTE --- 
+DE CATEGORIA: Inexistente ---  --- 
+ANTERIORES A: 2026-01-20 ---  --- 
+ANTERIORES A: 2026-01-21 --- AN-010 --- 
+ANTERIORES A: 2026-03-10 --- 00-URGENTE:::AN-010:::AN-030 --- 
+ANTERIORES A: 2026-12-31 --- 00-URGENTE:::AN-010:::AN-030:::AN-050:::AN-070:::AN-090:::an-050 --- 
+CAMBIADO: 00-URGENTE:::Busco piso urgente:::Alquiler:::Zona centro o universidad, maximo 350 euros:::2026-01-05:::2026-04-01
+CAMBIADO: AN-050:::Bicicleta carretera carbono:::Deportes y ocio:::Rebajada a 450 euros, grupo Shimano 105:::2026-06-15:::2026-09-15
+CAMBIADO: an-050:::Componente PC:::Informatica:::Tarjeta grafica segunda mano:::2026-03-12:::2026-07-12
+NO CAMBIADO: AN-040
+LOCALIZADO: 00-URGENTE:::Busco piso urgente:::Alquiler:::Zona centro o universidad, maximo 350 euros:::2026-01-05:::2026-04-01
+CATEGORIA DESCONOCIDA: Vivienda
+CATEGORIA CONOCIDA: Alquiler
+DE CATEGORIA: Informatica --- AN-010:::AN-030:::an-050 --- 
+ANTERIORES A: 2026-01-10 --- 00-URGENTE --- 
+-----LISTADO: 7
+[ 00-URGENTE -de-> Alquiler ;;; Busco piso urgente ] (2026-01-05) --- Zona centro o universidad, maximo 350 euros --- (2026-04-01)
+[ AN-010 -de-> Informatica ;;; Portatil ultraligero ] (2026-01-20) --- 16GB RAM, 512GB SSD, bateria nueva --- (2026-04-20)
+[ AN-030 -de-> Informatica ;;; Monitor 27 pulgadas ] (2026-02-14) --- Panel IPS 144Hz sin pixeles muertos --- (2026-05-14)
+[ AN-050 -de-> Deportes y ocio ;;; Bicicleta carretera carbono ] (2026-06-15) --- Rebajada a 450 euros, grupo Shimano 105 --- (2026-09-15)
+[ AN-070 -de-> Servicios profesionales ;;; Clases de calculo ] (2026-04-05) --- Ingeniero imparte clases particulares --- (2026-09-30)
+[ AN-090 -de-> Musica ;;; Guitarra acustica ] (2026-05-01) --- Incluye funda acolchada y afinador --- (2026-08-01)
+[ an-050 -de-> Informatica ;;; Componente PC ] (2026-03-12) --- Tarjeta grafica segunda mano --- (2026-07-12)
+-----
+BORRADO: 00-URGENTE
+NO BORRADO: 00-URGENTE
+BORRADO: AN-050
+BORRADO: an-050
+NO BORRADO: NO-EXISTE
+-----LISTADO: 4
+[ AN-010 -de-> Informatica ;;; Portatil ultraligero ] (2026-01-20) --- 16GB RAM, 512GB SSD, bateria nueva --- (2026-04-20)
+[ AN-030 -de-> Informatica ;;; Monitor 27 pulgadas ] (2026-02-14) --- Panel IPS 144Hz sin pixeles muertos --- (2026-05-14)
+[ AN-070 -de-> Servicios profesionales ;;; Clases de calculo ] (2026-04-05) --- Ingeniero imparte clases particulares --- (2026-09-30)
+[ AN-090 -de-> Musica ;;; Guitarra acustica ] (2026-05-01) --- Incluye funda acolchada y afinador --- (2026-08-01)
+-----
+INTRODUCIDO: AN-050:::Patinete electrico:::Movilidad:::Autonomia 30km, cargador original:::2026-02-20:::2026-05-20
+EXISTENTE: AN-050
+LOCALIZADO: AN-050:::Patinete electrico:::Movilidad:::Autonomia 30km, cargador original:::2026-02-20:::2026-05-20
+-----LISTADO: 5
+[ AN-010 -de-> Informatica ;;; Portatil ultraligero ] (2026-01-20) --- 16GB RAM, 512GB SSD, bateria nueva --- (2026-04-20)
+[ AN-030 -de-> Informatica ;;; Monitor 27 pulgadas ] (2026-02-14) --- Panel IPS 144Hz sin pixeles muertos --- (2026-05-14)
+[ AN-050 -de-> Movilidad ;;; Patinete electrico ] (2026-02-20) --- Autonomia 30km, cargador original --- (2026-05-20)
+[ AN-070 -de-> Servicios profesionales ;;; Clases de calculo ] (2026-04-05) --- Ingeniero imparte clases particulares --- (2026-09-30)
+[ AN-090 -de-> Musica ;;; Guitarra acustica ] (2026-05-01) --- Incluye funda acolchada y afinador --- (2026-08-01)
+-----
+NO PURGADOS: 2026-01-20
+-----LISTADO: 5
+[ AN-010 -de-> Informatica ;;; Portatil ultraligero ] (2026-01-20) --- 16GB RAM, 512GB SSD, bateria nueva --- (2026-04-20)
+[ AN-030 -de-> Informatica ;;; Monitor 27 pulgadas ] (2026-02-14) --- Panel IPS 144Hz sin pixeles muertos --- (2026-05-14)
+[ AN-050 -de-> Movilidad ;;; Patinete electrico ] (2026-02-20) --- Autonomia 30km, cargador original --- (2026-05-20)
+[ AN-070 -de-> Servicios profesionales ;;; Clases de calculo ] (2026-04-05) --- Ingeniero imparte clases particulares --- (2026-09-30)
+[ AN-090 -de-> Musica ;;; Guitarra acustica ] (2026-05-01) --- Incluye funda acolchada y afinador --- (2026-08-01)
+-----
+PURGADOS: 2026-02-20
+CATEGORIA DESCONOCIDA: Informatica
+DE CATEGORIA: Informatica ---  --- 
+-----LISTADO: 3
+[ AN-050 -de-> Movilidad ;;; Patinete electrico ] (2026-02-20) --- Autonomia 30km, cargador original --- (2026-05-20)
+[ AN-070 -de-> Servicios profesionales ;;; Clases de calculo ] (2026-04-05) --- Ingeniero imparte clases particulares --- (2026-09-30)
+[ AN-090 -de-> Musica ;;; Guitarra acustica ] (2026-05-01) --- Incluye funda acolchada y afinador --- (2026-08-01)
+-----
+INTRODUCIDO: AA-001:::Teclado mecanico:::Perifericos:::Switches rojos, retroiluminado:::2026-06-01:::2026-08-01
+INTRODUCIDO: AA-002:::Raton inalambrico:::Perifericos:::Sensor optico 16000 DPI:::2026-06-02:::2026-08-02
+INTRODUCIDO: ZZ-999:::Alfombrilla XXL:::Perifericos:::Base antideslizante 90x40cm:::2026-06-03:::2026-08-03
+-----LISTADO: 6
+[ AA-001 -de-> Perifericos ;;; Teclado mecanico ] (2026-06-01) --- Switches rojos, retroiluminado --- (2026-08-01)
+[ AA-002 -de-> Perifericos ;;; Raton inalambrico ] (2026-06-02) --- Sensor optico 16000 DPI --- (2026-08-02)
+[ AN-050 -de-> Movilidad ;;; Patinete electrico ] (2026-02-20) --- Autonomia 30km, cargador original --- (2026-05-20)
+[ AN-070 -de-> Servicios profesionales ;;; Clases de calculo ] (2026-04-05) --- Ingeniero imparte clases particulares --- (2026-09-30)
+[ AN-090 -de-> Musica ;;; Guitarra acustica ] (2026-05-01) --- Incluye funda acolchada y afinador --- (2026-08-01)
+[ ZZ-999 -de-> Perifericos ;;; Alfombrilla XXL ] (2026-06-03) --- Base antideslizante 90x40cm --- (2026-08-03)
+-----
+NO ELIMINADOS: Categoria Fantasma
+ELIMINADOS: Perifericos
+CATEGORIA DESCONOCIDA: Perifericos
+-----LISTADO: 3
+[ AN-050 -de-> Movilidad ;;; Patinete electrico ] (2026-02-20) --- Autonomia 30km, cargador original --- (2026-05-20)
+[ AN-070 -de-> Servicios profesionales ;;; Clases de calculo ] (2026-04-05) --- Ingeniero imparte clases particulares --- (2026-09-30)
+[ AN-090 -de-> Musica ;;; Guitarra acustica ] (2026-05-01) --- Incluye funda acolchada y afinador --- (2026-08-01)
+-----
+ELIMINADOS: Movilidad
+PURGADOS: 2026-04-06
+-----LISTADO: 1
+[ AN-090 -de-> Musica ;;; Guitarra acustica ] (2026-05-01) --- Incluye funda acolchada y afinador --- (2026-08-01)
+-----
+PURGADOS: 2026-05-02
+-----LISTADO: 0
+-----
+DESCONOCIDO: AN-090
+NO LOCALIZADO: AN-090
+NO BORRADO: AN-090
+NO PURGADOS: 2026-12-31
+NO ELIMINADOS: Musica

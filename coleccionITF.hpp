@@ -282,60 +282,6 @@ void anadir(ColeccionITF<T> &c, const T &i)
     }
 }
 
-/*
-    Busca si existe un dato de tipo T, en los nodos que almacena la coleccionITF, que tenga el mismo identificador que el dato de tipo T
-    proporcionado (i). De ser así, el dato que ya se encuentra en la coleccionITF se actualizará con el del parámetro i.
-    Al solo cambiarse el valor de la variable "dato" dentro del nodo que se encuentra en dicha posición, no hará falta hacer más cambios
-    en ninguna otra parte.
-*/
-/*
-template<typename T> 
-void actualizar(ColeccionITF<T> &c, const T &i) {
-
-    // Si la lista se encuentra vacía automáticamente dejaremos de intentar buscar el elemento del género T a actualizar.
-    if(c.primero != nullptr) {
-
-        string identificadorDelNuevoDato = identificador(i);
-        string identificadorDatoActual = identificador(c.primero->dato);
-
-        if(identificadorDelNuevoDato > identificadorDatoActual) {
-
-            // Empezamos comprobando el segundo elemento de la colección, ya que ya se comprobó el primero.
-            typename ColeccionITF<T>::Nodo* pAux = c.primero->sig;
-
-            bool actualizado = false;
-            bool busquedaAunValida = true; // Mientras tenga sentido buscar el elemento debido al orden de los IDs, se seguirá buscando.
-
-            while(pAux != nullptr && !actualizado && busquedaAunValida) {
-
-                identificadorDatoActual = identificador(pAux->dato);
-
-                if(identificadorDelNuevoDato < identificadorDatoActual) {
-
-                    busquedaAunValida = false;
-
-                } else if(identificadorDatoActual == identificadorDelNuevoDato) {
-
-                    pAux->dato = i;
-                    actualizado = true;
-
-                } else {
-                    pAux = pAux->sig;
-
-                }
-
-            }
-
-        } else if(identificadorDelNuevoDato == identificadorDatoActual){
-
-            c.primero->dato = i;
-
-        }
-
-    } 
-
-}
-*/
 
 /*
     Busca si existe un dato de tipo T, en los nodos que almacena la coleccionITF, que tenga el mismo identificador que el dato de tipo T
