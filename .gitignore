@@ -12,3 +12,4 @@
 !*.cpp
 !*.hpp
 !*.git.exe
+!*.zip
